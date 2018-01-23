@@ -232,9 +232,11 @@ body {
 .btn-acessar {
 	margin: 30px auto;
 	font-size: 20px;
-    ali
 }
 
+.btn-cancelar {
+	font-size: 22px;
+}
 .input-principal {
 	border: 0px;
 	background: transparent;
@@ -285,10 +287,19 @@ td {
     vertical-align: middle;
 }
 
-.h-align {
-    align-content: center;
-}
-
 table {
   border: 1px solid black;  
+}
+
+.conteudo-ao-centro {
+    margin: 0px auto;
+}
+
+.logout {
+    float: right;
+    margin: 10px;
+}
+
+.area-campo {
+    margin-top: 10px;
 }

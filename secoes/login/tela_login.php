@@ -16,7 +16,7 @@
 
 	</head>
 
-<div class="area-login">
+<div class="area-login conteudo-ao-centro">
 			
 			
 
