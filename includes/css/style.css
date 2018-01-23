@@ -230,9 +230,9 @@ body {
 }
 
 .btn-acessar {
-	float: right;
-	margin: 68px 0px 0px 0px;
+	margin: 30px auto;
 	font-size: 20px;
+    ali
 }
 
 .input-principal {
@@ -283,6 +283,10 @@ td {
 
 .v-align {
     vertical-align: middle;
+}
+
+.h-align {
+    align-content: center;
 }
 
 table {

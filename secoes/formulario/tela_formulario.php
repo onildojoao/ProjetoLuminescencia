@@ -993,7 +993,7 @@
                     <input type="text" name="usu_rg">
 
                     <div class="form-group">
-                        <button class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
+                        <button class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover center-block h-align">Confirmar</button>
                         <div class="clearfix"></div>
                     </div>
                 </form>
