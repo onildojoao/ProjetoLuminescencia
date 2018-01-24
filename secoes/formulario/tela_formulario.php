@@ -1,4 +1,311 @@
+<?php 
+//Include para conexão com o banco.
+include "../../utilidades/coneccao/conexao.php";
 
+//Inicia a Sessão
+session_start();
+
+//Verifica se o usuário está logado
+if ($_SESSION["logado"] != "ok")
+{
+    header ('Location: ../login/index.php');
+} 
+
+if ($_POST != null)
+{
+
+    // DADOS GEOGRÁFICOS
+    if (isset($_POST['dg_classe_via']))
+    {
+        $dg_classe_via = $_POST['dg_classe_via'];
+    }
+
+    if (isset($_POST['dg_cg_p1_utmx']))
+    {
+        $dg_cg_p1_utmx = $_POST['dg_cg_p1_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p1_utmy']))
+    {
+        $dg_classe_via = $_POST['dg_cg_p1_utmy'];
+    }
+
+    if (isset($_POST['dg_cg_p2_utmx']))
+    {
+        $dg_cg_p2_utmx = $_POST['dg_cg_p2_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p2_utmy']))
+    {
+        $dg_cg_p2_utmy = $_POST['dg_cg_p2_utmy'];
+    }
+
+    if (isset($_POST['dg_cg_p3_utmx']))
+    {
+        $dg_cg_p3_utmx = $_POST['dg_cg_p3_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p3_utmy']))
+    {
+        $dg_cg_p3_utmy = $_POST['dg_cg_p3_utmy'];
+    }
+
+    if (isset($_POST['dg_cg_p4_utmx']))
+    {
+        $dg_cg_p4_utmx = $_POST['dg_cg_p4_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p4_utmy']))
+    {
+        $dg_cg_p4_utmy = $_POST['dg_cg_p4_utmy'];
+    }
+
+    if (isset($_POST['dg_cg_p5_utmx']))
+    {
+        $dg_cg_p5_utmx = $_POST['dg_cg_p5_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p5_utmy']))
+    {
+        $dg_cg_p5_utmy = $_POST['dg_cg_p5_utmy'];
+    }
+
+    if (isset($_POST['dg_cg_p6_utmx']))
+    {
+        $dg_cg_p6_utmx = $_POST['dg_cg_p6_utmx'];
+    }
+
+    if (isset($_POST['dg_cg_p6_utmy']))
+    {
+        $dg_cg_p1_utmx = $_POST['dg_cg_p6_utmy'];
+    }
+
+    // DADOS TÉCNICOS
+    if (isset($_POST['dt_potencia_lampada']))
+    {
+        $dt_potencia_lampada = $_POST['dt_potencia_lampada'];
+    }
+
+    if (isset($_POST['dt_tipo_lampada']))
+    {
+        $dt_tipo_lampada = $_POST['dt_tipo_lampada'];
+    }
+
+    if (isset($_POST['dt_tipo_braco']))
+    {
+        $dt_tipo_braco = $_POST['dt_tipo_braco'];
+    }
+
+    if (isset($_POST['dt_altura_poste']))
+    {
+        $dt_altura_poste = $_POST['dt_altura_poste'];
+    }
+
+    if (isset($_POST['dt_material_poste']))
+    {
+        $dt_material_poste = $_POST['dt_material_poste'];
+    }
+
+    if (isset($_POST['dt_uso_poste']))
+    {
+        $dt_uso_poste = $_POST['dt_uso_poste'];
+    }
+
+    if (isset($_POST['dt_tipo_rele']))
+    {
+        $dt_tipo_rele = $_POST['dt_tipo_rele'];
+    }
+
+    if (isset($_POST['dt_tipo_reator']))
+    {
+        $dt_tipo_reator = $_POST['dt_tipo_reator'];
+    }
+
+    if (isset($_POST['dt_forma_distribuicao_energia']))
+    {
+        $dt_forma_distribuicao_energia = $_POST['dt_forma_distribuicao_energia'];
+    }
+
+    // DADOS FÍSICOS
+    if (isset($_POST['df_aparencia_ponto_luminoso']))
+    {
+        $df_aparencia_ponto_luminoso = $_POST['df_aparencia_ponto_luminoso'];
+    }
+
+    if (isset($_POST['df_estado_lampada']))
+    {
+        $df_estado_lampada = $_POST['df_estado_lampada'];
+    }
+
+    if (isset($_POST['df_arvore_ofuscando_iluminacao']))
+    {
+        $df_arvore_ofuscando_iluminacao = $_POST['df_arvore_ofuscando_iluminacao'];
+    }
+
+    if (isset($_POST['df_posicionamento_poste']))
+    {
+        $df_posicionamento_poste = $_POST['df_posicionamento_poste'];
+    }
+
+    if (isset($_POST['df_proximixade_luminaria_rede_energia']))
+    {
+        $df_proximixade_luminaria_rede_energia = $_POST['df_proximixade_luminaria_rede_energia'];
+    }
+
+    if (isset($_POST['df_local_dificil_acesso']))
+    {
+        $dg_classe_via = $_POST['df_local_dificil_acesso'];
+    }
+
+    // MEDIÇÕES
+    if (isset($_POST['md_distancia_postes_p1_p3']))
+    {
+        $md_distancia_postes_p1_p3 = $_POST['md_distancia_postes_p1_p3'];
+    }
+
+    if (isset($_POST['md_distancia_postes_p3_p5']))
+    {
+        $md_distancia_postes_p3_p5 = $_POST['md_distancia_postes_p3_p5'];
+    }
+
+    if (isset($_POST['md_distancia_postes_p2_p4']))
+    {
+        $md_distancia_postes_p2_p4 = $_POST['md_distancia_postes_p2_p4'];
+    }
+
+    if (isset($_POST['md_distancia_postes_p4_p6']))
+    {
+        $md_distancia_postes_p4_p6 = $_POST['md_distancia_postes_p4_p6'];
+    }
+
+    if (isset($_POST['md_distancia_postes_p1_p2']))
+    {
+        $md_distancia_postes_p1_p2 = $_POST['md_distancia_postes_p1_p2'];
+    }
+
+    if (isset($_POST['md_distancia_postes_p5_p6']))
+    {
+        $md_distancia_postes_p5_p6 = $_POST['md_distancia_postes_p5_p6'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a1']))
+    {
+        $md_altura_luminarias_a1 = $_POST['md_altura_luminarias_a1'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a3']))
+    {
+        $md_altura_luminarias_a3 = $_POST['md_altura_luminarias_a3'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a5']))
+    {
+        $md_altura_luminarias_a5 = $_POST['md_altura_luminarias_a5'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a2']))
+    {
+        $md_altura_luminarias_a2 = $_POST['md_altura_luminarias_a2'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a4']))
+    {
+        $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a6']))
+    {
+        $md_altura_luminarias_a6 = $_POST['md_altura_luminarias_a6'];
+    }
+
+    if (isset($_POST['md_altura_luminarias_a4']))
+    {
+        $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
+    }
+
+    if (isset($_POST['md_largura_via_publica_l5_l6']))
+    {
+        $md_largura_via_publica_l5_l6 = $_POST['md_largura_via_publica_l5_l6'];
+    }
+
+    // DATA DE CADASTRO
+    (isset($_POST['data_cadastro']))
+    {
+        $data_cadastro = $_POST['data_cadastro'];
+    }
+
+    // DADOS DO USUÁRIO
+    (isset($_SESSION['usu_cpf']))
+    {
+        $usu_cpf = $_SESSION['usu_cpf'];
+    }
+
+    (isset($_SESSION['usu_nome']))
+    {
+        $usu_nome = $_SESSION['usu_nome'];
+    }
+
+    // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
+    $conexao->beginTransaction();
+    // COMANDO SQL POSTE PRINCIPAL
+    $sql_pp = "INSERT INTO pp_posteprincipal
+                () VALUES 
+                ()";
+
+    $retorno_pp = $conexao->query($sql_pp);
+
+    if ($retorno_pp == true) 
+    {
+        $ok_pp = "true";
+        
+    } else {
+        
+        $ok_pp = "false"
+
+        $erro_pp = $conexao->erro;
+    }
+    
+    // COMANDO SQL CADASTRO
+    $sql_cad = "INSERT INTO cad_cadastro
+                () VALUES 
+                ()";
+
+    $retorno_cad = $conexao->query($sql_cad);
+
+    if ($retorno_cad == true) 
+    {
+        $ok_cad = "true";
+        
+    } else {
+        
+        $ok_cad = "false";
+
+        $erro_cad = $conexao->erro;
+    }
+    
+    if (($ok_pp == "true") && ($ok_cad == "true"))
+    {
+        $conexao->commit();
+        echo "<script>
+        alert('Cadastrado com Sucesso!');
+        location.href = '../menu/menu_principal.php';
+        </script>";
+        
+    } else {
+        $conexao->rollBack();
+        echo "<script>
+        alert('Erro ao Cadastrar!');
+        location.href = '../menu/menu_principal.php';
+        </script>";
+        
+        echo $erro_pp;
+        echo $erro_cad;
+        
+        header('Location: tela_formulario.php');
+    }
+} 
+
+?>
 
 <html>
     <head>
@@ -43,11 +350,15 @@
     </head>
     <body>
         <div class="area-campo">
-            
+
             <div class="logout">
-                    <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
+                <button type="submit" class="btn btn-success" onclick="location.href='../menu/menu_principal.php'">Retornar ao Menu</button>
             </div>
             
+            <div class="logout">
+                <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
+            </div>
+
             <div class="texto chamada-home txt-ao-centro oxygen-regular">
                 Preencha a Ficha de Campo abaixo.
             </div> 
@@ -55,18 +366,6 @@
             <div class="ficha_campo txt-ao-centro oxygen-regular">
                 <br>
                 <form class="form center-block" action="acao_formulario.php" method="POST">
-
-                    <!-- ENDEREÇO -->            
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Endereço:</label>
-                        <input class="inputs-iniciais" type="text" name="dg_enderenco" required>
-                    </div>
-
-                    <!-- REGIÃO ADMINISTRATIVA -->                   
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Região Administrativa(RA):</label>
-                        <input type="text" name="dg_regiao_administrativa" id="dg_regiao_administrativa" required>
-                    </div>
 
                     <!-- DADOS GEOGRÁFICOS -->
                     <label class="titulo-dados">Dados Geográficos</label>
@@ -98,54 +397,54 @@
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p1_utmx">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx">
                                 </td>
                                 <td class="v-align" rowspan="2">
                                     <label>P2</label>
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p2_utmx">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p1_utmy">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy">
                                 </td>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p2_utmy">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"><label>P3</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p3_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx"></td>
                                 <td class="v-align" rowspan="2"><label>P4</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p4_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx"></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p3_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy"></td>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p4_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy"></td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"> <label>P5</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p5_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx"></td>
                                 <td class="v-align" rowspan="2"><label>P6</label></td>
                                 <td> <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p6_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx"></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p5_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy"></td>
 
                                 <td> <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p6_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy"></td>
                             </tr>
                         </table>
                     </div>
@@ -230,7 +529,7 @@
                     <!-- ALTURA DO POSTE -->
                     <div class="form-group">
                         <label class="subtitulo-dados">Altura do Poste (m)</label>
-                        <select class="selectpicker" name="dt_altura_posta">
+                        <select class="selectpicker" name="dt_altura_poste">
                             <option value="0.0">0.0</option>
                             <option value="4.8">4.8</option>
                             <option value="5.0">5.0</option>
@@ -369,22 +668,6 @@
                         <select class="selectpicker" name="df_local_dificil_acesso">
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
-                            <option value="40">40</option>
-                            <option value="56">56</option>
-                            <option value="60">60</option>
-                            <option value="70">70</option>
-                            <option value="100">100</option>
-                            <option value="125">125</option>
-                            <option value="150">150</option>
-                            <option value="160">160</option>
-                            <option value="250">250</option>
-                            <option value="300">300</option>
-                            <option value="400">400</option>
-                            <option value="500">500</option>
-                            <option value="600">600</option>
-                            <option value="800">800</option>
-                            <option value="1000">1000</option>
-                            <option value="2000">2000</option>
                         </select>
                     </div>
 
@@ -408,104 +691,101 @@
                         </tr>
                         <tr>
                             <td><label>0%</label></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
                         </tr>
                         <tr>
                             <td><label>25%</label></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
                         </tr>
                         <tr>
                             <td><label>50%</label></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
                         </tr>
                         <tr>
                             <td><label>75%</label></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
                         </tr>
                         <tr>
                             <td><label>100%</label></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
-                            <td><input type="text" name="md_distancia_postes_p1_p3"></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
+                            <td><input type="text" class="input-tabelas" name=""></td>
                         </tr>
                     </table>
                     <br>
 
-                    <label class="subtitulo-dados">Medições métricas com equipamento a laser de precisão 0,1 metro:</label>
-                    <br>
-
                     <!-- DISTÂNCIA ENTRE POSTES -->
                     <div class="form-group">
+                        <label class="subtitulo-dados">Distância entre Postes (m)</label>
+                        <br>
+                        <label class="subtitulo-dados">Medições métricas com equipamento a laser de precisão 0,1 metro:</label>
                         <table class="teste">
                             <tr>
-                                <td class="v-align" rowspan="3">
-                                    <label class="subtitulo-dados">Distância entre Postes (m)</label>
-                                </td>
                                 <td><label>P1-P3:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p1_p3">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p3">
                                 </td>
                                 <td><label>P3-P5:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p3_p5">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p3_p5">
                                 </td>
                             </tr>
                             <tr>
                                 <td><label>P2-P4:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p2_p4">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p2_p4">
                                 </td>
                                 <td><label>P4-P6:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p4_p6">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p4_p6">
                                 </td>
                             </tr>
                             <tr>
                                 <td><label>P1-P2:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p1_p2">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p2">
                                 </td>
                                 <td><label>P5-P6:</label></td>
                                 <td>
-                                    <input type="text" name="md_distancia_postes_p5_p6">
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p5_p6">
                                 </td> 
                             </tr>
                         </table>
@@ -513,39 +793,37 @@
 
                     <!-- ALTURA DAS LUMINÁRIAS -->
                     <div class="form-group">
+                        <label class="subtitulo-dados">Altura das Luminárias (m)</label>
                         <table class="teste">
                             <tr>
-                                <td class="v-align" rowspan="2">
-                                    <label class="subtitulo-dados">Altura das Luminárias (m)</label>
-                                </td>
                                 <td><label>A1:</label></td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a1">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a1">
                                 </td>
                                 <td><label>A3:</label></td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a3">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a3">
                                 </td>
                                 <td>
                                     <label>A5:</label>
                                 </td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a5">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a5">
                                 </td>
                             </tr>
                             <tr>
 
                                 <td><label>A2:</label></td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a2">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a2">
                                 </td>
                                 <td><label>A4:</label></td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a4">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a4">
                                 </td>
                                 <td><label>A6:</label></td>
                                 <td>
-                                    <input type="text" name="md_altura_luminarias_a6">
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a6">
                                 </td>
                             </tr>
                         </table> 
@@ -553,25 +831,23 @@
 
                     <!-- LARGURA DA VIA PÚBLICA -->
                     <div class="form-group">
+                        <label class="subtitulo-dados">Largura da Via Pública (m)</label>
                         <table class="teste">
                             <tr>
-                                <td>
-                                    <label class="subtitulo-dados">Largura da Via Pública (m)</label>
-                                </td>
                                 <td><label>L1-L2:</label></td>
                                 <td>
-                                    <input type="text" name="md_largura_via_publica_l1_l2">
+                                    <input type="text" class="input-tabelas" name="md_largura_via_publica_l1_l2">
                                 </td>
                                 <td><label>L5-L6:</label></td>
                                 <td>
-                                    <input type="text" name="md_largura_via_publica_l5_l6">
+                                    <input type="text" class="input-tabelas" name="md_largura_via_publica_l5_l6">
                                 </td>
                             </tr>
                         </table>
                     </div>
 
                     <label>Data:</label>
-                    <input type="text" id="datepicker">
+                    <input type="text" id="datepicker" name="data_cadastro">
 
                     <div class="form-group row">
                         <button type="submit" class="btn btn-success btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>

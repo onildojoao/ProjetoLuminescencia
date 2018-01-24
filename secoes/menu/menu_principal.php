@@ -1,3 +1,12 @@
+<?php 
+session_start();
+//Verifica se o usuário está logado
+if ($_SESSION["logado"] != "ok")
+{
+    header ('Location: ../login/index.php');
+} 
+?>
+
 <html>
     <head>
 
@@ -14,7 +23,7 @@
     </head>
     <body>
         <button type="submit" class="btn btn-secondary logout" onclick="location.href='../login/acao_logout.php'">Logout</button>
-        
+
         <div class="area-login txt-ao-centro">
 
             <div class="texto chamada-home txt-ao-centro oxygen-regular">

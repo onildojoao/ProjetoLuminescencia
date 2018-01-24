@@ -309,3 +309,11 @@ table {
     border: 2px solid black;
     
 }
+
+.input-tabelas {
+    width: 60px;
+}
+
+.input-tabelas-coordenadas {
+    width: 110px;
+}

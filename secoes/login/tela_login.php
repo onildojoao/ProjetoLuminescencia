@@ -43,6 +43,7 @@ if ($_POST != null)
                 $_SESSION['usu_cpf']     = $registro_login["usu_CPF"];
                 $_SESSION['usu_senha']   = $registro_login["usu_Senha"];	
                 $_SESSION['usu_perfil']  = $registro_login["usu_Perfil"];
+                $_SESSION['usu_logado']  = "ok";
             }
 
             // header ao invés de echo por conta do session
