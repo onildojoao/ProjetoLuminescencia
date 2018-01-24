@@ -2,7 +2,7 @@
 <?php 
 
 //Include para conexão com o banco.
-include "../../utilidades/coneccao/conexao.php";
+include "../../utilidades/conexao/conexao.php";
 
 if ($_POST != null)
 {
