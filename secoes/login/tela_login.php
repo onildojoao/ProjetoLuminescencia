@@ -26,7 +26,7 @@
 
         <div class="login">
 
-            <form class="form center-block" action="acao_login.php" method="POST">
+            <form class="form center-block" action="acao_login.php" method="post">
                 <div class="form-group">
                     <input type="text" name="usu_cpf" class="form-control input-lg input-principal fonte-normal open-sans-light" placeholder="CPF" required>
                 </div>
