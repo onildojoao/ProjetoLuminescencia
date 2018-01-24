@@ -43,12 +43,11 @@
     </head>
     <body>
         <div class="area-campo">
+            
             <div class="logout">
-                <form action="../login/acao_logout.php" method="post">
-                    <button type="submit" class="btn-link">Logout</button>
-                </form>
-                
+                    <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
             </div>
+            
             <div class="texto chamada-home txt-ao-centro oxygen-regular">
                 Preencha a Ficha de Campo abaixo.
             </div> 
@@ -58,13 +57,13 @@
                 <form class="form center-block" action="acao_formulario.php" method="POST">
 
                     <!-- ENDEREÇO -->            
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Endereço:</label>
                         <input class="inputs-iniciais" type="text" name="dg_enderenco" required>
                     </div>
 
                     <!-- REGIÃO ADMINISTRATIVA -->                   
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Região Administrativa(RA):</label>
                         <input type="text" name="dg_regiao_administrativa" id="dg_regiao_administrativa" required>
                     </div>
@@ -74,7 +73,7 @@
                     <br>
 
                     <!-- CLASSE DA VIA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Classe da Via</label>
                         <select class="selectpicker" name="dg_classe_via">
                             <option value="V1">V1</option>
@@ -156,7 +155,7 @@
                     <br>
 
                     <!-- POTÊNCIA DA LÂMPADA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Potência da Lâmpada (W)</label>
                         <select class="selectpicker" name="dt_potencia_lampada">
                             <option value="20">20</option>
@@ -181,7 +180,7 @@
                     </div>
 
                     <!-- TIPO DA LÂMPADA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Tipo da Lâmpada</label>
                         <select class="selectpicker" name="dt_tipo_lampada">
                             <option value="compacta">Compacta</option>
@@ -196,7 +195,7 @@
                     </div>
 
                     <!-- TIPO DE LUMINÁRIA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Tipo de Luminária</label>
                         <select class="selectpicker" name="dt_tipo_luminaria">
                             <option value="aberta">Aberta</option>
@@ -211,7 +210,7 @@
                     </div>
 
                     <!-- TIPO DE BRAÇO -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Tipo de Braço</label>
                         <select class="selectpicker" name="dt_tipo_braco">
                             <option value="cruzeta n1.1">Cruzeta N1.1</option>
@@ -229,7 +228,7 @@
                     </div>
 
                     <!-- ALTURA DO POSTE -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Altura do Poste (m)</label>
                         <select class="selectpicker" name="dt_altura_posta">
                             <option value="0.0">0.0</option>
@@ -253,7 +252,7 @@
                     </div>
 
                     <!-- MATERIAL DO POSTE -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Material do Poste</label>
                         <select class="selectpicker" name="dt_material_poste">
                             <option value="abrigo projetor alvenaria">Abrigo Projetor Alvenaria</option>
@@ -272,7 +271,7 @@
                     </div>
 
                     <!-- USO DO POSTE -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Uso do Poste</label>
                         <select class="selectpicker" name="dt_uso_poste">
                             <option value="exclusivo p/ iluminacao publica">Exclusivo p/ Iluminação Pública</option>
@@ -281,7 +280,7 @@
                     </div>
 
                     <!-- TIPO DE RELÊ -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Tipo de Relê</label>
                         <select class="selectpicker" name="dt_tipo_rele">
                             <option value="fotoeletrico">Fotoelétrico</option>
@@ -292,7 +291,7 @@
                     </div>
 
                     <!-- TIPO DE REATOR -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Tipo de Reator</label>
                         <select class="selectpicker" name="dt_tipo_reator">
                             <option value="externo">Externo</option>
@@ -303,7 +302,7 @@
                     </div>
 
                     <!-- FORMA DE DISTRIBUIÇÃO DE ENERGIA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Forma de Distribuição de Energia</label>
                         <select class="selectpicker" name="dt_forma_distribuicao_energia">
                             <option value="aerea">Aérea</option>
@@ -316,7 +315,7 @@
                     <br>
 
                     <!-- APARÊNCIA DO PONTO LUMINOSO -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Aparência do Ponto Luminoso</label>
                         <select class="selectpicker" name="df_aparencia_ponto_luminoso">
                             <option value="bem instalado">Bem Instalado</option>
@@ -327,7 +326,7 @@
                     </div>
 
                     <!-- ESTADO DA LÂMPADA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Estado da Lâmpada</label>
                         <select class="selectpicker" name="df_estado_lampada">
                             <option value="acesa">Acesa</option>
@@ -336,7 +335,7 @@
                     </div>
 
                     <!-- ÁRVORE OFUSCANDO A ILUMINAÇÃO -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Árvore Ofuscando a Iluminação</label>
                         <select class="selectpicker" name="df_arvore_ofuscando_iluminacao">
                             <option value="sim">Sim</option>
@@ -345,7 +344,7 @@
                     </div>
 
                     <!-- POSICIONAMENTO DO POSTE -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Posicionamento do Poste</label>
                         <select class="selectpicker" name="df_posicionamento_poste">
                             <option value="normal">Normal</option>
@@ -355,7 +354,7 @@
                     </div>
 
                     <!-- PROXIMIDADE DA LUMINÁRIA EM RELAÇÃO À REDE DE ENERGIA -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Proximidade da Luminária em Relação à Rede de Energia</label>
                         <select class="selectpicker" name="df_proximixade_luminaria_rede_energia">
                             <option value="normal">Normal</option>
@@ -365,7 +364,7 @@
                     </div>
 
                     <!-- LOCAL DE DIFÍCIL ACESSO -->
-                    <div class="form-group row">
+                    <div class="form-group">
                         <label class="subtitulo-dados">Local de Difícil Acesso</label>
                         <select class="selectpicker" name="df_local_dificil_acesso">
                             <option value="sim">Sim</option>
@@ -575,7 +574,7 @@
                     <input type="text" id="datepicker">
 
                     <div class="form-group row">
-                        <button type="submit" class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
+                        <button type="submit" class="btn btn-success btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
                     </div>
                 </form>
                 <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>

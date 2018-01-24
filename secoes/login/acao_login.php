@@ -4,7 +4,7 @@
     //include "../../utilidades/coneccao/conexao.php";
 
     //Configura a conexão com o banco de dados
-    $conexao = new mysqli("localhost", "root", "", "icbie");
+    $conexao = new mysqli("localhost", "root", "", "opus");
 
 //verifica se ocorreu conexao
 if($conexao->connect_error == true){
@@ -14,11 +14,15 @@ if($conexao->connect_error == true){
 }
 //Inicia a Sessão
 //session_start();
-print($_POST['usu_cpf']);
-echo $_POST['usu_cpf'];
-$usu_cpf = $_POST["usu_cpf"];
-$usu_senha = $_POST["usu_senha"];
 
+if (isset($_POST['usu_cpf']))
+{
+    $usu_cpf = $_POST["usu_cpf"];
+}
+if (isset($_POST['usu_senha']))
+{
+    $usu_senha = $_POST["usu_senha"];
+}
 //Verifica se usuário e senha estão vazios
 if ((!$usu_cpf) || (!$usu_senha))
 {
@@ -44,7 +48,6 @@ if ((!$usu_cpf) || (!$usu_senha))
             $_SESSION['usu_email']              = $registro_login["usu_Email"];	
             $_SESSION['usu_cpf']          = $registro_login["usu_CPF"];
             $_SESSION['usu_senha']              = $registro_login["usu_Senha"];	
-
         }
 
         // header ao invés de echo por conta do session
@@ -56,6 +59,4 @@ if ((!$usu_cpf) || (!$usu_senha))
         echo "<script>alert('Usuário ou Senha não encontrados! Verifique os dados inseridos!'); </script>";
 
     }
-
-
 ?>
