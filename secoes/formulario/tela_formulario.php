@@ -346,16 +346,15 @@ if ($_POST != null)
                 });
             } );
         </script>
-
+        <script> 
+        $(function(){
+            $("#navbar").load("../navbar.html"); 
+        });
+        </script> 
     </head>
     <body>
-
-        <div class="logout">
-            <button type="submit" class="btn btn-success" onclick="location.href='../menu/menu_principal.php'">Retornar ao Menu</button>
-            
-            <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
-            
-        </div>
+        <div id="navbar"></div>
+        
 
         <div class="area-campo">
 
