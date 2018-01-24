@@ -1,9 +1,11 @@
 <?php 
 session_start();
 //Verifica se o usuário está logado
-if ($_SESSION["logado"] != "ok")
+if ($_SESSION["usu_logado"] != "ok")
 {
-    header ('Location: ../login/index.php');
+    echo "<script>alert('Usuário não está logado!');
+            </script>";
+    header ('Location: ../login/tela_login.php');
 } 
 ?>
 

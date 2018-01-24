@@ -6,9 +6,9 @@ include "../../utilidades/coneccao/conexao.php";
 session_start();
 
 //Verifica se o usuário está logado
-if ($_SESSION["logado"] != "ok")
+if ($_SESSION["usu_logado"] != "ok")
 {
-    header ('Location: ../login/index.php');
+    header ('Location: ../login/tela_login.php');
 } 
 
 if ($_POST != null)
@@ -229,18 +229,18 @@ if ($_POST != null)
     }
 
     // DATA DE CADASTRO
-    (isset($_POST['data_cadastro']))
+    if (isset($_POST['data_cadastro']))
     {
         $data_cadastro = $_POST['data_cadastro'];
     }
 
     // DADOS DO USUÁRIO
-    (isset($_SESSION['usu_cpf']))
+    if (isset($_SESSION['usu_cpf']))
     {
         $usu_cpf = $_SESSION['usu_cpf'];
     }
 
-    (isset($_SESSION['usu_nome']))
+    if (isset($_SESSION['usu_nome']))
     {
         $usu_nome = $_SESSION['usu_nome'];
     }
@@ -257,14 +257,14 @@ if ($_POST != null)
     if ($retorno_pp == true) 
     {
         $ok_pp = "true";
-        
+
     } else {
-        
-        $ok_pp = "false"
+
+        $ok_pp = "false";
 
         $erro_pp = $conexao->erro;
     }
-    
+
     // COMANDO SQL CADASTRO
     $sql_cad = "INSERT INTO cad_cadastro
                 () VALUES 
@@ -275,14 +275,14 @@ if ($_POST != null)
     if ($retorno_cad == true) 
     {
         $ok_cad = "true";
-        
+
     } else {
-        
+
         $ok_cad = "false";
 
         $erro_cad = $conexao->erro;
     }
-    
+
     if (($ok_pp == "true") && ($ok_cad == "true"))
     {
         $conexao->commit();
@@ -290,17 +290,17 @@ if ($_POST != null)
         alert('Cadastrado com Sucesso!');
         location.href = '../menu/menu_principal.php';
         </script>";
-        
+
     } else {
         $conexao->rollBack();
         echo "<script>
         alert('Erro ao Cadastrar!');
         location.href = '../menu/menu_principal.php';
         </script>";
-        
+
         echo $erro_pp;
         echo $erro_cad;
-        
+
         header('Location: tela_formulario.php');
     }
 } 
@@ -349,23 +349,23 @@ if ($_POST != null)
 
     </head>
     <body>
+
+        <div class="logout">
+            <button type="submit" class="btn btn-success" onclick="location.href='../menu/menu_principal.php'">Retornar ao Menu</button>
+            
+            <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
+            
+        </div>
+
         <div class="area-campo">
 
-            <div class="logout">
-                <button type="submit" class="btn btn-success" onclick="location.href='../menu/menu_principal.php'">Retornar ao Menu</button>
-            </div>
-            
-            <div class="logout">
-                <button type="submit" class="btn btn-secondary" onclick="location.href='../login/acao_logout.php'">Logout</button>
-            </div>
-
-            <div class="texto chamada-home txt-ao-centro oxygen-regular">
-                Preencha a Ficha de Campo abaixo.
-            </div> 
-
-            <div class="ficha_campo txt-ao-centro oxygen-regular">
+            <div class="ficha-campo txt-ao-centro oxygen-regular">
                 <br>
                 <form class="form center-block" action="acao_formulario.php" method="POST">
+
+                    <div class="texto chamada-home oxygen-regular">
+                        Preencha a Ficha de Campo abaixo.
+                    </div> 
 
                     <!-- DADOS GEOGRÁFICOS -->
                     <label class="titulo-dados">Dados Geográficos</label>
