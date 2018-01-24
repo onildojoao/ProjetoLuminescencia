@@ -1,7 +1,7 @@
 <?php
 
     //Configura a conexão com o banco de dados
-	$conexao = new mysqli("localhost", "root", "", "icbie");
+	$conexao = new mysqli("localhost", "root", "", "opus");
 
 	//$conexao->query("SET NAMES 'utf8'");
 	//$conexao->query("SET CHARACTER SET utf8");  

@@ -44,7 +44,10 @@
     <body>
         <div class="area-campo">
             <div class="logout">
-                <label>Logout</label>
+                <form action="../login/acao_logout.php" method="post">
+                    <button type="submit" class="btn-link">Logout</button>
+                </form>
+                
             </div>
             <div class="texto chamada-home txt-ao-centro oxygen-regular">
                 Preencha a Ficha de Campo abaixo.
@@ -84,55 +87,6 @@
                             <option value="P3">P3</option>
                             <option value="P4">P4</option>
                         </select>
-                        <!-- <table class="teste">
-<tr>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="V1">V1</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="V2">V2</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="V3">V3</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="V4">V4</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="V5">V5</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="P1">P1</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="P2">P2</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="P3">P3</label>
-</div>
-</td>
-<td>
-<div class="radio">
-<label><input type="radio" name="dg_classe_via" value="P4">P4</label>
-</div>
-</td>
-</tr>
-</table> -->
                     </div>
 
                     <!-- COORDENADA GEORREFERÊNCIADA -->
@@ -145,54 +99,54 @@
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p1_x">
+                                    <input type="text" name="dg_cg_p1_utmx">
                                 </td>
                                 <td class="v-align" rowspan="2">
                                     <label>P2</label>
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p2_x">
+                                    <input type="text" name="dg_cg_p2_utmx">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p1_y">
+                                    <input type="text" name="dg_cg_p1_utmy">
                                 </td>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p2_y">
+                                    <input type="text" name="dg_cg_p2_utmy">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"><label>P3</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p3_x"></td>
+                                    <input type="text" name="dg_cg_p3_utmx"></td>
                                 <td class="v-align" rowspan="2"><label>P4</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p4_x"></td>
+                                    <input type="text" name="dg_cg_p4_utmx"></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p3_y"></td>
+                                    <input type="text" name="dg_cg_p3_utmy"></td>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p4_y"></td>
+                                    <input type="text" name="dg_cg_p4_utmy"></td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"> <label>P5</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p5_x"></td>
+                                    <input type="text" name="dg_cg_p5_utmx"></td>
                                 <td class="v-align" rowspan="2"><label>P6</label></td>
                                 <td> <label>UTM-X:</label>
-                                    <input type="text" name="dg_cg_p6_x"></td>
+                                    <input type="text" name="dg_cg_p6_utmx"></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p5_y"></td>
+                                    <input type="text" name="dg_cg_p5_utmy"></td>
 
                                 <td> <label>UTM-Y:</label>
-                                    <input type="text" name="dg_cg_p6_y"></td>
+                                    <input type="text" name="dg_cg_p6_utmy"></td>
                             </tr>
                         </table>
                     </div>
@@ -621,11 +575,10 @@
                     <input type="text" id="datepicker">
 
                     <div class="form-group row">
-                        <button class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
-                        
-                        <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>
+                        <button type="submit" class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
                     </div>
                 </form>
+                <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>
             </div>
         </div>
     </body>

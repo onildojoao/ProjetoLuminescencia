@@ -224,9 +224,10 @@ body {
 
 .area-login {
 	width: 350px;
-	height: 619px;
-	float: right;
-	margin: 192px 152px 0px 0px;
+    margin-top: 200px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
 }
 
 .btn-acessar {

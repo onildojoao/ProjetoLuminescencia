@@ -6,16 +6,16 @@
     //Inicia a Sessão
     session_start();
 
-    $usu_usuario = $_POST['usu_usuario'];
+    $usu_cpf = $_POST['usu_cpf'];
     $usu_senha = $_POST['usu_senha'];
 
     //Verifica se usuário e senha estão vazios
-    if ((!$usu_usuario) || (!$usu_senha))
+    if ((!$usu_cpf) || (!$usu_senha))
     {
         echo "<script>alert('Nome do Usuário ou Senha estão vazios! Por favor, insira os seus dados e tente novamente!'); location.href='tela_login.php';</script>";
     } else {
         
-        $sql_login = "SELECT * FROM funcionario WHERE usu_usuario = '$usu_usuario' AND usu_senha = '$usu_senha'";
+        $sql_login = "SELECT * FROM funcionario WHERE usu_CPF = '$usu_cpf' AND usu_Senha = '$usu_senha'";
 
 		$retorno_login = $conexao->query($sql_login);
 
@@ -25,9 +25,10 @@
 			while( $registro_login = $retorno2->fetch_array() ){
 
 				$_SESSION['usu_id']      = $registro_login["usu_id"];
-				$_SESSION['usu_nome']           = $registro_login["usu_nome"];;
-				$_SESSION['usu_usuario']          = $registro_login["usu_usuario"];
-				$_SESSION['usu_senha']              = $registro_login["usu_senha"];	
+				$_SESSION['usu_nome']           = $registro_login["usu_Nome"];;
+                $_SESSION['usu_email']              = $registro_login["usu_Email"];	
+				$_SESSION['usu_cpf']          = $registro_login["usu_CPF"];
+				$_SESSION['usu_senha']              = $registro_login["usu_Senha"];	
 
 			}
             
