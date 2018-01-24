@@ -13,11 +13,9 @@ if($conexao->connect_error == true){
     exit;
 }
 //Inicia a Sessão
-session_start();
-if($_POST == null)
-{
-    echo "<script>alert('POST VAZIO!');</script>";
-}
+//session_start();
+print($_POST['usu_cpf']);
+echo $_POST['usu_cpf'];
 $usu_cpf = $_POST["usu_cpf"];
 $usu_senha = $_POST["usu_senha"];
 
