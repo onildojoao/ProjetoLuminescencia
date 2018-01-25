@@ -123,8 +123,6 @@ CREATE TABLE IF NOT EXISTS `pp_posteprincipal` (
   `pp_LNG_DD` double DEFAULT NULL,
   `pp_LNG_END_DD` double DEFAULT NULL,
   `pp_Classe_Via` varchar(2) DEFAULT NULL,
-  `pp_rua_proxima_x_dd` double DEFAULT NULL,
-  `pp_rua_proxima_y_dd` double DEFAULT NULL,
   PRIMARY KEY (`pp_id_proprio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

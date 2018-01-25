@@ -12,8 +12,6 @@ if ($_POST != null)
     if (isset($_POST['usu_cpf']))
     {
         $usu_cpf = $_POST['usu_cpf'];
-        echo "<script>alert('teste!');
-            </script>";
     }
     if (isset($_POST['usu_senha']))
     {
@@ -24,9 +22,6 @@ if ($_POST != null)
     {
         echo "<script>alert('Nome do Usuário ou Senha estão vazios! Por favor, insira os seus dados e tente novamente!'); location.href='tela_login.php'; </script>";
     } else {
-
-        echo "<script>alert('realizando consulta!');
-            </script>";
         
         $sql_login = "SELECT * FROM usu_usuario WHERE usu_CPF = '$usu_cpf' AND usu_Senha = '$usu_senha'";
 
@@ -51,9 +46,6 @@ if ($_POST != null)
                 $_SESSION['usu_logado']  = "ok";
             }
 
-            // header ao invés de echo por conta do session
-            echo "<script>alert('Login realizado com sucesso!');
-            </script>";
             header("Location: ../menu/menu_principal.php");
 
 

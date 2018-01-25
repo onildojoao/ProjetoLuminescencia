@@ -29,61 +29,85 @@ if ($_POST != null)
     if (isset($_POST['dg_cg_p1_utmx']))
     {
         $dg_cg_p1_utmx = $_POST['dg_cg_p1_utmx'];
+    } else {
+        $dg_cg_p1_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p1_utmy']))
     {
         $dg_cg_p1_utmy = $_POST['dg_cg_p1_utmy'];
+    } else {
+        $dg_cg_p1_utmy = 0;
     }
 
     if (isset($_POST['dg_cg_p2_utmx']))
     {
         $dg_cg_p2_utmx = $_POST['dg_cg_p2_utmx'];
+    } else {
+        $dg_cg_p2_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p2_utmy']))
     {
         $dg_cg_p2_utmy = $_POST['dg_cg_p2_utmy'];
+    } else {
+        $dg_cg_p2_utmy = 0;
     }
 
     if (isset($_POST['dg_cg_p3_utmx']))
     {
         $dg_cg_p3_utmx = $_POST['dg_cg_p3_utmx'];
+    } else {
+        $dg_cg_p3_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p3_utmy']))
     {
         $dg_cg_p3_utmy = $_POST['dg_cg_p3_utmy'];
+    } else {
+        $dg_cg_p3_utmy = 0;
     }
 
     if (isset($_POST['dg_cg_p4_utmx']))
     {
         $dg_cg_p4_utmx = $_POST['dg_cg_p4_utmx'];
+    } else {
+        $dg_cg_p4_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p4_utmy']))
     {
         $dg_cg_p4_utmy = $_POST['dg_cg_p4_utmy'];
+    } else {
+        $dg_cg_p4_utmy = 0;
     }
 
     if (isset($_POST['dg_cg_p5_utmx']))
     {
         $dg_cg_p5_utmx = $_POST['dg_cg_p5_utmx'];
+    } else {
+        $dg_cg_p5_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p5_utmy']))
     {
         $dg_cg_p5_utmy = $_POST['dg_cg_p5_utmy'];
+    } else {
+        $dg_cg_p5_utmy = 0;
     }
 
     if (isset($_POST['dg_cg_p6_utmx']))
     {
         $dg_cg_p6_utmx = $_POST['dg_cg_p6_utmx'];
+    } else {
+        $dg_cg_p6_utmx = 0;
     }
 
     if (isset($_POST['dg_cg_p6_utmy']))
     {
         $dg_cg_p6_utmy = $_POST['dg_cg_p6_utmy'];
+    } else {
+        $dg_cg_p6_utmy = 0;
     }
 
     // DADOS TÉCNICOS
@@ -172,200 +196,244 @@ if ($_POST != null)
     if (isset($_POST['md_largura_via_l1']))
     {
         $md_largura_via_l1 = $_POST['md_largura_via_l1'];
+    } else {
+        $md_largura_via_l1 = 0;
     }
 
     if (isset($_POST['md_largura_via_l2']))
     {
         $md_largura_via_l2 = $_POST['md_largura_via_l2'];
+    } else {
+        $md_largura_via_l2 = 0;
     }
 
     if (isset($_POST['md_largura_calcada_l1']))
     {
         $md_largura_calcada_l1 = $_POST['md_largura_calcada_l1'];
+    } else {
+        $md_largura_calcada_l1 = 0;
     }
 
     if (isset($_POST['md_largura_calcada_l2']))
     {
         $md_largura_calcada_l2 = $_POST['md_largura_calcada_l2'];
+    } else {
+        $md_largura_calcada_l2 = 0;
     }
 
     if (isset($_POST['md_altura_montagem']))
     {
         $md_altura_montagem = $_POST['md_altura_montagem'];
+    } else {
+        $md_altura_montagem = 0;
     }
 
     if (isset($_POST['md_projecao_horizontal_braco']))
     {
         $md_projecao_horizontal_braco = $_POST['md_projecao_horizontal_braco'];
+    } else {
+        $md_projecao_horizontal_braco = 0;
     }
 
     if (isset($_POST['md_espacamento_entre_postes']))
     {
         $md_espacamento_entre_postes = $_POST['md_espacamento_entre_postes'];
+    } else {
+        $md_espacamento_entre_postes = 0;
     }
 
     // TABELA DE LUMINÂNCIA
-    $md_contador_luminancia = 0;
+
     // PRIMEIRA LINHA DA TABELA
     if (isset($_POST['md_c1_l1']))
     {
         $md_c1_l1 = $_POST['md_c1_l1'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l1 = 0;
     }
     if (isset($_POST['md_c2_l1']))
     {
         $md_c2_l1 = $_POST['md_c2_l1'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l1 = 0;
     }
     if (isset($_POST['md_c3_l1']))
     {
         $md_c3_l1 = $_POST['md_c3_l1'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l1 = 0;
     }
     if (isset($_POST['md_c4_l1']))
     {
         $md_c4_l1 = $_POST['md_c4_l1'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l1 = 0;
     }
     if (isset($_POST['md_c5_l1']))
     {
         $md_c5_l1 = $_POST['md_c5_l1'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l1 = 0;
     }
 
     // SEGUNDA LINHA DA TABELA
     if (isset($_POST['md_c1_l2']))
     {
         $md_c1_l2 = $_POST['md_c1_l2'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l2 = 0;
     }
     if (isset($_POST['md_c2_l2']))
     {
         $md_c2_l2 = $_POST['md_c2_l2'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l2 = 0;
     }
     if (isset($_POST['md_c3_l2']))
     {
         $md_c3_l2 = $_POST['md_c3_l2'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l2 = 0;
     }
     if (isset($_POST['md_c4_l2']))
     {
         $md_c4_l2 = $_POST['md_c4_l2'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l2 = 0;
     }
     if (isset($_POST['md_c5_l2']))
     {
         $md_c5_l2 = $_POST['md_c5_l2'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l2 = 0;
     }
 
     //TERCEIRA LINHA DA TABELA
     if (isset($_POST['md_c1_l3']))
     {
         $md_c1_l3 = $_POST['md_c1_l3'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l3 = 0;
     }
     if (isset($_POST['md_c2_l3']))
     {
         $md_c2_l3 = $_POST['md_c2_l3'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l3 = 0;
     }
     if (isset($_POST['md_c3_l3']))
     {
         $md_c3_l3 = $_POST['md_c3_l3'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l3 = 0;
     }
     if (isset($_POST['md_c4_l3']))
     {
         $md_c4_l3 = $_POST['md_c4_l3'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l3 = 0;
     }
     if (isset($_POST['md_c5_l3']))
     {
         $md_c5_l3 = $_POST['md_c5_l3'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l3 = 0;
     }
 
     // QUARTA LINHA DA TABELA
     if (isset($_POST['md_c1_l4']))
     {
         $md_c1_l4 = $_POST['md_c1_l4'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l4 = 0;
     }
     if (isset($_POST['md_c2_l4']))
     {
         $md_c2_l4 = $_POST['md_c2_l4'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l4 = 0;
     }
     if (isset($_POST['md_c3_l4']))
     {
         $md_c3_l4 = $_POST['md_c3_l4'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l4 = 0;
     }
     if (isset($_POST['md_c4_l4']))
     {
         $md_c4_l4 = $_POST['md_c4_l4'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l4 = 0;
     }
     if (isset($_POST['md_c5_l4']))
     {
         $md_c5_l4 = $_POST['md_c5_l4'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l4 = 0;
     }
 
     // QUINTA LINHA DA TABELA
     if (isset($_POST['md_c1_l5']))
     {
         $md_c1_l5 = $_POST['md_c1_l5'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l5 = 0;
     }
     if (isset($_POST['md_c2_l5']))
     {
         $md_c2_l5 = $_POST['md_c2_l5'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l5 = 0;
     }
     if (isset($_POST['md_c3_l5']))
     {
         $md_c3_l5 = $_POST['md_c3_l5'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l5 = 0;
     }
     if (isset($_POST['md_c4_l5']))
     {
         $md_c4_l5 = $_POST['md_c4_l5'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l5 = 0;
     }
     if (isset($_POST['md_c5_l5']))
     {
         $md_c5_l5 = $_POST['md_c5_l5'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l5 = 0;
     }
 
     // SEXTA LINHA DA TABELA
     if (isset($_POST['md_c1_l6']))
     {
         $md_c1_l6 = $_POST['md_c1_l6'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c1_l6 = 0;
     }
     if (isset($_POST['md_c2_l6']))
     {
         $md_c2_l6 = $_POST['md_c2_l6'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c2_l6 = 0;
     }
     if (isset($_POST['md_c3_l6']))
     {
         $md_c3_l6 = $_POST['md_c3_l6'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c3_l6 = 0;
     }
     if (isset($_POST['md_c4_l6']))
     {
         $md_c4_l6 = $_POST['md_c4_l6'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c4_l6 = 0;
     }
     if (isset($_POST['md_c5_l6']))
     {
         $md_c5_l6 = $_POST['md_c5_l6'];
-        $md_contador_luminancia = $md_contador_luminancia + 1;
+    } else {
+        $md_c5_l6 = 0;
     }
 
     // DATA DE CADASTRO
@@ -387,7 +455,7 @@ if ($_POST != null)
 
     // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
     //$conexao->beginTransaction();
-    
+
     // COMANDO SQL CADASTRO
     $sql_cad = "INSERT INTO cad_cadastro
                 (cad_idPoste, cad_data_cadastro, 
@@ -463,13 +531,9 @@ if ($_POST != null)
         $ok_cad = "ok";
 
     } else {
-
         $ok_cad = "false";
-        echo "<script>
-        alert('Erro cadastro');
-        </script>"; 
     }
-    
+
     // COMANDO SQL POSTE PRINCIPAL
     $sql_pp = "UPDATE pp_posteprincipal
                SET pp_classe_via = '$dg_classe_via'
@@ -488,7 +552,7 @@ if ($_POST != null)
         echo "Erro poste principal " .$conexao->erro;
     }
 
-    
+
 
     if (($ok_pp == "ok") && ($ok_cad == "ok"))
     {
@@ -557,6 +621,11 @@ if ($_POST != null)
                 $("#navbar").load("../navbar.html"); 
             });
         </script> 
+        <script>
+            function resetForm(){
+                $('#form').trigger("reset");    
+            }
+        </script>
     </head>
     <body>
         <div id="navbar"></div>
@@ -566,7 +635,7 @@ if ($_POST != null)
 
             <div class="ficha-campo txt-ao-centro oxygen-regular">
                 <br>
-                <form class="form center-block" method="POST">
+                <form class="form center-block" method="POST" id="form">
 
                     <div class="texto chamada-home oxygen-regular">
                         Preencha a Ficha de Campo abaixo. <br>
@@ -1003,13 +1072,13 @@ if ($_POST != null)
                     <br>
 
                     <label>Data:</label>
-                    <input type="text" id="datepicker" name="data_cadastro">
+                    <input type="text" id="datepicker" name="data_cadastro" required>
 
                     <div class="form-group row">
                         <button type="submit" class="btn btn-success btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
                     </div>
                 </form>
-                <button hidden class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>
+                <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block" onclick="resetForm()">Cancelar</button>
             </div>
         </div>
     </body>
