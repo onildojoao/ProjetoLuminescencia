@@ -420,7 +420,6 @@ if ($_POST != null)
                 cad_md_c4_l5, cad_md_c5_l5,
                 cad_md_c1_l6, cad_md_c2_l6, cad_md_c3_l6,
                 cad_md_c4_l6, cad_md_c5_l6,
-                cad_md_contador_luminancia,
                 cad_cpf_usuario, cad_nome_usuario) VALUES 
                 ('$id_poste', '$data_cadastro',
                 '$dg_cg_p2_utmx', '$dg_cg_p2_utmy',
@@ -455,7 +454,6 @@ if ($_POST != null)
                 '$md_c4_l5', '$md_c5_l5',
                 '$md_c1_l6', '$md_c3_l6', '$md_c3_l6',
                 '$md_c4_l6', '$md_c5_l6',
-                '$md_contador_luminancia,
                 '$usu_cpf', '$usu_nome')";
 
     $retorno_cad = $conexao->query($sql_cad);
@@ -571,7 +569,8 @@ if ($_POST != null)
                 <form class="form center-block" method="POST">
 
                     <div class="texto chamada-home oxygen-regular">
-                        Preencha a Ficha de Campo abaixo.
+                        Preencha a Ficha de Campo abaixo. <br>
+                        Complete todos os campos abaixo, se não for possível relizar alguma medição, complete com o valor 0!
                     </div> 
                     <br>
 
@@ -609,54 +608,54 @@ if ($_POST != null)
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx" required>
                                 </td>
                                 <td class="v-align" rowspan="2">
                                     <label>P2</label>
                                 </td>
                                 <td>
                                     <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy" required>
                                 </td>
                                 <td>
                                     <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy">
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"><label>P3</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx" required></td>
                                 <td class="v-align" rowspan="2"><label>P4</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx" required></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy" required></td>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy" required></td>
                             </tr>
                             <tr>
                                 <td class="v-align" rowspan="2"> <label>P5</label></td>
                                 <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx" required></td>
                                 <td class="v-align" rowspan="2"><label>P6</label></td>
                                 <td> <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx" required></td>
                             </tr>
                             <tr>
                                 <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy" required></td>
 
                                 <td> <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy"></td>
+                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy" required></td>
                             </tr>
                         </table>
                     </div>
@@ -912,39 +911,39 @@ if ($_POST != null)
                             <td colspan="2">
                                 <!-- LARGURA DE CADA VIA -->
                                 <label>Largura de Cada Via (m):</label>
-                                <input type="text" class="input-tabelas" name="md_largura_via_l1">
+                                <input type="text" class="input-tabelas" name="md_largura_via_l1" required>
                                 -
-                                <input type="text" class="input-tabelas" name="md_largura_via_l2">
+                                <input type="text" class="input-tabelas" name="md_largura_via_l2" required>
                             </td>
                         </tr>
                         <tr class="espaco-tabela">
                             <td colspan="2">
                                 <!-- LARGURA DA CALÇADA -->
                                 <label>Largura da Calçada (m):</label>
-                                <input type="text" class="input-tabelas" name="md_largura_calcada_l1">
+                                <input type="text" class="input-tabelas" name="md_largura_calcada_l1" required>
                                 -
-                                <input type="text" class="input-tabelas" name="md_largura_calcada_l2">
+                                <input type="text" class="input-tabelas" name="md_largura_calcada_l2" required>
                             </td>
                         </tr>
                         <tr class="espaco-tabela">
                             <td colspan="2">
                                 <!-- ALTURA MONTAGEM -->
                                 <label>Altura Montagem (m):</label>
-                                <input type="text" class="input-tabelas" name="md_altura_montagem">
+                                <input type="text" class="input-tabelas" name="md_altura_montagem" required>
                             </td>
                         </tr>
                         <tr class="espaco-tabela">
                             <td colspan="2">
                                 <!-- PROJEÇÃO HORIZONTAL BRAÇO -->
                                 <label>Projeção Horizontal Braço (m):</label>
-                                <input type="text" class="input-tabelas" name="md_projecao_horizontal_braco">
+                                <input type="text" class="input-tabelas" name="md_projecao_horizontal_braco" required>
                             </td>
                         </tr>
                         <tr class="espaco-tabela">
                             <td  colspan="2">
                                 <!-- ESPAÇAMENTO ENTRE POSTES -->
                                 <label>Espaçamento entre Postes (m):</label>
-                                <input type="text" class="input-tabelas" name="md_espacamento_entre_postes">
+                                <input type="text" class="input-tabelas" name="md_espacamento_entre_postes" required>
                             </td>
                         </tr>
                     </table>
@@ -954,51 +953,51 @@ if ($_POST != null)
                     <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
                     <table class="teste tabela-luminancia">
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l1"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l1"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l1"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l1"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l1"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l1" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l1" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l1" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l1" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l1" required></td>
                         </tr>
                         <div class="espaca-linha"> </div>
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l2"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l2"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l2"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l2"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l2"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l2" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l2" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l2" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l2" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l2" required></td>
                         </tr>
                         <div class="espaca-linha"> </div>
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l3"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l3"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l3"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l3"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l3"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l3" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l3" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l3" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l3" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
                         </tr>
                         <div class="espaca-linha"> </div>
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l4"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l4"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l4"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l4"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l4"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l4" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l4" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l4" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l4" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l4" required></td>
                         </tr>
                         <div class="espaca-linha"> </div>
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l5"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l5"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l5"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l5"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l5"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l5" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l5" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l5" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l5" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l5" required></td>
                         </tr>
                         <div class="espaca-linha"> </div>
                         <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l6"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l6"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l6"></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l6"></td>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l6" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l6" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l6" required></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l6" required></td>
                         </tr>
                     </table>
                     <br>
