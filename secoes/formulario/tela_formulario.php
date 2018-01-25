@@ -1009,7 +1009,7 @@ if ($_POST != null)
                         <button type="submit" class="btn btn-success btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
                     </div>
                 </form>
-                <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>
+                <button hidden class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block">Cancelar</button>
             </div>
         </div>
     </body>
