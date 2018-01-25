@@ -317,3 +317,16 @@ table {
 .input-tabelas-coordenadas {
     width: 120px;
 }
+
+.espaco-tabela {
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.elimina-recuo {
+    padding-left: 0px;
+}
+
+.espaca-linha {
+    margin: 5px;
+}

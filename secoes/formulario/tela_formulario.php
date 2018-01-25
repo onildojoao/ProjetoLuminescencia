@@ -14,6 +14,12 @@ if ($_SESSION["usu_logado"] != "ok")
 if ($_POST != null)
 {
 
+    // ID DO POSTE  
+    if (isset($_POST['id_poste']))
+    {
+        $id_poste = $_POST['id_poste'];
+    }
+
     // DADOS GEOGRÁFICOS
     if (isset($_POST['dg_classe_via']))
     {
@@ -27,7 +33,7 @@ if ($_POST != null)
 
     if (isset($_POST['dg_cg_p1_utmy']))
     {
-        $dg_classe_via = $_POST['dg_cg_p1_utmy'];
+        $dg_cg_p1_utmy = $_POST['dg_cg_p1_utmy'];
     }
 
     if (isset($_POST['dg_cg_p2_utmx']))
@@ -77,7 +83,7 @@ if ($_POST != null)
 
     if (isset($_POST['dg_cg_p6_utmy']))
     {
-        $dg_cg_p1_utmx = $_POST['dg_cg_p6_utmy'];
+        $dg_cg_p6_utmy = $_POST['dg_cg_p6_utmy'];
     }
 
     // DADOS TÉCNICOS
@@ -147,85 +153,219 @@ if ($_POST != null)
         $df_posicionamento_poste = $_POST['df_posicionamento_poste'];
     }
 
-    if (isset($_POST['df_proximixade_luminaria_rede_energia']))
+    if (isset($_POST['df_proximidade_luminaria_rede_energia']))
     {
-        $df_proximixade_luminaria_rede_energia = $_POST['df_proximixade_luminaria_rede_energia'];
+        $df_proximidade_luminaria_rede_energia = $_POST['df_proximidade_luminaria_rede_energia'];
     }
 
     if (isset($_POST['df_local_dificil_acesso']))
     {
-        $dg_classe_via = $_POST['df_local_dificil_acesso'];
+        $df_local_dificil_acesso = $_POST['df_local_dificil_acesso'];
     }
 
     // MEDIÇÕES
-    if (isset($_POST['md_distancia_postes_p1_p3']))
+    if (isset($_POST['md_configuracao']))
     {
-        $md_distancia_postes_p1_p3 = $_POST['md_distancia_postes_p1_p3'];
+        $md_configuracao = $_POST['md_configuracao'];
     }
 
-    if (isset($_POST['md_distancia_postes_p3_p5']))
+    if (isset($_POST['md_largura_via_l1']))
     {
-        $md_distancia_postes_p3_p5 = $_POST['md_distancia_postes_p3_p5'];
+        $md_largura_via_l1 = $_POST['md_largura_via_l1'];
     }
 
-    if (isset($_POST['md_distancia_postes_p2_p4']))
+    if (isset($_POST['md_largura_via_l2']))
     {
-        $md_distancia_postes_p2_p4 = $_POST['md_distancia_postes_p2_p4'];
+        $md_largura_via_l2 = $_POST['md_largura_via_l2'];
     }
 
-    if (isset($_POST['md_distancia_postes_p4_p6']))
+    if (isset($_POST['md_largura_calcada_l1']))
     {
-        $md_distancia_postes_p4_p6 = $_POST['md_distancia_postes_p4_p6'];
+        $md_largura_calcada_l1 = $_POST['md_largura_calcada_l1'];
     }
 
-    if (isset($_POST['md_distancia_postes_p1_p2']))
+    if (isset($_POST['md_largura_calcada_l2']))
     {
-        $md_distancia_postes_p1_p2 = $_POST['md_distancia_postes_p1_p2'];
+        $md_largura_calcada_l2 = $_POST['md_largura_calcada_l2'];
     }
 
-    if (isset($_POST['md_distancia_postes_p5_p6']))
+    if (isset($_POST['md_altura_montagem']))
     {
-        $md_distancia_postes_p5_p6 = $_POST['md_distancia_postes_p5_p6'];
+        $md_altura_montagem = $_POST['md_altura_montagem'];
     }
 
-    if (isset($_POST['md_altura_luminarias_a1']))
+    if (isset($_POST['md_projecao_horizontal_braco']))
     {
-        $md_altura_luminarias_a1 = $_POST['md_altura_luminarias_a1'];
+        $md_projecao_horizontal_braco = $_POST['md_projecao_horizontal_braco'];
     }
 
-    if (isset($_POST['md_altura_luminarias_a3']))
+    if (isset($_POST['md_espacamento_entre_postes']))
     {
-        $md_altura_luminarias_a3 = $_POST['md_altura_luminarias_a3'];
+        $md_espacamento_entre_postes = $_POST['md_espacamento_entre_postes'];
     }
 
-    if (isset($_POST['md_altura_luminarias_a5']))
+    // TABELA DE LUMINÂNCIA
+    $md_contador_luminancia = 0;
+    // PRIMEIRA LINHA DA TABELA
+    if (isset($_POST['md_c1_l1']))
     {
-        $md_altura_luminarias_a5 = $_POST['md_altura_luminarias_a5'];
+        $md_c1_l1 = $_POST['md_c1_l1'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l1']))
+    {
+        $md_c2_l1 = $_POST['md_c2_l1'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l1']))
+    {
+        $md_c3_l1 = $_POST['md_c3_l1'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l1']))
+    {
+        $md_c4_l1 = $_POST['md_c4_l1'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l1']))
+    {
+        $md_c5_l1 = $_POST['md_c5_l1'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
-    if (isset($_POST['md_altura_luminarias_a2']))
+    // SEGUNDA LINHA DA TABELA
+    if (isset($_POST['md_c1_l2']))
     {
-        $md_altura_luminarias_a2 = $_POST['md_altura_luminarias_a2'];
+        $md_c1_l2 = $_POST['md_c1_l2'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l2']))
+    {
+        $md_c2_l2 = $_POST['md_c2_l2'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l2']))
+    {
+        $md_c3_l2 = $_POST['md_c3_l2'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l2']))
+    {
+        $md_c4_l2 = $_POST['md_c4_l2'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l2']))
+    {
+        $md_c5_l2 = $_POST['md_c5_l2'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
-    if (isset($_POST['md_altura_luminarias_a4']))
+    //TERCEIRA LINHA DA TABELA
+    if (isset($_POST['md_c1_l3']))
     {
-        $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
+        $md_c1_l3 = $_POST['md_c1_l3'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l3']))
+    {
+        $md_c2_l3 = $_POST['md_c2_l3'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l3']))
+    {
+        $md_c3_l3 = $_POST['md_c3_l3'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l3']))
+    {
+        $md_c4_l3 = $_POST['md_c4_l3'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l3']))
+    {
+        $md_c5_l3 = $_POST['md_c5_l3'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
-    if (isset($_POST['md_altura_luminarias_a6']))
+    // QUARTA LINHA DA TABELA
+    if (isset($_POST['md_c1_l4']))
     {
-        $md_altura_luminarias_a6 = $_POST['md_altura_luminarias_a6'];
+        $md_c1_l4 = $_POST['md_c1_l4'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l4']))
+    {
+        $md_c2_l4 = $_POST['md_c2_l4'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l4']))
+    {
+        $md_c3_l4 = $_POST['md_c3_l4'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l4']))
+    {
+        $md_c4_l4 = $_POST['md_c4_l4'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l4']))
+    {
+        $md_c5_l4 = $_POST['md_c5_l4'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
-    if (isset($_POST['md_altura_luminarias_a4']))
+    // QUINTA LINHA DA TABELA
+    if (isset($_POST['md_c1_l5']))
     {
-        $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
+        $md_c1_l5 = $_POST['md_c1_l5'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l5']))
+    {
+        $md_c2_l5 = $_POST['md_c2_l5'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l5']))
+    {
+        $md_c3_l5 = $_POST['md_c3_l5'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l5']))
+    {
+        $md_c4_l5 = $_POST['md_c4_l5'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l5']))
+    {
+        $md_c5_l5 = $_POST['md_c5_l5'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
-    if (isset($_POST['md_largura_via_publica_l5_l6']))
+    // SEXTA LINHA DA TABELA
+    if (isset($_POST['md_c1_l6']))
     {
-        $md_largura_via_publica_l5_l6 = $_POST['md_largura_via_publica_l5_l6'];
+        $md_c1_l6 = $_POST['md_c1_l6'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c2_l6']))
+    {
+        $md_c2_l6 = $_POST['md_c2_l6'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c3_l6']))
+    {
+        $md_c3_l6 = $_POST['md_c3_l6'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c4_l6']))
+    {
+        $md_c4_l6 = $_POST['md_c4_l6'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
+    }
+    if (isset($_POST['md_c5_l6']))
+    {
+        $md_c5_l6 = $_POST['md_c5_l6'];
+        $md_contador_luminancia = $md_contador_luminancia + 1;
     }
 
     // DATA DE CADASTRO
@@ -246,62 +386,130 @@ if ($_POST != null)
     }
 
     // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
-    $conexao->beginTransaction();
-    // COMANDO SQL POSTE PRINCIPAL
-    $sql_pp = "INSERT INTO pp_posteprincipal
-                () VALUES 
-                ()";
-
-    $retorno_pp = $conexao->query($sql_pp);
-
-    if ($retorno_pp == true) 
-    {
-        $ok_pp = "true";
-
-    } else {
-
-        $ok_pp = "false";
-
-        $erro_pp = $conexao->erro;
-    }
-
+    //$conexao->beginTransaction();
+    
     // COMANDO SQL CADASTRO
     $sql_cad = "INSERT INTO cad_cadastro
-                () VALUES 
-                ()";
+                (cad_idPoste, cad_data_cadastro, 
+                cad_dg_cg_p2_utmx, cad_dg_cg_p2_utmy, cad_dg_cg_p3_utmx, cad_dg_cg_p3_utmy, cad_dg_cg_p4_utmx, cad_dg_cg_p4_utmy, cad_dg_cg_p5_utmx, cad_dg_cg_p5_utmy, cad_dg_cg_p6_utmx, cad_dg_cg_p6_utmy,
+                cad_dt_potencia_lampada, cad_dt_tipo_lampada,
+                cad_dt_tipo_braco, cad_dt_altura_poste,
+                cad_dt_material_poste, cad_dt_uso_poste,
+                cad_dt_tipo_rele, cad_dt_tipo_reator,
+                cad_dt_forma_distribuicao_energia,
+                cad_df_aparencia_ponto_luminoso,
+                cad_df_estado_lampada, 
+                cad_df_arvore_ofuscando_iluminacao,
+                cad_df_posicionamento_poste,
+                cad_df_proximidade_luminaria_rede_energia,
+                cad_df_local_dificil_acesso,
+                cad_md_configuracao, 
+                cad_md_largura_via_l1, cad_md_largura_via_l2, cad_md_largura_calcada_l1, cad_md_largura_calcada_l2, 
+                cad_md_altura_montagem,
+                cad_md_projecao_horizontal_braco,
+                cad_md_espacamento_entre_postes,
+                cad_md_c1_l1, cad_md_c2_l1, cad_md_c3_l1,
+                cad_md_c4_l1, cad_md_c5_l1, 
+                cad_md_c1_l2,cad_md_c2_l2, cad_md_c3_l2, 
+                cad_md_c4_l2, cad_md_c5_l2, 
+                cad_md_c1_l3, cad_md_c2_l3, cad_md_c3_l3,
+                cad_md_c4_l3, cad_md_c5_l3,
+                cad_md_c1_l4, cad_md_c2_l4, cad_md_c3_l4,
+                cad_md_c4_l4, cad_md_c5_l4, 
+                cad_md_c1_l5, cad_md_c2_l5, cad_md_c3_l5,
+                cad_md_c4_l5, cad_md_c5_l5,
+                cad_md_c1_l6, cad_md_c2_l6, cad_md_c3_l6,
+                cad_md_c4_l6, cad_md_c5_l6,
+                cad_md_contador_luminancia,
+                cad_cpf_usuario, cad_nome_usuario) VALUES 
+                ('$id_poste', '$data_cadastro',
+                '$dg_cg_p2_utmx', '$dg_cg_p2_utmy',
+                '$dg_cg_p3_utmx', '$dg_cg_p3_utmy',
+                '$dg_cg_p4_utmx', '$dg_cg_p4_utmy',
+                '$dg_cg_p5_utmx', '$dg_cg_p5_utmy',
+                '$dg_cg_p6_utmx', '$dg_cg_p6_utmy',
+                '$dt_potencia_lampada', '$dt_tipo_lampada',
+                '$dt_tipo_braco', '$dt_altura_poste',
+                '$dt_material_poste', '$dt_uso_poste',
+                '$dt_tipo_rele', '$dt_tipo_reator',
+                '$dt_forma_distribuicao_energia',
+                '$df_aparencia_ponto_luminoso',
+                '$df_estado_lampada', '$df_arvore_ofuscando_iluminacao',
+                '$df_posicionamento_poste', '$df_proximidade_luminaria_rede_energia',
+                '$df_local_dificil_acesso',
+                '$md_configuracao',
+                '$md_largura_via_l1', '$md_largura_via_l2',
+                '$md_largura_calcada_l1', '$md_largura_calcada_l2',
+                '$md_altura_montagem', 
+                '$md_projecao_horizontal_braco',
+                '$md_espacamento_entre_postes',
+                '$md_c1_l1', '$md_c2_l1', '$md_c3_l1',
+                '$md_c4_l1', '$md_c5_l1',
+                '$md_c1_l2', '$md_c2_l2', '$md_c3_l2',
+                '$md_c4_l2', '$md_c5_l2',
+                '$md_c1_l3', '$md_c2_l3', '$md_c3_l3',
+                '$md_c4_l3', '$md_c5_l3',
+                '$md_c1_l4', '$md_c2_l4', '$md_c3_l4',
+                '$md_c4_l4', '$md_c5_l4',
+                '$md_c1_l5', '$md_c2_l5', '$md_c3_l5',
+                '$md_c4_l5', '$md_c5_l5',
+                '$md_c1_l6', '$md_c3_l6', '$md_c3_l6',
+                '$md_c4_l6', '$md_c5_l6',
+                '$md_contador_luminancia,
+                '$usu_cpf', '$usu_nome')";
 
     $retorno_cad = $conexao->query($sql_cad);
 
     if ($retorno_cad == true) 
     {
-        $ok_cad = "true";
+        $ok_cad = "ok";
 
     } else {
 
         $ok_cad = "false";
+        echo "<script>
+        alert('Erro cadastro');
+        </script>"; 
+    }
+    
+    // COMANDO SQL POSTE PRINCIPAL
+    $sql_pp = "UPDATE pp_posteprincipal
+               SET pp_classe_via = '$dg_classe_via'
+               WHERE pp_id = '$id_poste'";
 
-        $erro_cad = $conexao->erro;
+    $retorno_pp = $conexao->query($sql_pp);
+
+    if ($retorno_pp == true) 
+    {
+        $ok_pp = "ok";
+
+    } else {
+
+        $ok_pp = "false";
+
+        echo "Erro poste principal " .$conexao->erro;
     }
 
-    if (($ok_pp == "true") && ($ok_cad == "true"))
+    
+
+    if (($ok_pp == "ok") && ($ok_cad == "ok"))
     {
-        $conexao->commit();
+        //$conexao->commit();
         echo "<script>
         alert('Cadastrado com Sucesso!');
         location.href = '../menu/menu_principal.php';
         </script>";
 
     } else {
-        $conexao->rollBack();
+        //$conexao->rollBack();
         echo "<script>
         alert('Erro ao Cadastrar!');
-        location.href = '../menu/menu_principal.php';
         </script>";
 
-        echo $erro_pp;
-        echo $erro_cad;
+        //echo $erro_pp;
+        //echo $erro_cad;
 
-        header('Location: tela_formulario.php');
+        //header('Location: tela_formulario.php');
     }
 } 
 
@@ -334,7 +542,7 @@ if ($_POST != null)
                     changeYear: true,
                     showOtherMonths: true,
                     selectOtherMonths: true,
-                    dateFormat: 'dd/mm/yy',
+                    dateFormat: 'yy/mm/dd',
                     showButtonPanel:true,
                     currentText: 'Hoje',
                     closeText: 'Confirmar',
@@ -347,24 +555,29 @@ if ($_POST != null)
             } );
         </script>
         <script> 
-        $(function(){
-            $("#navbar").load("../navbar.html"); 
-        });
+            $(function(){
+                $("#navbar").load("../navbar.html"); 
+            });
         </script> 
     </head>
     <body>
         <div id="navbar"></div>
-        
+
 
         <div class="area-campo">
 
             <div class="ficha-campo txt-ao-centro oxygen-regular">
                 <br>
-                <form class="form center-block" action="acao_formulario.php" method="POST">
+                <form class="form center-block" method="POST">
 
                     <div class="texto chamada-home oxygen-regular">
                         Preencha a Ficha de Campo abaixo.
                     </div> 
+                    <br>
+
+                    <label class="subtitulo-dados">ID do Poste</label>
+                    <input type="number" name="id_poste" required>
+                    <br>
 
                     <!-- DADOS GEOGRÁFICOS -->
                     <label class="titulo-dados">Dados Geográficos</label>
@@ -654,7 +867,7 @@ if ($_POST != null)
                     <!-- PROXIMIDADE DA LUMINÁRIA EM RELAÇÃO À REDE DE ENERGIA -->
                     <div class="form-group">
                         <label class="subtitulo-dados">Proximidade da Luminária em Relação à Rede de Energia</label>
-                        <select class="selectpicker" name="df_proximixade_luminaria_rede_energia">
+                        <select class="selectpicker" name="df_proximidade_luminaria_rede_energia">
                             <option value="normal">Normal</option>
                             <option value="proxima">Próxima</option>
                             <option value="distante">Distante</option>
@@ -671,179 +884,124 @@ if ($_POST != null)
                     </div>
 
                     <!-- MEDIÇÕES -->
-                    <label class="titulo-dados">Medições</label>
+                    <label class="titulo-dados">Medições Métricas e Luminotécnicas</label>
                     <br>
-                    <!-- TABELA DE LUMINÂNCIA  -->
-                    <label class="subtitulo-dados">Medições de iluminância (em lux), utilizando luxímetro digital com precisão 0,1 lux:</label>
+                    <br>
+                    <label class="subtitulo-dados">Grade Padrão</label>
                     <table class="teste">
-                        <tr>
-                            <td></td>
-                            <td><label>IP A</label></td>
-                            <td><label>25%</label></td>
-                            <td><label>50%</label></td>
-                            <td><label>75%</label></td>
-                            <td><label>IP B</label></td>
-                            <td><label>25%</label></td>
-                            <td><label>50%</label></td>
-                            <td><label>75%</label></td>
-                            <td><label>IP C</label></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <div>
+                                    <!-- CONFIGURAÇÃO -->
+                                    <label>Configuração</label>
+                                    <select class="selectpicker" name="md_configuracao">
+                                        <option value="pu">PU</option>
+                                        <option value="pbf">PBF</option>
+                                        <option value="pba">PBA</option>
+                                        <option value="pcc">PCC</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
-                        <tr>
-                            <td><label>0%</label></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <label class="subtitulo-dados">Dados da Via</label>
+                            </td>
                         </tr>
-                        <tr>
-                            <td><label>25%</label></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <!-- LARGURA DE CADA VIA -->
+                                <label>Largura de Cada Via (m):</label>
+                                <input type="text" class="input-tabelas" name="md_largura_via_l1">
+                                -
+                                <input type="text" class="input-tabelas" name="md_largura_via_l2">
+                            </td>
                         </tr>
-                        <tr>
-                            <td><label>50%</label></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <!-- LARGURA DA CALÇADA -->
+                                <label>Largura da Calçada (m):</label>
+                                <input type="text" class="input-tabelas" name="md_largura_calcada_l1">
+                                -
+                                <input type="text" class="input-tabelas" name="md_largura_calcada_l2">
+                            </td>
                         </tr>
-                        <tr>
-                            <td><label>75%</label></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <!-- ALTURA MONTAGEM -->
+                                <label>Altura Montagem (m):</label>
+                                <input type="text" class="input-tabelas" name="md_altura_montagem">
+                            </td>
                         </tr>
-                        <tr>
-                            <td><label>100%</label></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
-                            <td><input type="text" class="input-tabelas" name=""></td>
+                        <tr class="espaco-tabela">
+                            <td colspan="2">
+                                <!-- PROJEÇÃO HORIZONTAL BRAÇO -->
+                                <label>Projeção Horizontal Braço (m):</label>
+                                <input type="text" class="input-tabelas" name="md_projecao_horizontal_braco">
+                            </td>
+                        </tr>
+                        <tr class="espaco-tabela">
+                            <td  colspan="2">
+                                <!-- ESPAÇAMENTO ENTRE POSTES -->
+                                <label>Espaçamento entre Postes (m):</label>
+                                <input type="text" class="input-tabelas" name="md_espacamento_entre_postes">
+                            </td>
                         </tr>
                     </table>
                     <br>
 
-                    <!-- DISTÂNCIA ENTRE POSTES -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Distância entre Postes (m)</label>
-                        <br>
-                        <label class="subtitulo-dados">Medições métricas com equipamento a laser de precisão 0,1 metro:</label>
-                        <table class="teste">
-                            <tr>
-                                <td><label>P1-P3:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p3">
-                                </td>
-                                <td><label>P3-P5:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p3_p5">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>P2-P4:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p2_p4">
-                                </td>
-                                <td><label>P4-P6:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p4_p6">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>P1-P2:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p2">
-                                </td>
-                                <td><label>P5-P6:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p5_p6">
-                                </td> 
-                            </tr>
-                        </table>
-                    </div>
-
-                    <!-- ALTURA DAS LUMINÁRIAS -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Altura das Luminárias (m)</label>
-                        <table class="teste">
-                            <tr>
-                                <td><label>A1:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a1">
-                                </td>
-                                <td><label>A3:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a3">
-                                </td>
-                                <td>
-                                    <label>A5:</label>
-                                </td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a5">
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td><label>A2:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a2">
-                                </td>
-                                <td><label>A4:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a4">
-                                </td>
-                                <td><label>A6:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a6">
-                                </td>
-                            </tr>
-                        </table> 
-                    </div>
-
-                    <!-- LARGURA DA VIA PÚBLICA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Largura da Via Pública (m)</label>
-                        <table class="teste">
-                            <tr>
-                                <td><label>L1-L2:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_largura_via_publica_l1_l2">
-                                </td>
-                                <td><label>L5-L6:</label></td>
-                                <td>
-                                    <input type="text" class="input-tabelas" name="md_largura_via_publica_l5_l6">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <!-- TABELA DE LUMINÂNCIA  -->
+                    <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
+                    <table class="teste tabela-luminancia">
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l1"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l1"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l1"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l1"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l1"></td>
+                        </tr>
+                        <div class="espaca-linha"> </div>
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l2"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l2"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l2"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l2"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l2"></td>
+                        </tr>
+                        <div class="espaca-linha"> </div>
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l3"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l3"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l3"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l3"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l3"></td>
+                        </tr>
+                        <div class="espaca-linha"> </div>
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l4"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l4"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l4"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l4"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l4"></td>
+                        </tr>
+                        <div class="espaca-linha"> </div>
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l5"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l5"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l5"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l5"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l5"></td>
+                        </tr>
+                        <div class="espaca-linha"> </div>
+                        <tr>
+                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c2_l6"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c3_l6"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c4_l6"></td>
+                            <td><input type="text" class="input-tabelas" name="md_c5_l6"></td>
+                        </tr>
+                    </table>
+                    <br>
 
                     <label>Data:</label>
                     <input type="text" id="datepicker" name="data_cadastro">
