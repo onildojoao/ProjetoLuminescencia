@@ -1,7 +1,7 @@
 <?php
 
     //Configura a conexão com o banco de dados
-	$conexao = new mysqli("localhost", "opus1", "magodgordo", "opus1");
+	$conexao = new mysqli("localhost", "root", "", "opus");
 
 	//verifica se ocorreu conexao
 	if($conexao->connect_error == true){
