@@ -523,6 +523,8 @@ if ($_POST != null)
         <link rel="stylesheet" type="text/css" href="../../includes/css/bootstrap.min.css">
 
         <link rel="stylesheet" href="../../includes/css/font-awesome.min.css">
+        
+        <script src="../../includes/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="../../includes/css/style.css">
 

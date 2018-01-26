@@ -75,6 +75,8 @@ if ($_POST != null)
         <title>Sistema de Controle de Luminescência - Login</title>
 
         <link rel="stylesheet" type="text/css" href="../../includes/css/bootstrap.min.css">
+        
+        <script src="../../includes/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="../../includes/css/font-awesome.min.css">
 
