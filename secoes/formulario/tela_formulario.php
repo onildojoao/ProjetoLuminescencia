@@ -121,6 +121,11 @@ if ($_POST != null)
         $dt_tipo_lampada = $_POST['dt_tipo_lampada'];
     }
 
+    if (isset($_POST['dt_tipo_luminaria']))
+    {
+        $dt_tipo_luminaria = $_POST['dt_tipo_luminaria'];
+    }
+
     if (isset($_POST['dt_tipo_braco']))
     {
         $dt_tipo_braco = $_POST['dt_tipo_braco'];
@@ -460,7 +465,7 @@ if ($_POST != null)
     $sql_cad = "INSERT INTO cad_cadastro
                 (cad_idPoste, cad_data_cadastro, 
                 cad_dg_cg_p2_utmx, cad_dg_cg_p2_utmy, cad_dg_cg_p3_utmx, cad_dg_cg_p3_utmy, cad_dg_cg_p4_utmx, cad_dg_cg_p4_utmy, cad_dg_cg_p5_utmx, cad_dg_cg_p5_utmy, cad_dg_cg_p6_utmx, cad_dg_cg_p6_utmy,
-                cad_dt_potencia_lampada, cad_dt_tipo_lampada,
+                cad_dt_potencia_lampada, cad_dt_tipo_lampada, cad_dt_tipo_luminaria,
                 cad_dt_tipo_braco, cad_dt_altura_poste,
                 cad_dt_material_poste, cad_dt_uso_poste,
                 cad_dt_tipo_rele, cad_dt_tipo_reator,
@@ -495,7 +500,7 @@ if ($_POST != null)
                 '$dg_cg_p4_utmx', '$dg_cg_p4_utmy',
                 '$dg_cg_p5_utmx', '$dg_cg_p5_utmy',
                 '$dg_cg_p6_utmx', '$dg_cg_p6_utmy',
-                '$dt_potencia_lampada', '$dt_tipo_lampada',
+                '$dt_potencia_lampada', '$dt_tipo_lampada', '$dt_tipo_luminaria',
                 '$dt_tipo_braco', '$dt_altura_poste',
                 '$dt_material_poste', '$dt_uso_poste',
                 '$dt_tipo_rele', '$dt_tipo_reator',
@@ -589,14 +594,12 @@ if ($_POST != null)
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="../../includes/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" type="text/css" href="../../includes/css/style.css">
+        <link rel="stylesheet" href="includes/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="includes/css/style.css">
 
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
-
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-
         <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 
         <script>
@@ -632,32 +635,21 @@ if ($_POST != null)
     </head>
     <body>
         <div id="navbar"></div>
+        <form method="POST" id="form">
+            <div class="form-group">
 
-
-        <div class="area-campo">
-
-            <div class="ficha-campo txt-ao-centro oxygen-regular">
-                <br>
-                <form class="form center-block" method="POST" id="form">
-                    
-                    <div class="texto chamada-home oxygen-regular">
-                        <p>Preencha a Ficha de Campo abaixo.
-                        Complete todos os campos abaixo, se não for possível relizar alguma medição, complete com o valor 0!</p>
-                    </div> 
-                    <br>
-
-                    <label class="subtitulo-dados">ID do Poste</label>
-                    <input type="number" name="id_poste" required>
-                    <br>
-
-                    <!-- DADOS GEOGRÁFICOS -->
-                    <label class="titulo-dados">Dados Geográficos</label>
-                    <br>
-
-                    <!-- CLASSE DA VIA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Classe da Via</label>
-                        <select class="selectpicker" name="dg_classe_via">
+                <!-- DADOS GEOGRÁFICOS -->
+                <label class="titulo-dados">Dados Geográficos</label>
+                <!-- CLASSE DA VIA --> 
+                <div class="row">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="idPoste">ID do Poste</label>
+                        <input type="number" class="form-control" id="idPoste" name="id_poste">
+                    </div>
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dg_classe_via">Classe da Via</label>
+                        <select class="form-control" name="dg_classe_via" id="dg_classe_via">
                             <option value="V1">V1</option>
                             <option value="V2">V2</option>
                             <option value="V3">V3</option>
@@ -669,77 +661,81 @@ if ($_POST != null)
                             <option value="P4">P4</option>
                         </select>
                     </div>
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
+                </div>
 
-                    <!-- COORDENADA GEORREFERÊNCIADA -->
-                    <label class="subtitulo-dados ">Coordenada Georreferênciada</label>
-                    <div class="form-group">
-                        <table class="teste" border="1px solid black">
-                            <tr>
-                                <td class="v-align" rowspan="2">
-                                    <label>P1</label>
-                                </td>
-                                <td>
-                                    <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx" required>
-                                </td>
-                                <td class="v-align" rowspan="2">
-                                    <label>P2</label>
-                                </td>
-                                <td>
-                                    <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy" required>
-                                </td>
-                                <td>
-                                    <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="v-align" rowspan="2"><label>P3</label></td>
-                                <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx" required></td>
-                                <td class="v-align" rowspan="2"><label>P4</label></td>
-                                <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx" required></td>
-                            </tr>
-                            <tr>
-                                <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy" required></td>
-                                <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy" required></td>
-                            </tr>
-                            <tr>
-                                <td class="v-align" rowspan="2"> <label>P5</label></td>
-                                <td><label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx" required></td>
-                                <td class="v-align" rowspan="2"><label>P6</label></td>
-                                <td> <label>UTM-X:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx" required></td>
-                            </tr>
-                            <tr>
-                                <td><label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy" required></td>
 
-                                <td> <label>UTM-Y:</label>
-                                    <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy" required></td>
-                            </tr>
-                        </table>
-                    </div>
 
-                    <!-- DADOS TÉCNICOS -->
-                    <label class="titulo-dados">Dados Técnicos</label>
-                    <br>
+                <!-- COORDENADA GEORREFERÊNCIADA -->
+                <label class="subtitulo-dados ">Coordenada Georreferênciada</label>
+                <div class="form-group">
+                    <table class="teste" border="1px solid black">
+                        <tr>
+                            <td class="v-align" rowspan="2">
+                                <label>P1</label>
+                            </td>
+                            <td>
+                                <label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx" required>
+                            </td>
+                            <td class="v-align" rowspan="2">
+                                <label>P2</label>
+                            </td>
+                            <td>
+                                <label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy" required>
+                            </td>
+                            <td>
+                                <label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="v-align" rowspan="2"><label>P3</label></td>
+                            <td><label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx" required></td>
+                            <td class="v-align" rowspan="2"><label>P4</label></td>
+                            <td><label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy" required></td>
+                            <td><label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy" required></td>
+                        </tr>
+                        <tr>
+                            <td class="v-align" rowspan="2"> <label>P5</label></td>
+                            <td><label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx" required></td>
+                            <td class="v-align" rowspan="2"><label>P6</label></td>
+                            <td> <label>UTM-X:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx" required></td>
+                        </tr>
+                        <tr>
+                            <td><label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy" required></td>
 
+                            <td> <label>UTM-Y:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy" required></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- DADOS TÉCNICOS -->
+                <label class="titulo-dados">Dados Técnicos</label>
+                <br>
+                <div class="row">
                     <!-- POTÊNCIA DA LÂMPADA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Potência da Lâmpada (W)</label>
-                        <select class="selectpicker" name="dt_potencia_lampada">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_potencia_lampada">Potência da Lâmpada (W)</label>                    
+                        <select class="form-control" id="dt_potencia_lampada" name="dt_potencia_lampada">
                             <option value="20">20</option>
                             <option value="26">26</option>
                             <option value="40">40</option>
@@ -759,12 +755,12 @@ if ($_POST != null)
                             <option value="1000">1000</option>
                             <option value="2000">2000</option>
                         </select>
-                    </div>
+                    </div>     
 
                     <!-- TIPO DA LÂMPADA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Tipo da Lâmpada</label>
-                        <select class="selectpicker" name="dt_tipo_lampada">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_tipo_lampada">Tipo da Lâmpada</label>
+                        <select class="form-control" id="dt_tipo_lampada" name="dt_tipo_lampada">
                             <option value="compacta">Compacta</option>
                             <option value="halogena">Halógena</option>
                             <option value="Fluorescente">Fluorescente</option>
@@ -777,9 +773,9 @@ if ($_POST != null)
                     </div>
 
                     <!-- TIPO DE LUMINÁRIA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Tipo de Luminária</label>
-                        <select class="selectpicker" name="dt_tipo_luminaria">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_tipo_luminaria">Tipo da Luminária</label>
+                        <select class="form-control" name="dt_tipo_luminaria" id="dt_tipo_luminaria" >
                             <option value="aberta">Aberta</option>
                             <option value="fechada">Fechada</option>
                             <option value="decorativa">Decorativa</option>
@@ -792,9 +788,9 @@ if ($_POST != null)
                     </div>
 
                     <!-- TIPO DE BRAÇO -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Tipo de Braço</label>
-                        <select class="selectpicker" name="dt_tipo_braco">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_tipo_braco">Tipo da Braço</label>
+                        <select class="form-control" name="dt_tipo_braco" id="dt_tipo_braco">
                             <option value="cruzeta n1.1">Cruzeta N1.1</option>
                             <option value="cruzeta n1.2">Cruzeta N1.2</option>
                             <option value="cruzeta n2.1">Cruzeta N2.1</option>
@@ -808,11 +804,14 @@ if ($_POST != null)
                             <option value="leve">Leve</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="row">
 
                     <!-- ALTURA DO POSTE -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Altura do Poste (m)</label>
-                        <select class="selectpicker" name="dt_altura_poste">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_altura_poste">Altura do Poste (m)</label>
+                        <select class="form-control" name="dt_altura_poste" id="dt_altura_poste">
                             <option value="0.0">0.0</option>
                             <option value="4.8">4.8</option>
                             <option value="5.0">5.0</option>
@@ -834,9 +833,9 @@ if ($_POST != null)
                     </div>
 
                     <!-- MATERIAL DO POSTE -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Material do Poste</label>
-                        <select class="selectpicker" name="dt_material_poste">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_material_poste">Material do Poste</label>
+                        <select class="form-control" name="dt_material_poste" id="dt_material_poste">
                             <option value="abrigo projetor alvenaria">Abrigo Projetor Alvenaria</option>
                             <option value="aco">Aço</option>
                             <option value="aco faixa pedestre">aço Faixa Pedestre</option>
@@ -853,29 +852,29 @@ if ($_POST != null)
                     </div>
 
                     <!-- USO DO POSTE -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Uso do Poste</label>
-                        <select class="selectpicker" name="dt_uso_poste">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_altura_poste">Uso do Poste</label>
+                        <select class="form-control" name="dt_uso_poste" id="dt_uso_poste">
                             <option value="exclusivo p/ iluminacao publica">Exclusivo p/ Iluminação Pública</option>
                             <option value="compatilado c/ outros servicos">Compartilhado c/ Outros Serviços</option>
                         </select>
                     </div>
 
-                    <!-- TIPO DE RELÊ -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Tipo de Relê</label>
-                        <select class="selectpicker" name="dt_tipo_rele">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_tipo_rele">Tipo de Relê</label>
+                        <select class="form-control" name="dt_tipo_rele" id="dt_tipo_rele">
                             <option value="fotoeletrico">Fotoelétrico</option>
                             <option value="foto-eletonico">Foto-eletrônico</option>
                             <option value="sem rele">Sem Relê</option>
                             <option value="nao informado">Não Informado</option>
                         </select>
                     </div>
-
+                </div>
+                <div class="row">
                     <!-- TIPO DE REATOR -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Tipo de Reator</label>
-                        <select class="selectpicker" name="dt_tipo_reator">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_tipo_reator">Tipo de Reator</label>
+                        <select class="form-control" name="dt_tipo_reator" id='dt_tipo_reator'>
                             <option value="externo">Externo</option>
                             <option value="interno">Interno</option>
                             <option value="sem reator">Sem Reator</option>
@@ -884,22 +883,22 @@ if ($_POST != null)
                     </div>
 
                     <!-- FORMA DE DISTRIBUIÇÃO DE ENERGIA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Forma de Distribuição de Energia</label>
-                        <select class="selectpicker" name="dt_forma_distribuicao_energia">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="dt_forma_distribuicao_energia">Forma de Distribuição de Energia</label>
+                        <select class="form-control" name="dt_forma_distribuicao_energia" id="dt_forma_distribuicao_energia">
                             <option value="aerea">Aérea</option>
                             <option value="subterranea">Subterrânea</option>
                         </select>
                     </div>
-
-                    <!-- DADOS FÍSICOS -->
-                    <label class="titulo-dados">Dados Físicos</label>
-                    <br>
-
+                </div>
+                <!-- DADOS FÍSICOS -->
+                <label class="titulo-dados">Dados Físicos</label>
+                <br>
+                <div class="row">
                     <!-- APARÊNCIA DO PONTO LUMINOSO -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Aparência do Ponto Luminoso</label>
-                        <select class="selectpicker" name="df_aparencia_ponto_luminoso">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="df_aparencia_ponto_luminoso">Aparência do Ponto Luminoso</label>
+                        <select class="form-control" name="df_aparencia_ponto_luminoso" id="df_aparencia_ponto_luminoso">
                             <option value="bem instalado">Bem Instalado</option>
                             <option value="mal instalado">Mal Instalado</option>
                             <option value="sujo">Sujo</option>
@@ -908,37 +907,38 @@ if ($_POST != null)
                     </div>
 
                     <!-- ESTADO DA LÂMPADA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Estado da Lâmpada</label>
-                        <select class="selectpicker" name="df_estado_lampada">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="df_estado_lampada">Estado da Lâmpada</label>
+                        <select class="form-control" name="df_estado_lampada" id="df_estado_lampada">
                             <option value="acesa">Acesa</option>
                             <option value="apagada">Apagada</option>
                         </select>
                     </div>
 
                     <!-- ÁRVORE OFUSCANDO A ILUMINAÇÃO -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Árvore Ofuscando a Iluminação</label>
-                        <select class="selectpicker" name="df_arvore_ofuscando_iluminacao">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="df_arvore_ofuscando_iluminacao">Árvore Ofuscando a Iluminação</label>
+                        <select class="form-control" name="df_arvore_ofuscando_iluminacao" id="df_arvore_ofuscando_iluminacao">
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                         </select>
                     </div>
 
                     <!-- POSICIONAMENTO DO POSTE -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Posicionamento do Poste</label>
-                        <select class="selectpicker" name="df_posicionamento_poste">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="df_posicionamento_poste">Posicionamento do Poste</label>
+                        <select class="form-control" name="df_posicionamento_poste" id="df_posicionamento_poste">
                             <option value="normal">Normal</option>
                             <option value="desaprumado">Desaprumado</option>
                             <option value="fletido">Fletido</option>
                         </select>
                     </div>
-
+                </div>
+                <div class="row">
                     <!-- PROXIMIDADE DA LUMINÁRIA EM RELAÇÃO À REDE DE ENERGIA -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Proximidade da Luminária em Relação à Rede de Energia</label>
-                        <select class="selectpicker" name="df_proximidade_luminaria_rede_energia">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="df_proximidade_luminaria_rede_energia">Proximidade da Luminária em Relação à Rede de Energia</label>
+                        <select class="form-control" name="df_proximidade_luminaria_rede_energia" id="df_proximidade_luminaria_rede_energia">
                             <option value="normal">Normal</option>
                             <option value="proxima">Próxima</option>
                             <option value="distante">Distante</option>
@@ -946,143 +946,144 @@ if ($_POST != null)
                     </div>
 
                     <!-- LOCAL DE DIFÍCIL ACESSO -->
-                    <div class="form-group">
-                        <label class="subtitulo-dados">Local de Difícil Acesso</label>
-                        <select class="selectpicker" name="df_local_dificil_acesso">
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                        <label for="df_local_dificil_acesso">Local de Difícil Acesso</label>
+                        <select class="form-control" name="df_local_dificil_acesso" id="df_local_dificil_acesso">
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
                         </select>
                     </div>
+                </div>
 
-                    <!-- MEDIÇÕES -->
-                    <label class="titulo-dados">Medições Métricas e Luminotécnicas</label>
-                    <br>
-                    <br>
-                    <label class="subtitulo-dados">Grade Padrão</label>
-                    <table class="teste">
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <div>
-                                    <!-- CONFIGURAÇÃO -->
-                                    <label>Configuração</label>
-                                    <select class="selectpicker" name="md_configuracao">
-                                        <option value="pu">PU</option>
-                                        <option value="pbf">PBF</option>
-                                        <option value="pba">PBA</option>
-                                        <option value="pcc">PCC</option>
-                                    </select>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <label class="subtitulo-dados">Dados da Via</label>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <!-- LARGURA DE CADA VIA -->
-                                <label>Largura de Cada Via (m):</label>
-                                <input type="text" class="input-tabelas" name="md_largura_via_l1" required>
-                                -
-                                <input type="text" class="input-tabelas" name="md_largura_via_l2" required>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <!-- LARGURA DA CALÇADA -->
-                                <label>Largura da Calçada (m):</label>
-                                <input type="text" class="input-tabelas" name="md_largura_calcada_l1" required>
-                                -
-                                <input type="text" class="input-tabelas" name="md_largura_calcada_l2" required>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <!-- ALTURA MONTAGEM -->
-                                <label>Altura Montagem (m):</label>
-                                <input type="text" class="input-tabelas" name="md_altura_montagem" required>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td colspan="2">
-                                <!-- PROJEÇÃO HORIZONTAL BRAÇO -->
-                                <label>Projeção Horizontal Braço (m):</label>
-                                <input type="text" class="input-tabelas" name="md_projecao_horizontal_braco" required>
-                            </td>
-                        </tr>
-                        <tr class="espaco-tabela">
-                            <td  colspan="2">
-                                <!-- ESPAÇAMENTO ENTRE POSTES -->
-                                <label>Espaçamento entre Postes (m):</label>
-                                <input type="text" class="input-tabelas" name="md_espacamento_entre_postes" required>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
+                <!-- MEDIÇÕES -->
+                <label class="titulo-dados">Medições Métricas e Luminotécnicas</label>
+                <br>
+                <br>
+                <label class="subtitulo-dados">Grade Padrão</label>
+                <div class="row">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">   
+                        <label for="md_configuracao">Configuração</label>
+                        <select class="form-control" name="md_configuracao" id ="md_configuracao">
+                            <option value="pu">PU</option>
+                            <option value="pbf">PBF</option>
+                            <option value="pba">PBA</option>
+                            <option value="pcc">PCC</option>
+                        </select>
+                    </div>          
 
-                    <!-- TABELA DE LUMINÂNCIA  -->
-                    <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
-                    <table class="teste tabela-luminancia">
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l1" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l1" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l1" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l1" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l1" required></td>
-                        </tr>
-                        <div class="espaca-linha"> </div>
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l2" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l2" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l2" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l2" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l2" required></td>
-                        </tr>
-                        <div class="espaca-linha"> </div>
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l3" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l3" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l3" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l3" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
-                        </tr>
-                        <div class="espaca-linha"> </div>
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l4" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l4" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l4" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l4" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l4" required></td>
-                        </tr>
-                        <div class="espaca-linha"> </div>
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l5" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l5" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l5" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l5" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l5" required></td>
-                        </tr>
-                        <div class="espaca-linha"> </div>
-                        <tr>
-                            <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c2_l6" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c3_l6" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c4_l6" required></td>
-                            <td><input type="text" class="input-tabelas" name="md_c5_l6" required></td>
-                        </tr>
-                    </table>
-                    <br>
-
-                    <label>Data:</label>
-                    <input type="text" id="datepicker" name="data_cadastro" required>
-
-                    <div class="form-group row">
-                        <button type="submit" class="btn btn-success btn-acessar fonte-bold transition mukta-bold transition hover center-block">Confirmar</button>
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
+                        <!-- LARGURA DE CADA VIA -->
+                        <label  for="md_largura_via_l1">Largura de Via 1 (m):</label>
+                        <input type="text" class="form-control" id="md_largura_via_l1" name="md_largura_via_l1" required>
                     </div>
-                </form>
-                <button class="btn btn-danger btn-cancelar fonte-bold transition mukta-bold transition hover center-block" onclick="resetForm()">Cancelar</button>
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="md_largura_via_l2">Largura de Via 2 (m):</label>
+                        <input type="text" class="form-control" id="md_largura_via_l2" name="md_largura_via_l2" required> 
+
+                    </div>
+
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="md_largura_via_l2">Altura Montagem (m):</label>
+                        <input type="text" class="form-control" id="md_altura_montagem" name="md_altura_montagem" required> 
+
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
+                        <label  for="md_projecao_horizontal_braco">Projeção Horizontal Braço (m):</label>
+                        <input type="text" class="form-control" id="md_projecao_horizontal_braco" name="md_projecao_horizontal_braco" required>
+                    </div>  
+
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
+                        <label  for="md_largura_calcada_l1">Largura da Calçada 1 (m):</label>
+                        <input type="text" class="form-control" id="md_largura_calcada_l1" name="md_largura_calcada_l1" required>
+                    </div>
+
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="md_largura_calcada_l2">Largura da Calçada 2 (m):</label>
+                        <input type="text" class="form-control" id="md_largura_calcada_l2" name="md_largura_calcada_l2" required> 
+
+                    </div>
+
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="md_espacamento_entre_postes">Espaçamento entre Postes (m):</label>
+                        <input type="text" class="form-control" id="md_espacamento_entre_postes" name="md_espacamento_entre_postes" required> 
+
+                    </div>
+                </div>
+                <br>
+
+                <!-- TABELA DE LUMINÂNCIA  -->
+                <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
+                <table class="teste tabela-luminancia">
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l1" required></td>
+                    </tr>
+                    <div class="espaca-linha"> </div>
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l2" required></td>
+                    </tr>
+                    <div class="espaca-linha"> </div>
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
+                    </tr>
+                    <div class="espaca-linha"> </div>
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l4" required></td>
+                    </tr>
+                    <div class="espaca-linha"> </div>
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l5" required></td>
+                    </tr>
+                    <div class="espaca-linha"> </div>
+                    <tr>
+                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c2_l6" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c3_l6" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c4_l6" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l6" required></td>
+                    </tr>
+                </table>
+                <br>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <label>Data:</label>
+                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" required>
+                        <br>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-success">Confirmar</button>
+                        <button class="btn btn-danger" onclick="resetForm()">Cancelar</button>
+                    </div> 
+                </div>
             </div>
-        </div>
+        </form>
     </body>
 </html>
