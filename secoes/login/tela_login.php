@@ -66,24 +66,21 @@ if ($_POST != null)
 
         <title>Sistema de Controle de Luminescência - Login</title>
 
-        <link rel="stylesheet" type="text/css" href="../../includes/css/bootstrap.min.css">
-        
-        <script src="../../includes/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="../../includes/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
         <link rel="stylesheet" type="text/css" href="../../includes/css/style.css">
 
     </head>
 
-    <div class="area-login txt-ao-centro">
+    
 
-        <div class="texto chamada-home txt-ao-centro oxygen-regular">
-
-            <p>Digite seu CPF e Senha abaixo:</p>
-
-        </div>
-
+        
+<!--
         <div class="login">
 
             <form method="post" class="form center-block" >
@@ -99,7 +96,54 @@ if ($_POST != null)
             </form>
 
         </div>
+-->
+        <div class="outer">
+        <div class="middle">
+        <div class="inner">
 
+   
+        <div class="texto chamada-home txt-ao-centro oxygen-regular">
+
+            <h2>Digite seu CPF e Senha abaixo:</h2>
+            <hr>
+        </div>    
+   
+        <div class="container">
+        <form class="form-horizontal" role="form" method="POST">
+            
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input type="text" name="usu_cpf" class="form-control"
+                                   placeholder="CPF (só numeros)" required autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input type="password" name="usu_senha" class="form-control" id="password"
+                                   placeholder="Senha" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 1rem">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
+                </div>
+            </div>
+        </form>
+        </div>
     </div>
+    </div>
+    </div>
+    
 
 </html>
