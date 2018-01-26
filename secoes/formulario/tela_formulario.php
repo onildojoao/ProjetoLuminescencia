@@ -586,7 +586,7 @@ if ($_POST != null)
     <head>
 
         <meta charset="UTF-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sistema de Controle de Luminescência - Ficha de Campo</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -594,9 +594,9 @@ if ($_POST != null)
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="includes/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../includes/css/font-awesome.min.css">
 
-        <link rel="stylesheet" type="text/css" href="includes/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../includes/css/style.css">
 
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
@@ -642,12 +642,11 @@ if ($_POST != null)
                 <label class="titulo-dados">Dados Geográficos</label>
                 <!-- CLASSE DA VIA --> 
                 <div class="row">
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="idPoste">ID do Poste</label>
                         <input type="number" class="form-control" id="idPoste" name="id_poste">
                     </div>
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="dg_classe_via">Classe da Via</label>
                         <select class="form-control" name="dg_classe_via" id="dg_classe_via">
                             <option value="V1">V1</option>

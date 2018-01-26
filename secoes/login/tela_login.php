@@ -63,7 +63,7 @@ if ($_POST != null)
     <head>
 
         <meta charset="UTF-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sistema de Controle de Luminescência - Login</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -79,41 +79,14 @@ if ($_POST != null)
 
     
 
-        
-<!--
-        <div class="login">
-
-            <form method="post" class="form center-block" >
-
-                <input type="text" name="usu_cpf" class="form-control input-lg input-principal fonte-normal open-sans-light" placeholder="CPF" required>
-
-
-                <input type="password" name="usu_senha" class="form-control input-lg input-principal fonte-normal open-sans-light" placeholder="Senha" required>
-
-
-                <button class="btn btn-primary btn-acessar fonte-bold transition mukta-bold transition hover">Acessar</button>
-
-            </form>
-
-        </div>
--->
-        <div class="outer">
-        <div class="middle">
-        <div class="inner">
-
-   
-        <div class="texto chamada-home txt-ao-centro oxygen-regular">
-
-            <h2>Digite seu CPF e Senha abaixo:</h2>
-            <hr>
-        </div>    
-   
         <div class="container">
+        <div class="login-form col-md-4 offset-md-4 col-xs-12">
+        <h1 class="title">Login</h1>
         <form class="form-horizontal" role="form" method="POST">
             
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                
+                <div class="col-md-12 col-lg-12 col-xs-12">
                     <div class="form-group has-danger">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <input type="text" name="usu_cpf" class="form-control"
@@ -123,8 +96,8 @@ if ($_POST != null)
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                
+                <div class="col-md-12 col-lg-12 col-xs-12">
                     <div class="form-group">
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <input type="password" name="usu_senha" class="form-control" id="password"
@@ -134,16 +107,15 @@ if ($_POST != null)
                 </div>
             </div>
             <div class="row" style="padding-top: 1rem">
-                <div class="col-md-3"></div>
+                
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
                 </div>
             </div>
         </form>
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
+
     
 
 </html>
