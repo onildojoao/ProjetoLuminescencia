@@ -123,7 +123,11 @@ if ($_POST != null)
 
     if (isset($_POST['dt_tipo_luminaria']))
     {
-        $dt_tipo_luminaria = $_POST['dt_tipo_luminaria'];
+        if ($_POST['dt_tipo_luminaria'] != "otherTipoLuminaria") {
+            $dt_tipo_luminaria = $_POST['dt_tipo_luminaria'];
+        } else {
+            $dt_tipo_luminaria = $_POST['otherTipoLuminaria'];
+        }
     }
 
     if (isset($_POST['dt_tipo_braco']))
@@ -461,8 +465,8 @@ if ($_POST != null)
     // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
     //$conexao->beginTransaction();
 
-    // COMANDO SQL CADASTRO
-    $sql_cad = "INSERT INTO cad_cadastro
+    // COMANDO SQL CADASTRO CEB
+    $sql_cad = "INSERT INTO cad_ceb
                 (cad_idPoste, cad_data_cadastro, 
                 cad_dg_cg_p2_utmx, cad_dg_cg_p2_utmy, cad_dg_cg_p3_utmx, cad_dg_cg_p3_utmy, cad_dg_cg_p4_utmx, cad_dg_cg_p4_utmy, cad_dg_cg_p5_utmx, cad_dg_cg_p5_utmy, cad_dg_cg_p6_utmx, cad_dg_cg_p6_utmy,
                 cad_dt_potencia_lampada, cad_dt_tipo_lampada, cad_dt_tipo_luminaria,
@@ -622,6 +626,12 @@ if ($_POST != null)
                 });
             } );
         </script>
+        <script type="text/javascript">
+            function showfieldTipoLuminaria(name){
+                if(name=='otherTipoLuminaria')document.getElementById('outraTipoLuminaria').innerHTML='<div class="form-group col-lg-12 col-md-12 col-sm-12"><label for="otherTipoLuminaria">Outra:</label> <input type="text" class="form-control" id="otherTipoLuminaria" name="otherTipoLuminaria" required/>';
+                else document.getElementById('outraTipoLuminaria').innerHTML='';
+            }
+        </script>
         <script> 
             $(function(){
                 $("#navbar").load("../navbar.html"); 
@@ -760,47 +770,48 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_tipo_lampada">Tipo da Lâmpada</label>
                         <select class="form-control" id="dt_tipo_lampada" name="dt_tipo_lampada">
-                            <option value="compacta">Compacta</option>
-                            <option value="halogena">Halógena</option>
+                            <option value="Compacta">Compacta</option>
+                            <option value="Halígena">Halógena</option>
                             <option value="Fluorescente">Fluorescente</option>
-                            <option value="vapor de sodio">Vapor de Sódio</option>
-                            <option value="multi vapor metalico">Multi Vapor Metálico</option>
-                            <option value="vapor de mercurio">Vapor de Mercúrio</option>
-                            <option value="mista">Mista</option>
-                            <option value="led">LED</option>
+                            <option value="Vapor de sódio">Vapor de Sódio</option>
+                            <option value="Multi vapor metálico">Multi Vapor Metálico</option>
+                            <option value="Vapor de mercúrio">Vapor de Mercúrio</option>
+                            <option value="Mista">Mista</option>
+                            <option value="LED">LED</option>
                         </select>
                     </div>
 
                     <!-- TIPO DE LUMINÁRIA -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_tipo_luminaria">Tipo da Luminária</label>
-                        <select class="form-control" name="dt_tipo_luminaria" id="dt_tipo_luminaria" >
-                            <option value="aberta">Aberta</option>
-                            <option value="fechada">Fechada</option>
-                            <option value="decorativa">Decorativa</option>
-                            <option value="petala">Pétala</option>
-                            <option value="faixa de pedestre">Faixa de Pedestre</option>
-                            <option value="fechada ornamental">Fechada Ornamental</option>
-                            <option value="projetor">Projetor</option>
-                            <option value="outra">Outra</option>
+                        <select class="form-control" name="dt_tipo_luminaria" id="dt_tipo_luminaria" onchange="showfieldTipoLuminaria(this.options[this.selectedIndex].value)">
+                            <option value="Aberta">Aberta</option>
+                            <option value="Fechada">Fechada</option>
+                            <option value="Decorativa">Decorativa</option>
+                            <option value="Pétala">Pétala</option>
+                            <option value="Faixa de pedestre">Faixa de Pedestre</option>
+                            <option value="Fechada ornamental">Fechada Ornamental</option>
+                            <option value="Projetor">Projetor</option>
+                            <option value="otherTipoLuminaria">Outra</option>
                         </select>
+                        <div id="outraTipoLuminaria"></div>
                     </div>
 
                     <!-- TIPO DE BRAÇO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_tipo_braco">Tipo do Braço</label>
                         <select class="form-control" name="dt_tipo_braco" id="dt_tipo_braco">
-                            <option value="cruzeta n1.1">Cruzeta N1.1</option>
-                            <option value="cruzeta n1.2">Cruzeta N1.2</option>
-                            <option value="cruzeta n2.1">Cruzeta N2.1</option>
-                            <option value="cruzeta n2.2">Cruzeta N2.2</option>
-                            <option value="pesado 48">Pesado 48</option>
-                            <option value="pesado 60">Pesado 60</option>
-                            <option value="meio pesado">Meio Pesado</option>
-                            <option value="sem cruzeta">Sem Cruzeta</option>
-                            <option value="suporte petala">Suporte Pétala</option>
-                            <option value="sem braco">Sem Braço</option>
-                            <option value="leve">Leve</option>
+                            <option value="Cruzeta n1.1">Cruzeta N1.1</option>
+                            <option value="Cruzeta n1.2">Cruzeta N1.2</option>
+                            <option value="Cruzeta n2.1">Cruzeta N2.1</option>
+                            <option value="Cruzeta n2.2">Cruzeta N2.2</option>
+                            <option value="Pesado 48">Pesado 48</option>
+                            <option value="Pesado 60">Pesado 60</option>
+                            <option value="Meio pesado">Meio Pesado</option>
+                            <option value="Sem cruzeta">Sem Cruzeta</option>
+                            <option value="Suporte pétala">Suporte Pétala</option>
+                            <option value="Sem braço">Sem Braço</option>
+                            <option value="Leve">Leve</option>
                         </select>
                     </div>
                 </div>
@@ -836,16 +847,16 @@ if ($_POST != null)
                         <label for="dt_material_poste">Material do Poste</label>
                         <select class="form-control" name="dt_material_poste" id="dt_material_poste">
                             <option value="abrigo projetor alvenaria">Abrigo Projetor Alvenaria</option>
-                            <option value="aco">Aço</option>
-                            <option value="aco faixa pedestre">aço Faixa Pedestre</option>
-                            <option value="concreto s/c (rl-35)">Concreto S/C (RL-35)</option>
-                            <option value="concreto s/c (l-30)">Concreto S/C (L-30)</option>
-                            <option value="concreto s/c (l-35)">Concreto S/C (L-35)</option>
-                            <option value="concreto s/c (r-30)">Concreto S/C (R-30)</option>
-                            <option value="concreto dt">Concreto DT</option>
-                            <option value="concreto s/c">Concreto S/C</option>
-                            <option value="aco c/ sapata">Aço c/ Sapata</option>
-                            <option value="madeira">Madeira</option>
+                            <option value="Aço">Aço</option>
+                            <option value="Aço faixa pedestre">aço Faixa Pedestre</option>
+                            <option value="Concreto S/c (RL-35)">Concreto S/C (RL-35)</option>
+                            <option value="Concreto S/C (L-30)">Concreto S/C (L-30)</option>
+                            <option value="concreto S/C (L-35)">Concreto S/C (L-35)</option>
+                            <option value="Concreto s/C (R-30)">Concreto S/C (R-30)</option>
+                            <option value="Concreto DT">Concreto DT</option>
+                            <option value="Concreto S/C">Concreto S/C</option>
+                            <option value="Aço c/ sapata">Aço c/ Sapata</option>
+                            <option value="Madeira">Madeira</option>
                             <option value="nao informado">Não Informado</option>
                         </select>
                     </div>
@@ -854,8 +865,8 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_altura_poste">Uso do Poste</label>
                         <select class="form-control" name="dt_uso_poste" id="dt_uso_poste">
-                            <option value="exclusivo p/ iluminacao publica">Exclusivo p/ Iluminação Pública</option>
-                            <option value="compatilado c/ outros servicos">Compartilhado c/ Outros Serviços</option>
+                            <option value="Exclusivo p/ iluminação pública">Exclusivo p/ Iluminação Pública</option>
+                            <option value="Compatilado c/ outros serviços">Compartilhado c/ Outros Serviços</option>
                         </select>
                     </div>
 
@@ -874,10 +885,10 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_tipo_reator">Tipo de Reator</label>
                         <select class="form-control" name="dt_tipo_reator" id='dt_tipo_reator'>
-                            <option value="externo">Externo</option>
-                            <option value="interno">Interno</option>
+                            <option value="Externo">Externo</option>
+                            <option value="Interno">Interno</option>
                             <option value="sem reator">Sem Reator</option>
-                            <option value="nao informado">Não Informado</option>
+                            <option value="Não informado">Não Informado</option>
                         </select>
                     </div>
 
@@ -885,8 +896,8 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_forma_distribuicao_energia">Forma de Distribuição de Energia</label>
                         <select class="form-control" name="dt_forma_distribuicao_energia" id="dt_forma_distribuicao_energia">
-                            <option value="aerea">Aérea</option>
-                            <option value="subterranea">Subterrânea</option>
+                            <option value="Aérea">Aérea</option>
+                            <option value="Subterrânea">Subterrânea</option>
                         </select>
                     </div>
                 </div>
@@ -898,10 +909,10 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_aparencia_ponto_luminoso">Aparência do Ponto Luminoso</label>
                         <select class="form-control" name="df_aparencia_ponto_luminoso" id="df_aparencia_ponto_luminoso">
-                            <option value="bem instalado">Bem Instalado</option>
-                            <option value="mal instalado">Mal Instalado</option>
-                            <option value="sujo">Sujo</option>
-                            <option value="corroido">Corroído</option>
+                            <option value="Bem instalado">Bem Instalado</option>
+                            <option value="Mal instalado">Mal Instalado</option>
+                            <option value="Sujo">Sujo</option>
+                            <option value="corroído">Corroído</option>
                         </select>
                     </div>
 
@@ -910,7 +921,7 @@ if ($_POST != null)
                         <label for="df_estado_lampada">Estado da Lâmpada</label>
                         <select class="form-control" name="df_estado_lampada" id="df_estado_lampada">
                             <option value="acesa">Acesa</option>
-                            <option value="apagada">Apagada</option>
+                            <option value="Apagada">Apagada</option>
                         </select>
                     </div>
 
@@ -918,8 +929,8 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_arvore_ofuscando_iluminacao">Árvore Ofuscando a Iluminação</label>
                         <select class="form-control" name="df_arvore_ofuscando_iluminacao" id="df_arvore_ofuscando_iluminacao">
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
                         </select>
                     </div>
 
@@ -927,9 +938,9 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_posicionamento_poste">Posicionamento do Poste</label>
                         <select class="form-control" name="df_posicionamento_poste" id="df_posicionamento_poste">
-                            <option value="normal">Normal</option>
+                            <option value="Normal">Normal</option>
                             <option value="desaprumado">Desaprumado</option>
-                            <option value="fletido">Fletido</option>
+                            <option value="Fletido">Fletido</option>
                         </select>
                     </div>
                 </div>
@@ -938,9 +949,9 @@ if ($_POST != null)
                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="df_proximidade_luminaria_rede_energia">Proximidade da Luminária em Relação à Rede de Energia</label>
                         <select class="form-control" name="df_proximidade_luminaria_rede_energia" id="df_proximidade_luminaria_rede_energia">
-                            <option value="normal">Normal</option>
-                            <option value="proxima">Próxima</option>
-                            <option value="distante">Distante</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Próxima">Próxima</option>
+                            <option value="Distante">Distante</option>
                         </select>
                     </div>
 
@@ -948,8 +959,8 @@ if ($_POST != null)
                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <label for="df_local_dificil_acesso">Local de Difícil Acesso</label>
                         <select class="form-control" name="df_local_dificil_acesso" id="df_local_dificil_acesso">
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
                         </select>
                     </div>
                 </div>
@@ -963,10 +974,10 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">   
                         <label for="md_configuracao">Configuração</label>
                         <select class="form-control" name="md_configuracao" id ="md_configuracao">
-                            <option value="pu">PU</option>
-                            <option value="pbf">PBF</option>
-                            <option value="pba">PBA</option>
-                            <option value="pcc">PCC</option>
+                            <option value="PU">PU</option>
+                            <option value="PBF">PBF</option>
+                            <option value="PBA">PBA</option>
+                            <option value="PCC">PCC</option>
                         </select>
                     </div>          
 
@@ -984,7 +995,6 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="md_largura_via_l2">Altura Montagem (m):</label>
                         <input type="text" class="form-control" id="md_altura_montagem" name="md_altura_montagem" required> 
-
                     </div>
 
                 </div>

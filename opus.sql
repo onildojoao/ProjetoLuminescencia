@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cad_cadastro`
 --
 
-DROP TABLE IF EXISTS `cad_cadastro`;
-CREATE TABLE IF NOT EXISTS `cad_cadastro` (
+DROP TABLE IF EXISTS `cad_ceb`;
+CREATE TABLE IF NOT EXISTS `cad_ceb` (
   `cad_id` int(11) NOT NULL AUTO_INCREMENT,
   `cad_idPoste` int(11) NOT NULL,
   `cad_Data_Cadastro` date DEFAULT NULL,
@@ -102,6 +102,84 @@ CREATE TABLE IF NOT EXISTS `cad_cadastro` (
   PRIMARY KEY (`cad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+DROP TABLE IF EXISTS `cad_convencional`;
+CREATE TABLE IF NOT EXISTS `cad_convencional` (
+  `cad_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cad_idPoste` int(11) NOT NULL,
+  `cad_Data_Cadastro` date DEFAULT NULL,
+  `cad_CPF_Usuario` int(11) DEFAULT NULL,
+  `cad_Nome_Usuario` varchar(70) DEFAULT NULL,
+  `cad_dg_cg_p2_utmx` double DEFAULT NULL,
+  `cad_dg_cg_p2_utmy` double DEFAULT NULL,
+  `cad_dg_cg_p3_utmx` double DEFAULT NULL,
+  `cad_dg_cg_p3_utmy` double DEFAULT NULL,
+  `cad_dg_cg_p4_utmx` double DEFAULT NULL,
+  `cad_dg_cg_p4_utmy` double DEFAULT NULL,
+  `cad_dg_cg_p5_utmx` double DEFAULT NULL,
+  `cad_dg_cg_p5_utmy` double DEFAULT NULL,
+  `cad_dg_cg_p6_utmx` double DEFAULT NULL,
+  `cad_dg_cg_p6_utmy` double DEFAULT NULL,
+  `cad_dt_potencia_lampada` int(11) DEFAULT NULL,
+  `cad_dt_tipo_lampada` varchar(25) DEFAULT NULL,
+  `cad_dt_tipo_luminaria` varchar(25) DEFAULT NULL,
+  `cad_dt_material_poste` varchar(25) DEFAULT NULL,
+  `cad_dt_uso_poste` varchar(45) DEFAULT NULL,
+  `cad_dt_altura_poste` double DEFAULT NULL,
+  `cad_dt_tipo_braco` varchar(30) DEFAULT NULL,
+  `cad_dt_tamanho_braco` varchar(10) DEFAULT NULL,
+  `cad_dt_tipo_comando` varchar(25) DEFAULT NULL,
+  `cad_dt_tipo_reator` varchar(45) DEFAULT NULL,
+  `cad_dt_forma_rede_alimentacao` varchar(45) DEFAULT NULL,
+  `cad_dt_numero_petalas` varchar(30) DEFAULT NULL,
+  `cad_dt_fabricante_luminaria` varchar(50) DEFAULT NULL,
+  `cad_df_aparencia_ponto_luminoso` varchar(45) DEFAULT NULL,
+  `cad_df_observacao_ponto_luminoso` varchar(100) DEFAULT NULL,
+  `cad_df_estado_lampada` varchar(45) DEFAULT NULL,
+  `cad_df_arvore_ofuscando_iluminacao` varchar(3) DEFAULT NULL,
+  `cad_df_posicionamento_poste` varchar(45) DEFAULT NULL,
+  `cad_df_proximidade_luminaria_rede_energia` varchar(45) DEFAULT NULL,
+  `cad_df_local_dificil_acesso` varchar(3) DEFAULT NULL,
+  `cad_md_configuracao` varchar(2) DEFAULT NULL,
+  `cad_md_largura_via_l1` double DEFAULT NULL,
+  `cad_md_largura_via_l2` double DEFAULT NULL,
+  `cad_md_largura_calcada_l1` double DEFAULT NULL,
+  `cad_md_largura_calcada_l2` double DEFAULT NULL,
+  `cad_md_altura_montagem` double DEFAULT NULL,
+  `cad_md_projecao_horizontal_braco` double DEFAULT NULL,
+  `cad_md_espacamento_entre_postes` double DEFAULT NULL,
+  `cad_md_c1_l1` double DEFAULT NULL,
+  `cad_md_c2_l1` double DEFAULT NULL,
+  `cad_md_c3_l1` double DEFAULT NULL,
+  `cad_md_c4_l1` double DEFAULT NULL,
+  `cad_md_c5_l1` double DEFAULT NULL,
+  `cad_md_c1_l2` double DEFAULT NULL,
+  `cad_md_c2_l2` double DEFAULT NULL,
+  `cad_md_c3_l2` double DEFAULT NULL,
+  `cad_md_c4_l2` double DEFAULT NULL,
+  `cad_md_c5_l2` double DEFAULT NULL,
+  `cad_md_c1_l3` double DEFAULT NULL,
+  `cad_md_c2_l3` double DEFAULT NULL,
+  `cad_md_c3_l3` double DEFAULT NULL,
+  `cad_md_c4_l3` double DEFAULT NULL,
+  `cad_md_c5_l3` double DEFAULT NULL,
+  `cad_md_c1_l4` double DEFAULT NULL,
+  `cad_md_c2_l4` double DEFAULT NULL,
+  `cad_md_c3_l4` double DEFAULT NULL,
+  `cad_md_c4_l4` double DEFAULT NULL,
+  `cad_md_c5_l4` double DEFAULT NULL,
+  `cad_md_c1_l5` double DEFAULT NULL,
+  `cad_md_c2_l5` double DEFAULT NULL,
+  `cad_md_c3_l5` double DEFAULT NULL,
+  `cad_md_c4_l5` double DEFAULT NULL,
+  `cad_md_c5_l5` double DEFAULT NULL,
+  `cad_md_c1_l6` double DEFAULT NULL,
+  `cad_md_c2_l6` double DEFAULT NULL,
+  `cad_md_c3_l6` double DEFAULT NULL,
+  `cad_md_c4_l6` double DEFAULT NULL,
+  `cad_md_c5_l6` double DEFAULT NULL,
+  PRIMARY KEY (`cad_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
 --
