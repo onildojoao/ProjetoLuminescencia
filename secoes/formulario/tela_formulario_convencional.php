@@ -842,11 +842,11 @@ if ($_POST != null)
                         <label for="dt_tipo_lampada">Tipo da Lâmpada</label>
                         <select class="form-control" id="dt_tipo_lampada" name="dt_tipo_lampada" onchange="showfieldTipoLampada(this.options[this.selectedIndex].value)">
                             <option value="Compacta">Compacta</option>
-                            <option value="Halígena">Halógena</option>
+                            <option value="Halogena">Halógena</option>
                             <option value="Fluorescente">Fluorescente</option>
-                            <option value="Vapor de sódio">Vapor de Sódio</option>
-                            <option value="Multi vapor metálico">Multi Vapor Metálico</option>
-                            <option value="Vapor de mercúrio">Vapor de Mercúrio</option>
+                            <option value="Vapor de Sodio">Vapor de Sódio</option>
+                            <option value="Multi Vapor Metalico">Multi Vapor Metálico</option>
+                            <option value="Vapor de Mercurio">Vapor de Mercúrio</option>
                             <option value="Mista">Mista</option>
                             <option value="LED">LED</option>
                             <option value="otherTipoLampada">Outra</option>
@@ -861,9 +861,9 @@ if ($_POST != null)
                             <option value="Aberta">Aberta</option>
                             <option value="Fechada">Fechada</option>
                             <option value="Decorativa">Decorativa</option>
-                            <option value="Pétala">Pétala</option>
-                            <option value="Faixa de pedestre">Faixa de Pedestre</option>
-                            <option value="Fechada ornamental">Fechada Ornamental</option>
+                            <option value="Petala">Pétala</option>
+                            <option value="Faixa de Pedestre">Faixa de Pedestre</option>
+                            <option value="Fechada Ornamental">Fechada Ornamental</option>
                             <option value="Projetor">Projetor</option>
                             <option value="otherTipoLuminaria">Outra</option>
                         </select>
@@ -874,20 +874,20 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_material_poste">Tipo do Poste</label>
                         <select class="form-control" name="dt_material_poste" id="dt_material_poste" onchange="showfieldTipoPoste(this.options[this.selectedIndex].value)">
-                            <option value="Aço com base telecônico Curvado">Aço com base telecônico curvado</option>
-                            <option value="Aço com base telecônico">Aço com base telecônico</option>
-                            <option value="Aço com base redondo">Aço com base redondo</option>
-                            <option value="Aço com base octogonal">Aço com base octogonal</option>
-                            <option value="Aço engastado redondo">Aço engastado redondo</option>
-                            <option value="Aço engastado octogonal">Aço engastado octogonal</option>
-                            <option value="Aço engastado telecônico">Aço engastado telecônico</option>
-                            <option value="Aço engastado telecônico curvado">Aço engastado telecônico curvado</option>
+                            <option value="Aco com base Teleconico Curvado">Aço com Base Telecônico curvado</option>
+                            <option value="Aco Com Base Teleconico">Aço Com Base Telecônico</option>
+                            <option value="Aco Com Base Redondo">Aço Com Base Redondo</option>
+                            <option value="Aco Com Base Octogonal">Aço com Base Octogonal</option>
+                            <option value="Aco Engastado Redondo">Aço Engastado Redondo</option>
+                            <option value="Aco Engastado Octogonal">Aço Engastado Octogonal</option>
+                            <option value="Aco Engastado Teleconico">Aço Engastado Telecônico</option>
+                            <option value="Aco Engastado Teleconico Curvado">Aço Engastado Telecônico Curvado</option>
                             <option value="Concreto DT">Concreto DT</option>
                             <option value="Concreto R">Concreto R</option>
-                            <option value="Ferro Fundido">Ferro fundido</option>
+                            <option value="Ferro Fundido">Ferro Fundido</option>
                             <option value="Fibra">Fibra</option>
                             <option value="Madeira">Madeira</option>
-                            <option value="Sem Poste">Sem poste</option>
+                            <option value="Sem Poste">Sem Poste</option>
                             <option value="otherTipoPoste">Outro</option>
                         </select>
                         <div id="outraTipoPoste"></div>
@@ -900,9 +900,9 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_altura_poste">Uso do Poste</label>
                         <select class="form-control" name="dt_uso_poste" id="dt_uso_poste">
-                            <option value="Exclusivo p/ iluminação pública">Exclusivo p/ Iluminação Pública</option>
+                            <option value="Exclusivo p/ Iluminacao publica">Exclusivo p/ Iluminação Pública</option>
                             <option value="Compatilado CEB">Compartilhado CEB</option>
-                            <option value="Compatilado c/ outros serviços">Compartilhado c/ Outros Serviços</option>
+                            <option value="Compatilado C/ Outros Servicos">Compartilhado c/ Outros Serviços</option>
                         </select>
                     </div>                    
 
@@ -936,7 +936,7 @@ if ($_POST != null)
                             <option value="Normal">Normal</option>
                             <option value="Especial">Especial</option>
                             <option value="Suporte">Suporte</option>
-                            <option value="Fixação direta topo">Fixação direta topo</option>
+                            <option value="Fixacao Direta Topo">Fixacao Direta Topo</option>
                         </select>
                     </div>    
 
@@ -945,7 +945,7 @@ if ($_POST != null)
                         <label for="dt_tamanho_braco">Tamanho do Braço</label>
                         <select class="form-control" name="dt_tamanho_braco" id="dt_tamanho_braco">
                             <option value="Curto">Curto (menor 1,5m)</option>
-                            <option value="Médio">Médio (1,6 a 2,5m)</option>
+                            <option value="Medio">Médio (1,6 a 2,5m)</option>
                             <option value="Longo">Longo (maior que 2,5m)</option>
                         </select>
                     </div>
@@ -957,9 +957,9 @@ if ($_POST != null)
                         <label for="dt_tipo_comando">Tipo de Comando</label>
                         <select class="form-control" name="dt_tipo_comando" id="dt_tipo_comando">
                             <option value="Individual">Individual</option>
-                            <option value="Chave magnética">Chave Magnética</option>
-                            <option value="Quadro comando">Quadro Comando</option>
-                            <option value="Telegestão">Telegestão</option>
+                            <option value="Chave Magnetica">Chave Magnética</option>
+                            <option value="Quadro Comando">Quadro Comando</option>
+                            <option value="Telegestao">Telegestão</option>
                         </select>
                     </div>
 
@@ -969,9 +969,9 @@ if ($_POST != null)
                         <select class="form-control" name="dt_tipo_reator" id='dt_tipo_reator'>
                             <option value="Externo">Externo</option>
                             <option value="Interno">Interno</option>
-                            <option value="Ext. duplo nível">Ext. duplo nível</option>
-                            <option value="Int. duplo nível">Int. duplo nível</option>
-                            <option value="Sem reator">Sem Reator</option>
+                            <option value="Ext. Duplo Nivel">Ext. duplo Nível</option>
+                            <option value="Int. Duplo Nivel">Int. Duplo Nível</option>
+                            <option value="Sem Reator">Sem Reator</option>
                         </select>
                     </div>
 
@@ -979,10 +979,10 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="dt_rede_alimentacao">Rede de alimentação</label>
                         <select class="form-control" name="dt_rede_alimentacao" id="dt_rede_alimentacao">
-                            <option value="Aérea convencional">Aérea Convencional</option>
-                            <option value="Aérea multiplexada">Aérea Multiplexada</option>
+                            <option value="Aerea convencional">Aérea Convencional</option>
+                            <option value="Aerea Multiplexada">Aérea Multiplexada</option>
                             <option value="Irregular">Irregular (Provisória)</option>
-                            <option value="Subterrânea">Subterrânea</option>
+                            <option value="Subterranea">Subterrânea</option>
                         </select>
                     </div>
 
@@ -1013,8 +1013,8 @@ if ($_POST != null)
                         <label for="df_aparencia_ponto_luminoso">Aparência do Ponto Luminoso</label>
                         <select class="form-control" name="df_aparencia_ponto_luminoso" id="df_aparencia_ponto_luminoso">
                             <option value="Conforme">Conforme</option>
-                            <option value="Não conforme">Não conforme</option>
-                            <option value="Luminária suja">Luminária Suja</option>
+                            <option value="Nao Conforme">Não conforme</option>
+                            <option value="Luminaria suja">Luminária Suja</option>
                             <option value="Deteriorado">Deteriorado</option>
                         </select>
                     </div>
@@ -1031,7 +1031,7 @@ if ($_POST != null)
                         <select class="form-control" name="df_estado_lampada" id="df_estado_lampada">
                             <option value="Acesa">Acesa</option>
                             <option value="Apagada">Apagada</option>
-                            <option value="Acesa de dia">Acesa de dia</option>
+                            <option value="Acesa de Dia">Acesa de Dia</option>
                         </select>
                     </div>
 
@@ -1040,7 +1040,7 @@ if ($_POST != null)
                         <label for="df_arvore_ofuscando_iluminacao">Árvore Ofuscando a Iluminação</label>
                         <select class="form-control" name="df_arvore_ofuscando_iluminacao" id="df_arvore_ofuscando_iluminacao">
                             <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
+                            <option value="Nao">Não</option>
                         </select>
                     </div>
                 </div>
@@ -1060,7 +1060,7 @@ if ($_POST != null)
                         <label for="df_proximidade_luminaria_rede_energia">Proximidade da Luminária à Rede de Energia</label>
                         <select class="form-control" name="df_proximidade_luminaria_rede_energia" id="df_proximidade_luminaria_rede_energia">
                             <option value="Normal">Normal</option>
-                            <option value="Próxima">Próxima</option>
+                            <option value="Proxima">Próxima</option>
                             <option value="Distante">Distante</option>
                         </select>
                     </div>
@@ -1070,7 +1070,7 @@ if ($_POST != null)
                         <label for="df_local_dificil_acesso">Local de Difícil Acesso</label>
                         <select class="form-control" name="df_local_dificil_acesso" id="df_local_dificil_acesso">
                             <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
+                            <option value="Nao">Não</option>
                         </select>
                     </div>
                 </div>
