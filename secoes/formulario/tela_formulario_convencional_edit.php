@@ -11,6 +11,10 @@ if ($_SESSION["usu_logado"] != "ok")
     header ('Location: ../login/tela_login.php');
 } 
 
+$id_edit = $_GET['id_poste'];
+
+// BUSCANDO DADOS DO POSTE JÁ ENCONTRADO
+
 if ($_POST != null)
 {
 
@@ -20,100 +24,120 @@ if ($_POST != null)
         $id_poste = $_POST['id_poste'];
     }
 
+    // POSTE PRINCIPAL
+    if (isset($_POST['pp_estado']))
+    {
+        $pp_estado = $_POST['pp_estado'];
+    }
+    
+    if (isset($_POST['pp_cidade']))
+    {
+        $pp_cidade = $_POST['pp_cidade'];
+    }
+    
+    if (isset($_POST['pp_regiao_administrativa']))
+    {
+        $pp_regiao_administrativa = $_POST['pp_regiao_administrativa'];
+    }
+    
+    if (isset($_POST['pp_endereco']))
+    {
+        $pp_endereco = $_POST['pp_endereco'];
+    }
+    
+    if (isset($_POST['pp_classe_via']))
+    {
+        $pp_classe_via = $_POST['pp_classe_via'];
+    }
+    
     // DATA DE CADASTRO
     if (isset($_POST['data_cadastro']))
     {
         $data_cadastro = $_POST['data_cadastro'];
     }
 
-    // DADOS GEOGRÁFICOS
-    if (isset($_POST['dg_classe_via']))
+    if (isset($_POST['dg_cg_p1_lat']))
     {
-        $dg_classe_via = $_POST['dg_classe_via'];
+        $dg_cg_p1_lat = $_POST['dg_cg_p1_lat'];
+    } else {
+        $dg_cg_p1_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p1_utmx']))
+    if (isset($_POST['dg_cg_p1_lng']))
     {
-        $dg_cg_p1_utmx = $_POST['dg_cg_p1_utmx'];
+        $dg_cg_p1_lng = $_POST['dg_cg_p1_lng'];
     } else {
-        $dg_cg_p1_utmx = 0;
+        $dg_cg_p1_lng = 0;
     }
 
-    if (isset($_POST['dg_cg_p1_utmy']))
+    if (isset($_POST['dg_cg_p2_lat']))
     {
-        $dg_cg_p1_utmy = $_POST['dg_cg_p1_utmy'];
+        $dg_cg_p2_lat = $_POST['dg_cg_p2_lat'];
     } else {
-        $dg_cg_p1_utmy = 0;
+        $dg_cg_p2_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p2_utmx']))
+    if (isset($_POST['dg_cg_p2_lng']))
     {
-        $dg_cg_p2_utmx = $_POST['dg_cg_p2_utmx'];
+        $dg_cg_p2_lng = $_POST['dg_cg_p2_lng'];
     } else {
-        $dg_cg_p2_utmx = 0;
+        $dg_cg_p2_lng = 0;
     }
 
-    if (isset($_POST['dg_cg_p2_utmy']))
+    if (isset($_POST['dg_cg_p3_lat']))
     {
-        $dg_cg_p2_utmy = $_POST['dg_cg_p2_utmy'];
+        $dg_cg_p3_lat = $_POST['dg_cg_p3_lat'];
     } else {
-        $dg_cg_p2_utmy = 0;
+        $dg_cg_p3_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p3_utmx']))
+    if (isset($_POST['dg_cg_p3_lng']))
     {
-        $dg_cg_p3_utmx = $_POST['dg_cg_p3_utmx'];
+        $dg_cg_p3_lng = $_POST['dg_cg_p3_lng'];
     } else {
-        $dg_cg_p3_utmx = 0;
+        $dg_cg_p3_lng = 0;
     }
 
-    if (isset($_POST['dg_cg_p3_utmy']))
+    if (isset($_POST['dg_cg_p4_lat']))
     {
-        $dg_cg_p3_utmy = $_POST['dg_cg_p3_utmy'];
+        $dg_cg_p4_lat = $_POST['dg_cg_p4_lat'];
     } else {
-        $dg_cg_p3_utmy = 0;
+        $dg_cg_p4_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p4_utmx']))
+    if (isset($_POST['dg_cg_p4_lng']))
     {
-        $dg_cg_p4_utmx = $_POST['dg_cg_p4_utmx'];
+        $dg_cg_p4_lng = $_POST['dg_cg_p4_lng'];
     } else {
-        $dg_cg_p4_utmx = 0;
+        $dg_cg_p4_lng = 0;
     }
 
-    if (isset($_POST['dg_cg_p4_utmy']))
+    if (isset($_POST['dg_cg_p5_lat']))
     {
-        $dg_cg_p4_utmy = $_POST['dg_cg_p4_utmy'];
+        $dg_cg_p5_lat = $_POST['dg_cg_p5_lat'];
     } else {
-        $dg_cg_p4_utmy = 0;
+        $dg_cg_p5_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p5_utmx']))
+    if (isset($_POST['dg_cg_p5_lng']))
     {
-        $dg_cg_p5_utmx = $_POST['dg_cg_p5_utmx'];
+        $dg_cg_p5_lng = $_POST['dg_cg_p5_lng'];
     } else {
-        $dg_cg_p5_utmx = 0;
+        $dg_cg_p5_lng = 0;
     }
 
-    if (isset($_POST['dg_cg_p5_utmy']))
+    if (isset($_POST['dg_cg_p6_lat']))
     {
-        $dg_cg_p5_utmy = $_POST['dg_cg_p5_utmy'];
+        $dg_cg_p6_lat = $_POST['dg_cg_p6_lat'];
     } else {
-        $dg_cg_p5_utmy = 0;
+        $dg_cg_p6_lat = 0;
     }
 
-    if (isset($_POST['dg_cg_p6_utmx']))
+    if (isset($_POST['dg_cg_p6_lng']))
     {
-        $dg_cg_p6_utmx = $_POST['dg_cg_p6_utmx'];
+        $dg_cg_p6_lng = $_POST['dg_cg_p6_lng'];
     } else {
-        $dg_cg_p6_utmx = 0;
-    }
-
-    if (isset($_POST['dg_cg_p6_utmy']))
-    {
-        $dg_cg_p6_utmy = $_POST['dg_cg_p6_utmy'];
-    } else {
-        $dg_cg_p6_utmy = 0;
+        $dg_cg_p6_lng = 0;
     }
 
     // DADOS TÉCNICOS
@@ -510,11 +534,11 @@ if ($_POST != null)
     // COMANDO SQL CADASTRO
     $sql_cad = "INSERT INTO cad_convencional
                 (cad_idPoste, cad_data_cadastro, 
-                cad_dg_cg_p2_utmx, cad_dg_cg_p2_utmy, 
-                cad_dg_cg_p3_utmx, cad_dg_cg_p3_utmy, 
-                cad_dg_cg_p4_utmx, cad_dg_cg_p4_utmy, 
-                cad_dg_cg_p5_utmx, cad_dg_cg_p5_utmy, 
-                cad_dg_cg_p6_utmx, cad_dg_cg_p6_utmy,
+                cad_dg_cg_p2_lat, cad_dg_cg_p2_lng, 
+                cad_dg_cg_p3_lat, cad_dg_cg_p3_lng, 
+                cad_dg_cg_p4_lat, cad_dg_cg_p4_lng, 
+                cad_dg_cg_p5_lat, cad_dg_cg_p5_lng, 
+                cad_dg_cg_p6_lat, cad_dg_cg_p6_lng,
                 cad_dt_potencia_lampada, cad_dt_tipo_lampada, cad_dt_tipo_luminaria,
                 cad_dt_material_poste, cad_dt_uso_poste,
                 cad_dt_altura_poste, cad_dt_tipo_braco, 
@@ -544,11 +568,11 @@ if ($_POST != null)
                 cad_md_c4_l6, cad_md_c5_l6,
                 cad_cpf_usuario, cad_nome_usuario) VALUES 
                 ('$id_poste', '$data_cadastro',
-                '$dg_cg_p2_utmx', '$dg_cg_p2_utmy',
-                '$dg_cg_p3_utmx', '$dg_cg_p3_utmy',
-                '$dg_cg_p4_utmx', '$dg_cg_p4_utmy',
-                '$dg_cg_p5_utmx', '$dg_cg_p5_utmy',
-                '$dg_cg_p6_utmx', '$dg_cg_p6_utmy',
+                '$dg_cg_p2_lat', '$dg_cg_p2_lng',
+                '$dg_cg_p3_lat', '$dg_cg_p3_lng',
+                '$dg_cg_p4_lat', '$dg_cg_p4_lng',
+                '$dg_cg_p5_lat', '$dg_cg_p5_lng',
+                '$dg_cg_p6_lat', '$dg_cg_p6_lng',
                 '$dt_potencia_lampada', '$dt_tipo_lampada', '$dt_tipo_luminaria',
                 '$dt_material_poste', '$dt_uso_poste',
                 '$dt_altura_poste', '$dt_tipo_braco', 
@@ -591,7 +615,7 @@ if ($_POST != null)
 
     // COMANDO SQL POSTE PRINCIPAL
     $sql_pp = "UPDATE pp_posteprincipal
-               SET pp_classe_via = '$dg_classe_via'
+               SET pp_classe_via = '$pp_classe_via'
                WHERE pp_id = '$id_poste'";
 
     $retorno_pp = $conexao->query($sql_pp);
@@ -678,10 +702,6 @@ if ($_POST != null)
                     '<div class="form-group col-lg-12 col-md-12 col-sm-12"><label for="otherTipoLampada">Outra:</label> <input type="text" class="form-control" id="otherTipoLampada" name="otherTipoLampada" required/>';
                 else document.getElementById('outraTipoLampada').innerHTML='';
             }
-            //  <div class="form-group col-lg-3 col-md-6 col-sm-12">
-            //              <label for="md_largura_via_l2">Largura de Via 2 (m):</label>
-            //              <input type="text" class="form-control" id="md_largura_via_l2" name="md_largura_via_l2" required> 
-            //          </div>
         </script>
         <script type="text/javascript">
             function showfieldPotenciaLampada(name){
@@ -719,12 +739,13 @@ if ($_POST != null)
 
                 <!-- DADOS GEOGRÁFICOS -->
                 <label class="titulo-dados">Dados Geográficos</label>
-                <!-- CLASSE DA VIA --> 
+                <!-- ID DO POSTE --> 
                 <div class="row">
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="idPoste">ID do Poste</label>
-                        <input type="number" class="form-control" id="idPoste" name="id_poste">
+                        <input type="number" class="form-control" id="idPoste" name="id_poste" value="<?php echo $id_edit ?>" required>
                     </div>
+                    <!-- CLASSE DA VIA --> 
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="dg_classe_via">Classe da Via</label>
                         <select class="form-control" name="dg_classe_via" id="dg_classe_via">
@@ -741,7 +762,32 @@ if ($_POST != null)
                     </div>
                     <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
                 </div>
-
+                
+                <div class="row">
+                    <!-- ESTADO -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_estado">ESTADO</label>
+                        <input type="text" class="form-control" id="pp_estado" name="cg_estado" value="<?php echo  ?>" required>
+                    </div>
+                    <!-- CIDADE -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_cidade">Cidade</label>
+                        <input type="text" class="form-control" id="pp_cidade" name="cg_cidade" value="<?php echo  ?>" required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- RA -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_regiao_administrativa">Região Administrativa</label>
+                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="cg_regiao_administrativa" value="<?php echo  ?>" required>
+                    </div>
+                    <!-- ENDEREÇO -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_endereco">Endereço</label>
+                        <input type="text" class="form-control" id="pp_endereco" name="cg_endereco" value="<?php echo  ?>" required>
+                    </div>
+                </div>
 
 
                 <!-- COORDENADA GEORREFERÊNCIADA -->
@@ -753,55 +799,55 @@ if ($_POST != null)
                                 <label>P1</label>
                             </td>
                             <td>
-                                <label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmx" required>
+                                <label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lat" required>
                             </td>
                             <td class="v-align" rowspan="2">
                                 <label>P2</label>
                             </td>
                             <td>
-                                <label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmx" required>
+                                <label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lat" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_utmy" required>
+                                <label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lng" required>
                             </td>
                             <td>
-                                <label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_utmy" required>
+                                <label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lng" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"><label>P3</label></td>
-                            <td><label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmx" required></td>
+                            <td><label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P4</label></td>
-                            <td><label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmx" required></td>
+                            <td><label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_utmy" required></td>
-                            <td><label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_utmy" required></td>
+                            <td><label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lng" required></td>
+                            <td><label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lng" required></td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"> <label>P5</label></td>
-                            <td><label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmx" required></td>
+                            <td><label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P6</label></td>
-                            <td> <label>UTM-X:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmx" required></td>
+                            <td> <label>LAT:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_utmy" required></td>
+                            <td><label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lng" required></td>
 
-                            <td> <label>UTM-Y:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_utmy" required></td>
+                            <td> <label>LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lng" required></td>
                         </tr>
                     </table>
                 </div>
