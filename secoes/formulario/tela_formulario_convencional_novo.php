@@ -27,27 +27,27 @@ if ($_POST != null)
     {
         $pp_estado = $_POST['pp_estado'];
     }
-    
+
     if (isset($_POST['pp_cidade']))
     {
         $pp_cidade = $_POST['pp_cidade'];
     }
-    
+
     if (isset($_POST['pp_regiao_administrativa']))
     {
         $pp_regiao_administrativa = $_POST['pp_regiao_administrativa'];
     }
-    
+
     if (isset($_POST['pp_endereco']))
     {
         $pp_endereco = $_POST['pp_endereco'];
     }
-    
+
     if (isset($_POST['pp_classe_via']))
     {
         $pp_classe_via = $_POST['pp_classe_via'];
     }
-    
+
     // DATA DE CADASTRO
     if (isset($_POST['data_cadastro']))
     {
@@ -744,7 +744,7 @@ if ($_POST != null)
 
                 <!-- DADOS GEOGRÁFICOS -->
                 <label class="titulo-dados">Dados Geográficos</label>
-                 
+
                 <div class="row">
                     <!-- ID DO POSTE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
@@ -773,25 +773,25 @@ if ($_POST != null)
                     <!-- ESTADO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_estado">ESTADO</label>
-                        <input type="text" class="form-control" id="pp_estado" name="cg_estado" required>
+                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" required>
                     </div>
                     <!-- CIDADE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_cidade">Cidade</label>
-                        <input type="text" class="form-control" id="pp_cidade" name="cg_cidade" required>
+                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" required>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <!-- RA -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_regiao_administrativa">Região Administrativa</label>
-                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="cg_regiao_administrativa" required>
+                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="pp_regiao_administrativa" required>
                     </div>
                     <!-- ENDEREÇO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco">Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco" name="cg_endereco" required>
+                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" required>
                     </div>
                 </div>
 
@@ -1129,8 +1129,10 @@ if ($_POST != null)
                 <!-- MEDIÇÕES -->
                 <label class="titulo-dados">Medições Métricas e Luminotécnicas</label>
                 <br>
-                <br>
+
                 <label class="subtitulo-dados">Grade Padrão</label>
+                <br>
+
                 <div class="row">
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">   
                         <label for="md_configuracao">Configuração</label>

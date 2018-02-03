@@ -13,6 +13,30 @@ if ($_SESSION["usu_logado"] != "ok")
 
 $id_edit = $_GET['id_poste'];
 
+$sql_buscaposte = "SELECT pp_id, pp_Estado, pp_Cidade, pp_Endereco, pp_Regiao_Administrativa,
+                   pp_LAT_DD, pp_LNG_DD FROM pp_posteprincipal WHERE pp_id = '$id_edit'";
+
+$retorno_buscaposte = $conexao->query($sql_buscaposte);
+
+if ($retorno_buscaposte == true) {
+    if ($retorno_buscaposte->num_rows > 0)
+    {
+        while($registro = $retorno_buscaposte->fetch_array())
+        {
+            $Estado = $registro['pp_Estado'];
+            $Cidade = $registro['pp_Cidade'];
+            $Endereco = $registro['pp_Endereco'];
+            $Regiao_Administrativa = $registro['pp_Regiao_Administrativa'];
+            $LAT_DD = $registro['pp_LAT_DD'];
+            $LNG_DD = $registro['pp_LNG_DD'];
+        }
+    }
+} else {
+    echo "<script>
+          alert('Poste não encontrado!');
+          </script>";
+}
+
 // BUSCANDO DADOS DO POSTE JÁ ENCONTRADO
 
 if ($_POST != null)
@@ -29,27 +53,27 @@ if ($_POST != null)
     {
         $pp_estado = $_POST['pp_estado'];
     }
-    
+
     if (isset($_POST['pp_cidade']))
     {
         $pp_cidade = $_POST['pp_cidade'];
     }
-    
+
     if (isset($_POST['pp_regiao_administrativa']))
     {
         $pp_regiao_administrativa = $_POST['pp_regiao_administrativa'];
     }
-    
+
     if (isset($_POST['pp_endereco']))
     {
         $pp_endereco = $_POST['pp_endereco'];
     }
-    
+
     if (isset($_POST['pp_classe_via']))
     {
         $pp_classe_via = $_POST['pp_classe_via'];
     }
-    
+
     // DATA DE CADASTRO
     if (isset($_POST['data_cadastro']))
     {
@@ -615,7 +639,13 @@ if ($_POST != null)
 
     // COMANDO SQL POSTE PRINCIPAL
     $sql_pp = "UPDATE pp_posteprincipal
-               SET pp_classe_via = '$pp_classe_via'
+               SET pp_Estado = '$pp_estado',
+               pp_Cidade = '$pp_cidade',
+               pp_Endereco = '$pp_endereco',
+               pp_Regiao_Administrativa = '$pp_regiao_administrativa',
+               pp_LAT_DD = '$dg_cg_p1_lat',
+               pp_LNG_DD = '$dg_cg_p1_lng',
+               pp_classe_via = '$pp_classe_via'
                WHERE pp_id = '$id_poste'";
 
     $retorno_pp = $conexao->query($sql_pp);
@@ -747,8 +777,8 @@ if ($_POST != null)
                     </div>
                     <!-- CLASSE DA VIA --> 
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <label for="dg_classe_via">Classe da Via</label>
-                        <select class="form-control" name="dg_classe_via" id="dg_classe_via">
+                        <label for="pp_classe_via">Classe da Via</label>
+                        <select class="form-control" name="pp_classe_via" id="pp_classe_via">
                             <option value="V1">V1</option>
                             <option value="V2">V2</option>
                             <option value="V3">V3</option>
@@ -762,30 +792,30 @@ if ($_POST != null)
                     </div>
                     <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
                 </div>
-                
+
                 <div class="row">
                     <!-- ESTADO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_estado">ESTADO</label>
-                        <input type="text" class="form-control" id="pp_estado" name="cg_estado" value="<?php echo  ?>" required>
+                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" value="<?php echo $Estado ?>" required>
                     </div>
                     <!-- CIDADE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_cidade">Cidade</label>
-                        <input type="text" class="form-control" id="pp_cidade" name="cg_cidade" value="<?php echo  ?>" required>
+                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" value="<?php echo $Cidade ?>" required>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <!-- RA -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_regiao_administrativa">Região Administrativa</label>
-                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="cg_regiao_administrativa" value="<?php echo  ?>" required>
+                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="pp_regiao_administrativa" value="<?php echo $Regiao_Administrativa ?>" required>
                     </div>
                     <!-- ENDEREÇO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco">Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco" name="cg_endereco" value="<?php echo  ?>" required>
+                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" value="<?php echo $Endereco ?>" required>
                     </div>
                 </div>
 
@@ -800,7 +830,7 @@ if ($_POST != null)
                             </td>
                             <td>
                                 <label>LAT:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lat" required>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lat" value="<?php echo $LAT_DD ?>" required>
                             </td>
                             <td class="v-align" rowspan="2">
                                 <label>P2</label>
@@ -813,7 +843,7 @@ if ($_POST != null)
                         <tr>
                             <td>
                                 <label>LNG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lng" required>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lng" value="<?php echo $LNG_DD ?>" required>
                             </td>
                             <td>
                                 <label>LNG:</label>
