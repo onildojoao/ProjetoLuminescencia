@@ -190,6 +190,11 @@ if ($_POST != null)
     {
         $dt_tipo_braco = $_POST['dt_tipo_braco'];
     }
+    
+    if (isset($_POST['dt_tamanho_braco']))
+    {
+        $dt_tamanho_braco = $_POST['dt_tamanho_braco'];
+    }
 
     if (isset($_POST['dt_tipo_comando']))
     {
@@ -540,7 +545,7 @@ if ($_POST != null)
                 cad_dg_cg_p6_lat, cad_dg_cg_p6_lng,
                 cad_dt_potencia_lampada, cad_dt_tipo_lampada, cad_dt_tipo_luminaria,
                 cad_dt_material_poste, cad_dt_uso_poste,
-                cad_dt_altura_poste, cad_dt_tipo_braco, 
+                cad_dt_altura_poste, cad_dt_tipo_braco, cad_dt_tamanho_braco,
                 cad_dt_tipo_comando, cad_dt_tipo_reator,
                 cad_dt_rede_alimentacao, cad_dt_numero_petalas, 
                 cad_dt_nome_luminaria, cad_dt_fabricante_luminaria, 
@@ -574,7 +579,7 @@ if ($_POST != null)
                 '$dg_cg_p6_lat', '$dg_cg_p6_lng',
                 '$dt_potencia_lampada', '$dt_tipo_lampada', '$dt_tipo_luminaria',
                 '$dt_material_poste', '$dt_uso_poste',
-                '$dt_altura_poste', '$dt_tipo_braco', 
+                '$dt_altura_poste', '$dt_tipo_braco', '$dt_tamanho_braco',
                 '$dt_tipo_comando', '$dt_tipo_reator',
                 '$dt_rede_alimentacao', '$dt_numero_petalas',
                 '$dt_nome_luminaria', '$dt_fabricante_luminaria',
@@ -772,7 +777,7 @@ if ($_POST != null)
                 <div class="row">
                     <!-- ESTADO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <label for="pp_estado">ESTADO</label>
+                        <label for="pp_estado">Estado</label>
                         <input type="text" class="form-control" id="pp_estado" name="pp_estado" required>
                     </div>
                     <!-- CIDADE -->
@@ -804,54 +809,54 @@ if ($_POST != null)
                                 <label>P1</label>
                             </td>
                             <td>
-                                <label>LAT:</label>
+                                <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lat" required>
                             </td>
                             <td class="v-align" rowspan="2">
                                 <label>P2</label>
                             </td>
                             <td>
-                                <label>LAT:</label>
+                                <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lat" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>LNG:</label>
+                                <label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lng" required>
                             </td>
                             <td>
-                                <label>LNG:</label>
+                                <label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lng" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"><label>P3</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P4</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>LNG:</label>
+                            <td><label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lng" required></td>
-                            <td><label>LNG:</label>
+                            <td><label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lng" required></td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"> <label>P5</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P6</label></td>
-                            <td> <label>LAT:</label>
+                            <td> <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>LNG:</label>
+                            <td><label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lng" required></td>
 
-                            <td> <label>LNG:</label>
+                            <td> <label class="espaca-coluna">LNG:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lng" required></td>
                         </tr>
                     </table>
