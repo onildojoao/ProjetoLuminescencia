@@ -653,55 +653,55 @@ if ($_POST != null)
                                 <label>P1</label>
                             </td>
                             <td>
-                                <label>LAT:</label>
+                                <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lat" required>
                             </td>
                             <td class="v-align" rowspan="2">
                                 <label>P2</label>
                             </td>
                             <td>
-                                <label>LAT:</label>
+                                <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lat" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_long" required>
+                                <label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p1_lng" required>
                             </td>
                             <td>
-                                <label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_long" required>
+                                <label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p2_lng" required>
                             </td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"><label>P3</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P4</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_long" required></td>
-                            <td><label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_long" required></td>
+                            <td><label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p3_lng" required></td>
+                            <td><label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p4_lng" required></td>
                         </tr>
                         <tr>
                             <td class="v-align" rowspan="2"> <label>P5</label></td>
-                            <td><label>LAT:</label>
+                            <td><label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lat" required></td>
                             <td class="v-align" rowspan="2"><label>P6</label></td>
-                            <td> <label>LAT:</label>
+                            <td> <label class="espaca-coluna">LAT:</label>
                                 <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lat" required></td>
                         </tr>
                         <tr>
-                            <td><label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_long" required></td>
+                            <td><label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p5_lng" required></td>
 
-                            <td> <label>LONG:</label>
-                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_long" required></td>
+                            <td> <label class="espaca-coluna">LNG:</label>
+                                <input type="text" class="input-tabelas-coordenadas" name="dg_cg_p6_lng" required></td>
                         </tr>
                     </table>
                 </div>
