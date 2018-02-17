@@ -352,3 +352,7 @@ table {
 .espaca-coluna {
     width: 45px;
 }
+
+.espaca-coluna-mais {
+    width: 75px;
+}

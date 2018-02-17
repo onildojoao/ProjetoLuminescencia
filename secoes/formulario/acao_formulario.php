@@ -229,55 +229,26 @@ if ($_POST != null)
     {
         $md_posicao_poste = $_POST['md_posicao_poste'];
     }
+
     if (isset($_POST['md_lampada_apagada_pl1'])){
-        if ($_POST['md_lampada_apagada_pl1'] == "apagada")
-            $md_lampada_apagada_pl1 = true;
-        else
-            $md_lampada_apagada_pl1 = false;
-    } else {
-        $md_lampada_apagada_pl1 = false;
+        $md_lampada_apagada_pl1 = $_POST['md_lampada_apagada_pl1'];
     }
     if (isset($_POST['md_lampada_apagada_pl2'])){
-        if ($_POST['md_lampada_apagada_pl2'] == "apagada")
-            $md_lampada_apagada_pl2 = true;
-        else
-            $md_lampada_apagada_pl2 = false;
-    } else {
-        $md_lampada_apagada_pl2 = false;
+        $md_lampada_apagada_pl2 = $_POST['md_lampada_apagada_pl2'];
     }
     if (isset($_POST['md_lampada_apagada_pl3'])){
-        if ($_POST['md_lampada_apagada_pl3'] == "apagada")
-            $md_lampada_apagada_pl3 = true;
-        else
-            $md_lampada_apagada_pl3 = false;
-    } else {
-        $md_lampada_apagada_pl3 = false;
+        $md_lampada_apagada_pl3 = $_POST['md_lampada_apagada_pl3'];
     }
     if (isset($_POST['md_lampada_apagada_pl4'])){
-        if ($_POST['md_lampada_apagada_pl4'] == "apagada")
-            $md_lampada_apagada_pl4 = true;
-        else
-            $md_lampada_apagada_pl4 = false;
-    } else {
-        $md_lampada_apagada_pl4 = false;
+        $md_lampada_apagada_pl4 = $_POST['md_lampada_apagada_pl4'];
     }
     if (isset($_POST['md_lampada_apagada_pl5'])){
-        if ($_POST['md_lampada_apagada_pl5'] == "apagada")
-            $md_lampada_apagada_pl5 = true;
-        else
-            $md_lampada_apagada_pl5 = false;
-    } else {
-        $md_lampada_apagada_pl5 = false;
+        $md_lampada_apagada_pl5 = $_POST['md_lampada_apagada_pl5'];
     }
     if (isset($_POST['md_lampada_apagada_pl6'])){
-        if ($_POST['md_lampada_apagada_pl6'] == "apagada")
-            $md_lampada_apagada_pl6 = true;
-        else
-            $md_lampada_apagada_pl6 = false;
-    } else {
-        $md_lampada_apagada_pl6 = false;
+        $md_lampada_apagada_pl6 = $_POST['md_lampada_apagada_pl6'];
     }
-
+    
     // TABELA DE LUMINÂNCIA
     // PRIMEIRA LINHA DA TABELA
     if (isset($_POST['md_c1_l1']))
@@ -785,19 +756,13 @@ if ($_POST != null)
         echo "<script>
         alert('Erro ao Cadastrar!');
         </script>";
-        
+
         echo $retorno_pp;
 
         echo $retorno_cad;
-        
+
         echo $ok_cad;
         echo $ok_pp;
-        echo $md_lampada_apagada_pl1;
-        echo $md_lampada_apagada_pl2;
-        echo $md_lampada_apagada_pl3;
-        echo $md_lampada_apagada_pl4;
-        echo $md_lampada_apagada_pl5;
-        echo $md_lampada_apagada_pl6;
         //echo $erro_pp;
         //echo $erro_cad;
 
