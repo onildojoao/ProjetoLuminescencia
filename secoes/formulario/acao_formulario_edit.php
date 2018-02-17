@@ -80,14 +80,14 @@ if ($_POST != null)
         $dg_cg_p2_lng = "";
     }
 
-    if (empty($dg_cg_p3_lat))
+    if (isset($_POST['dg_cg_p3_lat']))
     {
-        $dg_cg_p3_lat = "";
-    } else {
         $dg_cg_p3_lat = $_POST['dg_cg_p3_lat'];
+    } else {
+        $dg_cg_p3_lat = "";
     }
 
-    if (isset($dg_cg_p3_lng))
+    if (isset($_POST['dg_cg_p3_lng']))
     {
         $dg_cg_p3_lng = $_POST['dg_cg_p3_lng'];
     } else {
@@ -248,7 +248,7 @@ if ($_POST != null)
     if (isset($_POST['md_lampada_apagada_pl6'])){
         $md_lampada_apagada_pl6 = $_POST['md_lampada_apagada_pl6'];
     }
-
+    
     // TABELA DE LUMINÂNCIA
     // PRIMEIRA LINHA DA TABELA
     if (isset($_POST['md_c1_l1']))
@@ -274,12 +274,6 @@ if ($_POST != null)
         $md_c4_l1 = $_POST['md_c4_l1'];
     } else {
         $md_c4_l1 = "";
-    }
-    if (isset($_POST['md_c5_l1']))
-    {
-        $md_c5_l1 = $_POST['md_c5_l1'];
-    } else {
-        $md_c5_l1 = "";
     }
     if (isset($_POST['md_c5_l1']))
     {
@@ -604,7 +598,7 @@ if ($_POST != null)
         $md_altura_luminarias_a6 = "";
     }
 
-    if (isset($_POST['md_lampada_apagada']))
+    if (isset($_POST['md_largura_via_l1']))
     {
         $md_largura_via_l1 = $_POST['md_largura_via_l1'];
     } else {
