@@ -606,10 +606,13 @@ if ($_POST != null)
         $md_largura_via_l1 = "";
     }
     // DATA DE CADASTRO
-    if (isset($_POST['data_cadastro']))
+    if ($_POST['data_cadastro'] != "")
     {
         $data_cadastro = $_POST['data_cadastro'];
+    } else {
+        $data_cadastro = "";
     }
+
 
     // DADOS DO USUÁRIO
     if (isset($_SESSION['usu_cpf']))
@@ -669,7 +672,7 @@ if ($_POST != null)
                 '$dt_potencia_lampada', '$dt_tipo_lampada', '$dt_tipo_luminaria',
                 '$dt_tipo_braco', '$dt_altura_poste', '$dt_material_poste', '$dt_uso_poste',
                 '$dt_tipo_comando', '$dt_tipo_reator', '$dt_forma_distribuicao_energia',
-                '$df_aparencia_ponto_luminoso', $df_observacao_ponto_luminoso,
+                '$df_aparencia_ponto_luminoso', '$df_observacao_ponto_luminoso',
                 '$df_arvore_ofuscando_iluminacao','$df_situacao_poste', 
                 '$df_proximidade_luminaria_rede_energia','$df_local_dificil_acesso',
                 '$md_posicao_poste',

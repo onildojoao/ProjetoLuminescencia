@@ -1415,7 +1415,7 @@ $id_edit = $_GET['id_poste'];
                     </div>
                     <div class="col-md-4">
                         <label>Data:</label>
-                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" >
+                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" required >
                         <br>
                     </div>
                     <div class="col-md-4"></div>
