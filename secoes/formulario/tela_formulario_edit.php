@@ -397,7 +397,7 @@ if ($retorno_buscaposte == true) {
                     <!-- OBSERVAÇÃO DO PONTO LUMINOSO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_observacao_ponto_luminoso">Observação do Ponto Luminoso</label>
-                        <input class="form-control" name="df_observacao_ponto_luminoso" id="df_observacao_ponto_luminoso">
+                        <input class="form-control" name="df_observacao_ponto_luminoso" id="df_observacao_ponto_luminoso" value="não há observação">
                     </div>
 
                     <!-- ÁRVORE OFUSCANDO A ILUMINAÇÃO -->
