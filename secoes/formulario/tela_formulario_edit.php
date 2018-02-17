@@ -445,7 +445,6 @@ if ($retorno_buscaposte == true) {
                 <label class="titulo-dados">Medições Métricas e Luminotécnicas</label>
                 <br>
                 <br>
-                <label class="subtitulo-dados">Grade Padrão</label>
                 <div class="row">
                     <!-- POSIÇÃO DOS POSTES -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
@@ -471,39 +470,31 @@ if ($retorno_buscaposte == true) {
                                 <label class="subtitulo-dados">Se houver lâmpada apagada marcar posição:</label>
                             </td>
                             <td><label>PL. 1:</label></td>
-                            <td class="espaca-coluna-mais espaca-linha">
+                            <td class="">
                                 <input type="radio" value="Acesa" name="md_lampada_apagada_pl1" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl1">Apagada
-                            </td>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl1">Apagada</td>
                             <td><label>PL. 3:</label></td>
-                            <td class="espaca-coluna-mais espaca-linha">
+                            <td class="">
                                 <input type="radio" value="Acesa" name="md_lampada_apagada_pl3" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl3">Apagada
-                            </td>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl3">Apagada</td>
                             <td>
-                                <label>PL. 5:</label>
-                            </td>
-                            <td class="espaca-coluna-mais">
-                                <input type="radio" value="Acesa" name="md_lampada_apagada_pl5" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl5">Apagada
-                            </td>
+                                <label>PL. 5:</label></td>
+                            <td class="" type="radio" value="Acesa" name="md_lampada_apagada_pl5" checked>Acesa<br>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl5">Apagada</td>
                         </tr>
                         <tr>
                             <td><label>PL. 2:</label></td>
-                            <td class="espaca-coluna-mais espaca-linha">
+                            <td class="">
                                 <input type="radio" value="Acesa" name="md_lampada_apagada_pl2" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl2">Apagada
-                            </td>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl2">Apagada</td>
                             <td><label>PL. 4:</label></td>
-                            <td class="espaca-coluna-mais espaca-linha">
+                            <td class="">
                                 <input type="radio" value="Acesa" name="md_lampada_apagada_pl4" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl4">Apagada
-                            </td>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl4">Apagada</td>
                             <td><label>PL. 6:</label></td>
-                            <td class="espaca-coluna-mais espaca-linha">
+                            <td class="">
                                 <input type="radio" value="Acesa" name="md_lampada_apagada_pl6" checked>Acesa<br>
-                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl6">Apagada
-                            </td>
+                                <input type="radio" value="Apagada" name="md_lampada_apagada_pl6">Apagada</td>
                         </tr>
                     </table>
                 </div>

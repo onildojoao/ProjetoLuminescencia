@@ -1,7 +1,6 @@
 <?php 
 //Include para conexão com o banco.
 include "../../utilidades/conexao/conexao.php";
-header('Content-type: text/plain; charset=utf-8');
 
 //Inicia a Sessão
 session_start();
