@@ -107,7 +107,7 @@ if ($retorno_buscaposte == true) {
                 <div class="row">
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="idPoste">ID do Poste</label>
-                        <input type="number" class="form-control" id="idPoste" name="id_poste" value="<?php echo $id_edit ?>" >
+                        <input type="number" class="form-control" id="idPoste" name="id_poste" value="<?php echo $id_edit ?>" required>
                     </div>
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="dg_classe_via">Classe da Via</label>
@@ -126,12 +126,12 @@ if ($retorno_buscaposte == true) {
                     <!-- ESTADO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_estado">Estado</label>
-                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" value="<?php echo $Estado ?>">
+                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" value="<?php echo $Estado ?>" required>
                     </div>
                     <!-- CIDADE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_cidade">Cidade</label>
-                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" value="<?php echo $Cidade ?>">
+                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" value="<?php echo $Cidade ?>" required>
                     </div>
                 </div>
 
@@ -144,12 +144,12 @@ if ($retorno_buscaposte == true) {
                     <!-- ENDEREÇO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco">Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" value="<?php echo $Endereco ?>">
+                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" value="<?php echo $Endereco ?>" required>
                     </div>
                     <!-- OBSERVAÇÃO ENDEREÇO -->
                     <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco_observacao">Observação Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco_observacao" name="pp_endereco_observacao" value="<?php echo $Endereco_Observacao ?>">
+                        <input type="text" class="form-control" id="pp_endereco_observacao" name="pp_endereco_observacao" value="<?php echo $Endereco_Observacao ?>" required>
                     </div>
                 </div>
 
@@ -657,7 +657,7 @@ if ($retorno_buscaposte == true) {
                     </div>
                     <div class="col-md-4">
                         <label>Data:</label>
-                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" >
+                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" required>
                         <br>
                     </div>
                     <div class="col-md-4"></div>

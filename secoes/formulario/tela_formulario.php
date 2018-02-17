@@ -866,7 +866,7 @@ $id_edit = $_GET['id_poste'];
                 <div class="row">
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="idPoste">ID do Poste</label>
-                        <input type="number" class="form-control" id="idPoste" name="id_poste" value="<?php echo $id_edit ?>" >
+                        <input type="number" class="form-control" id="idPoste" name="id_poste" value="<?php echo $id_edit ?>" required>
                     </div>
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="dg_classe_via">Classe da Via</label>
@@ -885,12 +885,12 @@ $id_edit = $_GET['id_poste'];
                     <!-- ESTADO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_estado">Estado</label>
-                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" >
+                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" required>
                     </div>
                     <!-- CIDADE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_cidade">Cidade</label>
-                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" >
+                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" required>
                     </div>
                 </div>
 
@@ -898,17 +898,17 @@ $id_edit = $_GET['id_poste'];
                     <!-- RA -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_regiao_administrativa">Região Administrativa</label>
-                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="pp_regiao_administrativa" >
+                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="pp_regiao_administrativa" required>
                     </div>
                     <!-- ENDEREÇO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco">Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" >
+                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" required>
                     </div>
                     <!-- OBSERVAÇÃO ENDEREÇO -->
                     <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <label for="pp_endereco_observacao">Observação Endereço</label>
-                        <input type="text" class="form-control" id="pp_endereco_observacao" name="pp_endereco_observacao" >
+                        <input type="text" class="form-control" id="pp_endereco_observacao" name="pp_endereco_observacao" required>
                     </div>
                 </div>
 
@@ -1415,7 +1415,7 @@ $id_edit = $_GET['id_poste'];
                     </div>
                     <div class="col-md-4">
                         <label>Data:</label>
-                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" >
+                        <input type="text" class="form-control" id="datepicker" name="data_cadastro" required>
                         <br>
                     </div>
                     <div class="col-md-4"></div>
