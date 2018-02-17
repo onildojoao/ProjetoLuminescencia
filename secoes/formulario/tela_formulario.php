@@ -11,7 +11,7 @@ if ($_SESSION["usu_logado"] != "ok")
     header ('Location: ../login/tela_login.php');
 } 
 
-$id_edit = $_GET['id_poste'];
+//$id_edit = $_GET['id_poste'];
 
 if ($_POST != null)
 {
@@ -152,9 +152,9 @@ if ($_POST != null)
         $dt_uso_poste = $_POST['dt_uso_poste'];
     }
 
-    if (isset($_POST['dt_tipo_rele']))
+    if (isset($_POST['dt_tipo_comando']))
     {
-        $dt_tipo_rele = $_POST['dt_tipo_rele'];
+        $dt_tipo_comando = $_POST['dt_tipo_comando'];
     }
 
     if (isset($_POST['dt_tipo_reator']))
@@ -173,9 +173,16 @@ if ($_POST != null)
         $df_aparencia_ponto_luminoso = $_POST['df_aparencia_ponto_luminoso'];
     }
 
-    if (isset($_POST['df_estado_lampada']))
+    if (isset($_POST['df_observacao_ponto_luminoso']))
     {
-        $df_estado_lampada = $_POST['df_estado_lampada'];
+        $df_observacao_ponto_luminoso = $_POST['df_observacao_ponto_luminoso'];
+    } else {
+        $df_observacao_ponto_luminoso = "";
+    }
+
+    if (isset($_POST['md_posicao_poste']))
+    {
+        $md_posicao_poste = $_POST['md_posicao_poste'];
     }
 
     if (isset($_POST['df_arvore_ofuscando_iluminacao']))
@@ -183,9 +190,9 @@ if ($_POST != null)
         $df_arvore_ofuscando_iluminacao = $_POST['df_arvore_ofuscando_iluminacao'];
     }
 
-    if (isset($_POST['df_posicionamento_poste']))
+    if (isset($_POST['df_situacao_poste']))
     {
-        $df_posicionamento_poste = $_POST['df_posicionamento_poste'];
+        $df_situacao_poste = $_POST['df_situacao_poste'];
     }
 
     if (isset($_POST['df_proximidade_luminaria_rede_energia']))
@@ -197,7 +204,7 @@ if ($_POST != null)
     {
         $df_local_dificil_acesso = $_POST['df_local_dificil_acesso'];
     }
-
+ 
     // MEDIÇÕES
     if (isset($_POST['md_configuracao']))
     {
@@ -218,40 +225,6 @@ if ($_POST != null)
         $md_largura_via_l2 = 0;
     }
 
-    if (isset($_POST['md_largura_calcada_l1']))
-    {
-        $md_largura_calcada_l1 = $_POST['md_largura_calcada_l1'];
-    } else {
-        $md_largura_calcada_l1 = 0;
-    }
-
-    if (isset($_POST['md_largura_calcada_l2']))
-    {
-        $md_largura_calcada_l2 = $_POST['md_largura_calcada_l2'];
-    } else {
-        $md_largura_calcada_l2 = 0;
-    }
-
-    if (isset($_POST['md_altura_montagem']))
-    {
-        $md_altura_montagem = $_POST['md_altura_montagem'];
-    } else {
-        $md_altura_montagem = 0;
-    }
-
-    if (isset($_POST['md_projecao_horizontal_braco']))
-    {
-        $md_projecao_horizontal_braco = $_POST['md_projecao_horizontal_braco'];
-    } else {
-        $md_projecao_horizontal_braco = 0;
-    }
-
-    if (isset($_POST['md_espacamento_entre_postes']))
-    {
-        $md_espacamento_entre_postes = $_POST['md_espacamento_entre_postes'];
-    } else {
-        $md_espacamento_entre_postes = 0;
-    }
 
     // TABELA DE LUMINÂNCIA
 
@@ -474,19 +447,17 @@ if ($_POST != null)
                 cad_dt_potencia_lampada, cad_dt_tipo_lampada, cad_dt_tipo_luminaria,
                 cad_dt_tipo_braco, cad_dt_altura_poste,
                 cad_dt_material_poste, cad_dt_uso_poste,
-                cad_dt_tipo_rele, cad_dt_tipo_reator,
+                cad_dt_tipo_comando, cad_dt_tipo_reator,
                 cad_dt_forma_distribuicao_energia,
                 cad_df_aparencia_ponto_luminoso,
-                cad_df_estado_lampada, 
+                cad_df_observacao_ponto_luminoso,
+                cad_md_posicao_poste, 
                 cad_df_arvore_ofuscando_iluminacao,
-                cad_df_posicionamento_poste,
+                cad_df_situacao_poste,
                 cad_df_proximidade_luminaria_rede_energia,
                 cad_df_local_dificil_acesso,
                 cad_md_configuracao, 
-                cad_md_largura_via_l1, cad_md_largura_via_l2, cad_md_largura_calcada_l1, cad_md_largura_calcada_l2, 
-                cad_md_altura_montagem,
-                cad_md_projecao_horizontal_braco,
-                cad_md_espacamento_entre_postes,
+                cad_md_largura_via_l1, cad_md_largura_via_l2, 
                 cad_md_c1_l1, cad_md_c2_l1, cad_md_c3_l1,
                 cad_md_c4_l1, cad_md_c5_l1, 
                 cad_md_c1_l2,cad_md_c2_l2, cad_md_c3_l2, 
@@ -509,18 +480,14 @@ if ($_POST != null)
                 '$dt_potencia_lampada', '$dt_tipo_lampada', '$dt_tipo_luminaria',
                 '$dt_tipo_braco', '$dt_altura_poste',
                 '$dt_material_poste', '$dt_uso_poste',
-                '$dt_tipo_rele', '$dt_tipo_reator',
+                '$dt_tipo_comando', '$dt_tipo_reator',
                 '$dt_forma_distribuicao_energia',
-                '$df_aparencia_ponto_luminoso',
-                '$df_estado_lampada', '$df_arvore_ofuscando_iluminacao',
-                '$df_posicionamento_poste', '$df_proximidade_luminaria_rede_energia',
+                '$df_aparencia_ponto_luminoso', $df_observacao_ponto_luminoso,
+                '$md_posicao_poste', '$df_arvore_ofuscando_iluminacao',
+                '$df_situacao_poste', '$df_proximidade_luminaria_rede_energia',
                 '$df_local_dificil_acesso',
                 '$md_configuracao',
                 '$md_largura_via_l1', '$md_largura_via_l2',
-                '$md_largura_calcada_l1', '$md_largura_calcada_l2',
-                '$md_altura_montagem', 
-                '$md_projecao_horizontal_braco',
-                '$md_espacamento_entre_postes',
                 '$md_c1_l1', '$md_c2_l1', '$md_c3_l1',
                 '$md_c4_l1', '$md_c5_l1',
                 '$md_c1_l2', '$md_c2_l2', '$md_c3_l2',
@@ -753,12 +720,14 @@ if ($_POST != null)
                             <option value="56">56</option>
                             <option value="60">60</option>
                             <option value="70">70</option>
+                            <option value="70">80</option>
                             <option value="100">100</option>
                             <option value="125">125</option>
                             <option value="150">150</option>
                             <option value="160">160</option>
                             <option value="250">250</option>
                             <option value="300">300</option>
+                            <option value="300">320</option>
                             <option value="400">400</option>
                             <option value="500">500</option>
                             <option value="600">600</option>
@@ -873,12 +842,10 @@ if ($_POST != null)
                     </div>
 
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="dt_tipo_rele">Tipo de Relê</label>
-                        <select class="form-control" name="dt_tipo_rele" id="dt_tipo_rele">
-                            <option value="Fotoeletrico">Fotoelétrico</option>
-                            <option value="Foto-eletonico">Foto-eletrônico</option>
-                            <option value="Sem Rele">Sem Relê</option>
-                            <option value="Nao Informado">Não Informado</option>
+                        <label for="dt_tipo_comando">Tipo de Comando</label>
+                        <select class="form-control" name="dt_tipo_comando" id="dt_tipo_comando">
+                            <option value="Indvidual">Individual</option>
+                            <option value="Em grupo">Em grupo</option>
                         </select>
                     </div>
                 </div>
@@ -914,17 +881,14 @@ if ($_POST != null)
                             <option value="Bem Instalado">Bem Instalado</option>
                             <option value="Mal Instalado">Mal Instalado</option>
                             <option value="Sujo">Sujo</option>
-                            <option value="Corroido">Corroído</option>
+                            <option value="Deteriorado">Deteriorado</option>
                         </select>
                     </div>
 
-                    <!-- ESTADO DA LÂMPADA -->
+                    <!-- OBSERVAÇÃO DO PONTO LUMINOSO -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="df_estado_lampada">Estado da Lâmpada</label>
-                        <select class="form-control" name="df_estado_lampada" id="df_estado_lampada">
-                            <option value="Acesa">Acesa</option>
-                            <option value="Apagada">Apagada</option>
-                        </select>
+                        <label for="df_observacao_ponto_luminoso">Observação do Ponto Luminoso</label>
+                        <input class="form-control" name="df_observacao_ponto_luminoso" id="df_observacao_ponto_luminoso">
                     </div>
 
                     <!-- ÁRVORE OFUSCANDO A ILUMINAÇÃO -->
@@ -936,15 +900,16 @@ if ($_POST != null)
                         </select>
                     </div>
 
-                    <!-- POSICIONAMENTO DO POSTE -->
+                    <!-- SITUACAO DO POSTE -->
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="df_posicionamento_poste">Posicionamento do Poste</label>
-                        <select class="form-control" name="df_posicionamento_poste" id="df_posicionamento_poste">
+                        <label for="df_situacao_poste">Situação do Poste</label>
+                        <select class="form-control" name="df_situacao_poste" id="df_situacao_poste">
                             <option value="Normal">Normal</option>
                             <option value="Desaprumado">Desaprumado</option>
                             <option value="Fletido">Fletido</option>
                         </select>
                     </div>
+                    
                 </div>
                 <div class="row">
                     <!-- PROXIMIDADE DA LUMINÁRIA EM RELAÇÃO À REDE DE ENERGIA -->
@@ -958,7 +923,7 @@ if ($_POST != null)
                     </div>
 
                     <!-- LOCAL DE DIFÍCIL ACESSO -->
-                    <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_local_dificil_acesso">Local de Difícil Acesso</label>
                         <select class="form-control" name="df_local_dificil_acesso" id="df_local_dificil_acesso">
                             <option value="Sim">Sim</option>
@@ -973,58 +938,60 @@ if ($_POST != null)
                 <br>
                 <label class="subtitulo-dados">Grade Padrão</label>
                 <div class="row">
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">   
-                        <label for="md_configuracao">Configuração</label>
-                        <select class="form-control" name="md_configuracao" id ="md_configuracao">
-                            <option value="PU">PU</option>
-                            <option value="PBF">PBF</option>
-                            <option value="PBA">PBA</option>
-                            <option value="PCC">PCC</option>
+                    <!-- POSIÇÃO DOS POSTES -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                        <label for="md_posicao_poste">Posição dos postes</label>
+                        <select class="form-control" name="md_posicao_poste" id="md_posicao_poste">
+                            <option value="Unilaterais">Unilaterais</option>
+                            <option value="Bilaterais frontal">Bilaterais frontal</option>
+                            <option value="Bilaterais alternado">Bilaterais alternado</option>
+                            <option value="Canteiro central">Canteiro central</option>
                         </select>
-                    </div>          
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
-                        <!-- LARGURA DE CADA VIA -->
-                        <label  for="md_largura_via_l1">Largura de Via 1 (m):</label>
-                        <input type="text" class="form-control" id="md_largura_via_l1" name="md_largura_via_l1" required>
-                    </div>
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="md_largura_via_l2">Largura de Via 2 (m):</label>
-                        <input type="text" class="form-control" id="md_largura_via_l2" name="md_largura_via_l2" required> 
-
-                    </div>
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="md_largura_via_l2">Altura Montagem (m):</label>
-                        <input type="text" class="form-control" id="md_altura_montagem" name="md_altura_montagem" required> 
-                    </div>
+                    </div>               
 
                 </div>
-                <div class="row">
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
-                        <label  for="md_projecao_horizontal_braco">Projeção Horizontal Braço (m):</label>
-                        <input type="text" class="form-control" id="md_projecao_horizontal_braco" name="md_projecao_horizontal_braco" required>
-                    </div>  
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12"> 
-                        <label  for="md_largura_calcada_l1">Largura da Calçada 1 (m):</label>
-                        <input type="text" class="form-control" id="md_largura_calcada_l1" name="md_largura_calcada_l1" required>
-                    </div>
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="md_largura_calcada_l2">Largura da Calçada 2 (m):</label>
-                        <input type="text" class="form-control" id="md_largura_calcada_l2" name="md_largura_calcada_l2" required> 
-
-                    </div>
-
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                        <label for="md_espacamento_entre_postes">Espaçamento entre Postes (m):</label>
-                        <input type="text" class="form-control" id="md_espacamento_entre_postes" name="md_espacamento_entre_postes" required> 
-
-                    </div>
-                </div>
+            
                 <br>
+
+                <!-- LAMPADAS APAGADAS -->
+                <div class="form-group">
+                        <table class="teste">
+                            <tr>
+                                <td class="v-align" rowspan="2">
+                                    <label class="subtitulo-dados">Se houver lampada apagada marcar posição (m)</label>
+                                </td>
+                                <td><label>PL - 1:</label></td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl1">
+                                </td>
+                                <td><label>PL - 3:</label></td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl3">
+                                </td>
+                                <td>
+                                    <label>PL - 5:</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl5">
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td><label>PL - 2:</label></td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl2">
+                                </td>
+                                <td><label>PL - 4:</label></td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl4">
+                                </td>
+                                <td><label>PL - 6:</label></td>
+                                <td>
+                                    <input type="checkbox" value="apagado" name="md_lampada_apagada_pl6">
+                                </td>
+                            </tr>
+                        </table>
+                </div>
 
                 <!-- TABELA DE LUMINÂNCIA  -->
                 <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
@@ -1035,6 +1002,10 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l1" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l1" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c6_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c7_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c8_l1" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c9_l1" required></td>
                     </tr>
                     <div class="espaca-linha"> </div>
                     <tr>
@@ -1043,6 +1014,10 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l2" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l2" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c6_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c7_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c8_l2" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c9_l2" required></td>
                     </tr>
                     <div class="espaca-linha"> </div>
                     <tr>
@@ -1051,6 +1026,11 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c6_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c7_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c8_l3" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c9_l3" required></td>
                     </tr>
                     <div class="espaca-linha"> </div>
                     <tr>
@@ -1059,6 +1039,10 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l4" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l4" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c6_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c7_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c8_l4" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c9_l4" required></td>
                     </tr>
                     <div class="espaca-linha"> </div>
                     <tr>
@@ -1067,19 +1051,93 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l5" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l5" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l5" required></td>
-                    </tr>
-                    <div class="espaca-linha"> </div>
-                    <tr>
-                        <td class="elimina-recuo"><input type="text" class="input-tabelas" name="md_c1_l6" required></td>
-                        <td><input type="text" class="input-tabelas" name="md_c2_l6" required></td>
-                        <td><input type="text" class="input-tabelas" name="md_c3_l6" required></td>
-                        <td><input type="text" class="input-tabelas" name="md_c4_l6" required></td>
-                        <td><input type="text" class="input-tabelas" name="md_c5_l6" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c6_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c7_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c8_l5" required></td>
+                        <td><input type="text" class="input-tabelas" name="md_c9_l5" required></td>
                     </tr>
                 </table>
                 <br>
+                <div class="form-group">
+                        
+                <table class="teste">
+                            <tr>
+                                <td class="v-align" rowspan="3">
+                                    <label class="subtitulo-dados">Distância entre Postes (m)</label>
+                                </td>
+                                <td><label>P1-P3:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p3">
+                                </td>
+                                <td><label>P3-P5:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p3_p5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>P2-P4:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p2_p4">
+                                </td>
+                                <td><label>P4-P6:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p4_p6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>P1-P2:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p2">
+                                </td></tr>
+                        </table>
+                </div>
+
+                <!-- ALTURA DAS LUMINÁRIAS -->
+                <div class="form-group">
+                        <table class="teste">
+                            <tr>
+                                <td class="v-align" rowspan="2">
+                                    <label class="subtitulo-dados">Altura das Luminárias (m)</label>
+                                </td>
+                                <td><label>A1:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a1">
+                                </td>
+                                <td><label>A3:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a3">
+                                </td>
+                                <td>
+                                    <label>A5:</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a5">
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td><label>A2:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a2">
+                                </td>
+                                <td><label>A4:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a4">
+                                </td>
+                                <td><label>A6:</label></td>
+                                <td>
+                                    <input type="text" class="input-tabelas" name="md_altura_luminarias_a6">
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+
                 <div class="row">
-                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <!-- LARGURA DE VIA -->
+                        <label  for="md_largura_via_l1">Largura de Via(m):</label>
+                        <input type="text" class="form-control" id="md_largura_via_l1" name="md_largura_via_l1" required>
+                    </div>
                     <div class="col-md-4">
                         <label>Data:</label>
                         <input type="text" class="form-control" id="datepicker" name="data_cadastro" required>
