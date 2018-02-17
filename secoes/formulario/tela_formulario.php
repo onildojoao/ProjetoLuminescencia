@@ -544,13 +544,13 @@ if ($_POST != null)
     }
     if (isset($_POST['md_c6_l5']))
     {
-        $md_c6_l15= $_POST['md_c6_l5'];
+        $md_c6_l5= $_POST['md_c6_l5'];
     } else {
         $md_c6_l5 = 0;
     }
-    if (isset($_POST['md_c7_l15']))
+    if (isset($_POST['md_c7_l5']))
     {
-        $md_c7_l15 = $_POST['md_c7_l5'];
+        $md_c7_l5 = $_POST['md_c7_l5'];
     } else {
         $md_c7_l15 = 0;
     }
@@ -615,55 +615,55 @@ if ($_POST != null)
         $md_altura_luminarias_a3 = $_POST['md_altura_luminarias_a3'];
     } else {
         $md_altura_luminarias_a3 = 0;
+    }
+    if (isset($_POST['md_altura_luminarias_a4']))
+    {
+        $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
+    } else {
+        $md_altura_luminarias_a4 = 0;
+    }
+    if (isset($_POST['md_altura_luminarias_a5']))
+    {
+        $md_altura_luminarias_a5 = $_POST['md_altura_luminarias_a5'];
+    } else {
+        $md_altura_luminarias_a5 = 0;
+    }
+    if (isset($_POST['md_altura_luminarias_a6']))
+    {
+        $md_altura_luminarias_a6 = $_POST['md_altura_luminarias_a6'];
+    } else {
+        $md_altura_luminarias_a6 = 0;
+    }
 
-        if (isset($_POST['md_altura_luminarias_a4']))
-        {
-            $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
-        } else {
-            $md_altura_luminarias_a4 = 0;
-        }
-        if (isset($_POST['md_altura_luminarias_a5']))
-        {
-            $md_altura_luminarias_a5 = $_POST['md_altura_luminarias_a5'];
-        } else {
-            $md_altura_luminarias_a5 = 0;
-        }
-        if (isset($_POST['md_altura_luminarias_a6']))
-        {
-            $md_altura_luminarias_a6 = $_POST['md_altura_luminarias_a6'];
-        } else {
-            $md_altura_luminarias_a6 = 0;
-        }
+    if (isset($_POST['md_lampada_apagada']))
+    {
+        $md_largura_via_l1 = $_POST['md_largura_via_l1'];
+    } else {
+        $md_largura_via_l1 = 0;
+    }
 
-        if (isset($_POST['md_lampada_apagada']))
-        {
-            $md_largura_via_l1 = $_POST['md_largura_via_l1'];
-        } else {
-            $md_largura_via_l1 = 0;
-        }
+    // DATA DE CADASTRO
+    if (isset($_POST['data_cadastro']))
+    {
+        $data_cadastro = $_POST['data_cadastro'];
+    }
 
-        // DATA DE CADASTRO
-        if (isset($_POST['data_cadastro']))
-        {
-            $data_cadastro = $_POST['data_cadastro'];
-        }
+    // DADOS DO USUÁRIO
+    if (isset($_SESSION['usu_cpf']))
+    {
+        $usu_cpf = $_SESSION['usu_cpf'];
+    }
 
-        // DADOS DO USUÁRIO
-        if (isset($_SESSION['usu_cpf']))
-        {
-            $usu_cpf = $_SESSION['usu_cpf'];
-        }
+    if (isset($_SESSION['usu_nome']))
+    {
+        $usu_nome = $_SESSION['usu_nome'];
+    }
 
-        if (isset($_SESSION['usu_nome']))
-        {
-            $usu_nome = $_SESSION['usu_nome'];
-        }
+    // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
+    //$conexao->beginTransaction();
 
-        // START TRANSACTION - CONFIGURAÇÃO PARA EVITAR "MEIOS SALVAMENTOS"
-        //$conexao->beginTransaction();
-
-        // COMANDO SQL CADASTRO CEB
-        $sql_cad = "INSERT INTO cad_ceb
+    // COMANDO SQL CADASTRO CEB
+    $sql_cad = "INSERT INTO cad_ceb
                 (cad_idPoste, cad_data_cadastro, cad_cpf_usuario, cad_nome_usuario,
                 cad_dg_cg_p2_lat, cad_dg_cg_p2_lng, cad_dg_cg_p3_lat, cad_dg_cg_p3_lng, 
                 cad_dg_cg_p4_lat, cad_dg_cg_p4_lng, cad_dg_cg_p5_lat, cad_dg_cg_p5_lng, 
@@ -734,20 +734,20 @@ if ($_POST != null)
                 '$md_altura_luminarias_a4', '$md_altura_luminarias_a5', '$md_altura_luminarias_a6',
                 '$md_largura_via_l1')";
 
-        $retorno_cad = $conexao->query($sql_cad);
+    $retorno_cad = $conexao->query($sql_cad);
 
-        if ($retorno_cad == true) 
-        {
-            $ok_cad = "ok";
+    if ($retorno_cad == true) 
+    {
+        $ok_cad = "ok";
 
-        } else {
-            $ok_cad = "false";
+    } else {
+        $ok_cad = "false";
 
-            //echo mysql_error($conexao);
-        }
+        //echo mysql_error($conexao);
+    }
 
-        // COMANDO SQL POSTE PRINCIPAL
-        $sql_pp = "INSERT INTO pp_posteprincipal
+    // COMANDO SQL POSTE PRINCIPAL
+    $sql_pp = "INSERT INTO pp_posteprincipal
                 (pp_id,
                 pp_Estado, pp_Cidade,
                 pp_Endereco, pp_Endereco_Observacao
@@ -759,42 +759,42 @@ if ($_POST != null)
                 '$pp_endereco', '$pp_endereco_observacao',
                 '$pp_regiao_administrativa',
                 '$dg_cg_p1_lat', '$dg_cg_p1_lng',
-                '$pp_classe_via')";
+                '$dg_classe_via')";
 
-        $retorno_pp = $conexao->query($sql_pp);
+    $retorno_pp = $conexao->query($sql_pp);
 
-        if ($retorno_pp == true) 
-        {
-            $ok_pp = "ok";
+    if ($retorno_pp == true) 
+    {
+        $ok_pp = "ok";
 
-        } else {
+    } else {
 
-            $ok_pp = "false";
+        $ok_pp = "false";
 
-            //echo mysql_error($conexao);
-        }
+        //echo mysql_error($conexao);
+    }
 
-        if (($ok_pp == "ok") && ($ok_cad == "ok"))
-        {
-            //$conexao->commit();
-            echo "<script>
+    if (($ok_pp == "ok") && ($ok_cad == "ok"))
+    {
+        //$conexao->commit();
+        echo "<script>
         alert('Cadastrado com Sucesso!');
         location.href = '../menu/menu_principal.php';
         </script>";
 
-        } else {
-            //$conexao->rollBack();
-            echo "<script>
+    } else {
+        //$conexao->rollBack();
+        echo "<script>
         alert('Erro ao Cadastrar!');
         </script>";
 
-            //echo $erro_pp;
-            //echo $erro_cad;
+        //echo $erro_pp;
+        //echo $erro_cad;
 
-            //header('Location: tela_formulario.php');
-        }
-    } 
-}
+        //header('Location: tela_formulario.php');
+    }
+} 
+
 
 ?>
 
@@ -857,7 +857,7 @@ if ($_POST != null)
     </head>
     <body>
         <div id="navbar"></div>
-        <form method="POST" id="form">
+        <form method="POST" id="form" action="acao_formulario.php">
             <div class="form-group">
 
                 <!-- DADOS GEOGRÁFICOS -->
