@@ -11,7 +11,7 @@ if ($_SESSION["usu_logado"] != "ok")
     header ('Location: ../login/tela_login.php');
 } 
 
-//$id_edit = $_GET['id_poste'];
+$id_edit = $_GET['id_poste'];
 
 if ($_POST != null)
 {
@@ -639,7 +639,34 @@ if ($_POST != null)
                             <option value="P4">P4</option>
                         </select>
                     </div>
-                    <div class="form-group col-lg-3 col-md-6 col-sm-12"></div>
+                    <!-- ESTADO -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_estado">Estado</label>
+                        <input type="text" class="form-control" id="pp_estado" name="pp_estado" required>
+                    </div>
+                    <!-- CIDADE -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_cidade">Cidade</label>
+                        <input type="text" class="form-control" id="pp_cidade" name="pp_cidade" required>
+                    </div>
+                </div>
+ 
+                <div class="row">
+                    <!-- RA -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_regiao_administrativa">Região Administrativa</label>
+                        <input type="text" class="form-control" id="pp_regiao_administrativa" name="pp_regiao_administrativa" required>
+                    </div>
+                    <!-- ENDEREÇO -->
+                    <div class="form-group col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_endereco">Endereço</label>
+                        <input type="text" class="form-control" id="pp_endereco" name="pp_endereco" required>
+                    </div>
+                    <!-- OBSERVAÇÃO ENDEREÇO -->
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <label for="pp_endereco_observacao">Observação Endereço</label>
+                        <input type="text" class="form-control" id="pp_endereco_observacao" name="pp_endereco_observacao" required>
+                    </div>
                 </div>
 
 
