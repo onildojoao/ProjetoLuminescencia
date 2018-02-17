@@ -1087,8 +1087,9 @@ if ($_POST != null)
                                 <td><label>P1-P2:</label></td>
                                 <td>
                                     <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p2">
-                                </td></tr>
+                                </td>
                                 <td></td>
+                            </tr>
                         </table>
                 </div>
 
