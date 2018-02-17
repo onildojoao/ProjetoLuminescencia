@@ -926,8 +926,8 @@ if ($_POST != null)
                     <div class="form-group col-lg-3 col-md-6 col-sm-12">
                         <label for="df_local_dificil_acesso">Local de Difícil Acesso</label>
                         <select class="form-control" name="df_local_dificil_acesso" id="df_local_dificil_acesso">
-                            <option value="Sim">Sim</option>
                             <option value="Nao">Não</option>
+                            <option value="Sim">Sim</option>
                         </select>
                     </div>
                 </div>
@@ -1026,7 +1026,6 @@ if ($_POST != null)
                         <td><input type="text" class="input-tabelas" name="md_c3_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c4_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
-                        <td><input type="text" class="input-tabelas" name="md_c5_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c6_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c7_l3" required></td>
                         <td><input type="text" class="input-tabelas" name="md_c8_l3" required></td>
@@ -1089,6 +1088,7 @@ if ($_POST != null)
                                 <td>
                                     <input type="text" class="input-tabelas" name="md_distancia_postes_p1_p2">
                                 </td></tr>
+                                <td></td>
                         </table>
                 </div>
 
