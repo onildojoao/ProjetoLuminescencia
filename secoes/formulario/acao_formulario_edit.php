@@ -56,84 +56,84 @@ if ($_POST != null)
     {
         $dg_cg_p1_lat = $_POST['dg_cg_p1_lat'];
     } else {
-        $dg_cg_p1_lat = 0;
+        $dg_cg_p1_lat = "";
     }
 
     if (isset($_POST['dg_cg_p1_lng']))
     {
         $dg_cg_p1_lng = $_POST['dg_cg_p1_lng'];
     } else {
-        $dg_cg_p1_lng = 0;
+        $dg_cg_p1_lng = "";
     }
 
     if (isset($_POST['dg_cg_p2_lat']))
     {
         $dg_cg_p2_lat = $_POST['dg_cg_p2_lat'];
     } else {
-        $dg_cg_p2_lat = 0;
+        $dg_cg_p2_lat = "";
     }
 
     if (isset($_POST['dg_cg_p2_lng']))
     {
         $dg_cg_p2_lng = $_POST['dg_cg_p2_lng'];
     } else {
-        $dg_cg_p2_lng = 0;
+        $dg_cg_p2_lng = "";
     }
 
-    if (isset($_POST['dg_cg_p3_lat']))
+    if (empty($dg_cg_p3_lat))
     {
-        $dg_cg_p3_lat = $_POST['dg_cg_p3_lat'];
+        $dg_cg_p3_lat = "";
     } else {
-        $dg_cg_p3_lat = 0;
+        $dg_cg_p3_lat = $_POST['dg_cg_p3_lat'];
     }
 
-    if (isset($_POST['dg_cg_p3_lng']))
+    if (isset($dg_cg_p3_lng))
     {
         $dg_cg_p3_lng = $_POST['dg_cg_p3_lng'];
     } else {
-        $dg_cg_p3_lng = 0;
+        $dg_cg_p3_lng = "";
     }
 
     if (isset($_POST['dg_cg_p4_lat']))
     {
         $dg_cg_p4_lat = $_POST['dg_cg_p4_lat'];
     } else {
-        $dg_cg_p4_lat = 0;
+        $dg_cg_p4_lat = "";
     }
 
     if (isset($_POST['dg_cg_p4_lng']))
     {
         $dg_cg_p4_lng = $_POST['dg_cg_p4_lng'];
     } else {
-        $dg_cg_p4_lng = 0;
+        $dg_cg_p4_lng = "";
     }
 
     if (isset($_POST['dg_cg_p5_lat']))
     {
         $dg_cg_p5_lat = $_POST['dg_cg_p5_lat'];
     } else {
-        $dg_cg_p5_lat = 0;
+        $dg_cg_p5_lat = "";
     }
 
     if (isset($_POST['dg_cg_p5_lng']))
     {
         $dg_cg_p5_lng = $_POST['dg_cg_p5_lng'];
     } else {
-        $dg_cg_p5_lng = 0;
+        $dg_cg_p5_lng = "";
     }
 
     if (isset($_POST['dg_cg_p6_lat']))
     {
         $dg_cg_p6_lat = $_POST['dg_cg_p6_lat'];
     } else {
-        $dg_cg_p6_lat = 0;
+        $dg_cg_p6_lat = "";
     }
 
     if (isset($_POST['dg_cg_p6_lng']))
     {
         $dg_cg_p6_lng = $_POST['dg_cg_p6_lng'];
     } else {
-        $dg_cg_p6_lng = 0;
+        $dg_cg_p6_lng = "";
     }
 
     // DADOS TÉCNICOS
@@ -255,61 +255,61 @@ if ($_POST != null)
     {
         $md_c1_l1 = $_POST['md_c1_l1'];
     } else {
-        $md_c1_l1 = 0;
+        $md_c1_l1 = "";
     }
     if (isset($_POST['md_c2_l1']))
     {
         $md_c2_l1 = $_POST['md_c2_l1'];
     } else {
-        $md_c2_l1 = 0;
+        $md_c2_l1 = "";
     }
     if (isset($_POST['md_c3_l1']))
     {
         $md_c3_l1 = $_POST['md_c3_l1'];
     } else {
-        $md_c3_l1 = 0;
+        $md_c3_l1 = "";
     }
     if (isset($_POST['md_c4_l1']))
     {
         $md_c4_l1 = $_POST['md_c4_l1'];
     } else {
-        $md_c4_l1 = 0;
+        $md_c4_l1 = "";
     }
     if (isset($_POST['md_c5_l1']))
     {
         $md_c5_l1 = $_POST['md_c5_l1'];
     } else {
-        $md_c5_l1 = 0;
+        $md_c5_l1 = "";
     }
     if (isset($_POST['md_c5_l1']))
     {
         $md_c5_l1 = $_POST['md_c5_l1'];
     } else {
-        $md_c5_l1 = 0;
+        $md_c5_l1 = "";
     }
     if (isset($_POST['md_c6_l1']))
     {
         $md_c6_l1 = $_POST['md_c6_l1'];
     } else {
-        $md_c6_l1 = 0;
+        $md_c6_l1 = "";
     }
     if (isset($_POST['md_c7_l1']))
     {
         $md_c7_l1 = $_POST['md_c7_l1'];
     } else {
-        $md_c7_l1 = 0;
+        $md_c7_l1 = "";
     }
     if (isset($_POST['md_c8_l1']))
     {
         $md_c8_l1 = $_POST['md_c8_l1'];
     } else {
-        $md_c8_l1 = 0;
+        $md_c8_l1 = "";
     }
     if (isset($_POST['md_c9_l1']))
     {
         $md_c9_l1 = $_POST['md_c9_l1'];
     } else {
-        $md_c9_l1 = 0;
+        $md_c9_l1 = "";
     }
 
     // SEGUNDA LINHA DA TABELA
@@ -317,55 +317,55 @@ if ($_POST != null)
     {
         $md_c1_l2 = $_POST['md_c1_l2'];
     } else {
-        $md_c1_l2 = 0;
+        $md_c1_l2 = "";
     }
     if (isset($_POST['md_c2_l2']))
     {
         $md_c2_l2 = $_POST['md_c2_l2'];
     } else {
-        $md_c2_l2 = 0;
+        $md_c2_l2 = "";
     }
     if (isset($_POST['md_c3_l2']))
     {
         $md_c3_l2 = $_POST['md_c3_l2'];
     } else {
-        $md_c3_l2 = 0;
+        $md_c3_l2 = "";
     }
     if (isset($_POST['md_c4_l2']))
     {
         $md_c4_l2 = $_POST['md_c4_l2'];
     } else {
-        $md_c4_l2 = 0;
+        $md_c4_l2 = "";
     }
     if (isset($_POST['md_c5_l2']))
     {
         $md_c5_l2 = $_POST['md_c5_l2'];
     } else {
-        $md_c5_l2 = 0;
+        $md_c5_l2 = "";
     }
     if (isset($_POST['md_c6_l2']))
     {
         $md_c6_l2 = $_POST['md_c6_l2'];
     } else {
-        $md_c6_l2 = 0;
+        $md_c6_l2 = "";
     }
     if (isset($_POST['md_c7_l2']))
     {
         $md_c7_l2 = $_POST['md_c7_l2'];
     } else {
-        $md_c7_l2 = 0;
+        $md_c7_l2 = "";
     }
     if (isset($_POST['md_c8_l2']))
     {
         $md_c8_l2 = $_POST['md_c8_l2'];
     } else {
-        $md_c8_l2 = 0;
+        $md_c8_l2 = "";
     }
     if (isset($_POST['md_c9_l2']))
     {
         $md_c9_l2 = $_POST['md_c9_l2'];
     } else {
-        $md_c9_l2 = 0;
+        $md_c9_l2 = "";
     }
 
     //TERCEIRA LINHA DA TABELA
@@ -373,55 +373,55 @@ if ($_POST != null)
     {
         $md_c1_l3 = $_POST['md_c1_l3'];
     } else {
-        $md_c1_l3 = 0;
+        $md_c1_l3 = "";
     }
     if (isset($_POST['md_c2_l3']))
     {
         $md_c2_l3 = $_POST['md_c2_l3'];
     } else {
-        $md_c2_l3 = 0;
+        $md_c2_l3 = "";
     }
     if (isset($_POST['md_c3_l3']))
     {
         $md_c3_l3 = $_POST['md_c3_l3'];
     } else {
-        $md_c3_l3 = 0;
+        $md_c3_l3 = "";
     }
     if (isset($_POST['md_c4_l3']))
     {
         $md_c4_l3 = $_POST['md_c4_l3'];
     } else {
-        $md_c4_l3 = 0;
+        $md_c4_l3 = "";
     }
     if (isset($_POST['md_c5_l3']))
     {
         $md_c5_l3 = $_POST['md_c5_l3'];
     } else {
-        $md_c5_l3 = 0;
+        $md_c5_l3 = "";
     }
     if (isset($_POST['md_c6_l3']))
     {
         $md_c6_l3 = $_POST['md_c6_l3'];
     } else {
-        $md_c6_l3 = 0;
+        $md_c6_l3 = "";
     }
     if (isset($_POST['md_c7_l3']))
     {
         $md_c7_l3 = $_POST['md_c7_l3'];
     } else {
-        $md_c7_l3 = 0;
+        $md_c7_l3 = "";
     }
     if (isset($_POST['md_c8_l3']))
     {
         $md_c8_l3 = $_POST['md_c8_l3'];
     } else {
-        $md_c8_l3 = 0;
+        $md_c8_l3 = "";
     }
     if (isset($_POST['md_c9_l3']))
     {
         $md_c9_l3 = $_POST['md_c9_l3'];
     } else {
-        $md_c9_l3 = 0;
+        $md_c9_l3 = "";
     }
 
     // QUARTA LINHA DA TABELA
@@ -429,55 +429,55 @@ if ($_POST != null)
     {
         $md_c1_l4 = $_POST['md_c1_l4'];
     } else {
-        $md_c1_l4 = 0;
+        $md_c1_l4 = "";
     }
     if (isset($_POST['md_c2_l4']))
     {
         $md_c2_l4 = $_POST['md_c2_l4'];
     } else {
-        $md_c2_l4 = 0;
+        $md_c2_l4 = "";
     }
     if (isset($_POST['md_c3_l4']))
     {
         $md_c3_l4 = $_POST['md_c3_l4'];
     } else {
-        $md_c3_l4 = 0;
+        $md_c3_l4 = "";
     }
     if (isset($_POST['md_c4_l4']))
     {
         $md_c4_l4 = $_POST['md_c4_l4'];
     } else {
-        $md_c4_l4 = 0;
+        $md_c4_l4 = "";
     }
     if (isset($_POST['md_c5_l4']))
     {
         $md_c5_l4 = $_POST['md_c5_l4'];
     } else {
-        $md_c5_l4 = 0;
+        $md_c5_l4 = "";
     }
     if (isset($_POST['md_c6_l4']))
     {
         $md_c6_l4 = $_POST['md_c6_l4'];
     } else {
-        $md_c6_l4 = 0;
+        $md_c6_l4 = "";
     }
     if (isset($_POST['md_c7_l4']))
     {
         $md_c7_l4 = $_POST['md_c7_l4'];
     } else {
-        $md_c7_l4 = 0;
+        $md_c7_l4 = "";
     }
     if (isset($_POST['md_c8_l4']))
     {
         $md_c8_l4 = $_POST['md_c8_l4'];
     } else {
-        $md_c8_l4 = 0;
+        $md_c8_l4 = "";
     }
     if (isset($_POST['md_c9_l4']))
     {
         $md_c9_l4 = $_POST['md_c9_l4'];
     } else {
-        $md_c9_l4 = 0;
+        $md_c9_l4 = "";
     }
 
     // QUINTA LINHA DA TABELA
@@ -485,130 +485,130 @@ if ($_POST != null)
     {
         $md_c1_l5 = $_POST['md_c1_l5'];
     } else {
-        $md_c1_l5 = 0;
+        $md_c1_l5 = "";
     }
     if (isset($_POST['md_c2_l5']))
     {
         $md_c2_l5 = $_POST['md_c2_l5'];
     } else {
-        $md_c2_l5 = 0;
+        $md_c2_l5 = "";
     }
     if (isset($_POST['md_c3_l5']))
     {
         $md_c3_l5 = $_POST['md_c3_l5'];
     } else {
-        $md_c3_l5 = 0;
+        $md_c3_l5 = "";
     }
     if (isset($_POST['md_c4_l5']))
     {
         $md_c4_l5 = $_POST['md_c4_l5'];
     } else {
-        $md_c4_l5 = 0;
+        $md_c4_l5 = "";
     }
     if (isset($_POST['md_c5_l5']))
     {
         $md_c5_l5 = $_POST['md_c5_l5'];
     } else {
-        $md_c5_l5 = 0;
+        $md_c5_l5 = "";
     }
     if (isset($_POST['md_c6_l5']))
     {
         $md_c6_l5= $_POST['md_c6_l5'];
     } else {
-        $md_c6_l5 = 0;
+        $md_c6_l5 = "";
     }
     if (isset($_POST['md_c7_l5']))
     {
         $md_c7_l5 = $_POST['md_c7_l5'];
     } else {
-        $md_c7_l5 = 0;
+        $md_c7_l5 = "";
     }
     if (isset($_POST['md_c8_l5']))
     {
         $md_c8_l5 = $_POST['md_c8_l5'];
     } else {
-        $md_c8_l5 = 0;
+        $md_c8_l5 = "";
     }
     if (isset($_POST['md_c9_l5']))
     {
         $md_c9_l5 = $_POST['md_c9_l5'];
     } else {
-        $md_c9_l5 = 0;
+        $md_c9_l5 = "";
     }
 
     if (isset($_POST['md_distancia_postes_p1_p3']))
     {
         $md_distancia_postes_p1_p3 = $_POST['md_distancia_postes_p1_p3'];
     } else {
-        $md_distancia_postes_p1_p3 = 0;
+        $md_distancia_postes_p1_p3 = "";
     }
     if (isset($_POST['md_distancia_postes_p3_p5']))
     {
         $md_distancia_postes_p3_p5 = $_POST['md_distancia_postes_p3_p5'];
     } else {
-        $md_distancia_postes_p3_p5 = 0;
+        $md_distancia_postes_p3_p5 = "";
     }
     if (isset($_POST['md_distancia_postes_p2_p4']))
     {
         $md_distancia_postes_p2_p4 = $_POST['md_distancia_postes_p2_p4'];
     } else {
-        $md_distancia_postes_p2_p4 = 0;
+        $md_distancia_postes_p2_p4 = "";
     }
     if (isset($_POST['md_distancia_postes_p4_p6']))
     {
         $md_distancia_postes_p4_p6 = $_POST['md_distancia_postes_p4_p6'];
     } else {
-        $md_distancia_postes_p4_p6 = 0;
+        $md_distancia_postes_p4_p6 = "";
     }
     if (isset($_POST['md_distancia_postes_p1_p2']))
     {
         $md_distancia_postes_p1_p2 = $_POST['md_distancia_postes_p1_p2'];
     } else {
-        $md_distancia_postes_p1_p2 = 0;
+        $md_distancia_postes_p1_p2 = "";
     }
 
     if (isset($_POST['md_altura_luminarias_a1']))
     {
         $md_altura_luminarias_a1 = $_POST['md_altura_luminarias_a1'];
     } else {
-        $md_altura_luminarias_a1 = 0;
+        $md_altura_luminarias_a1 = "";
     }
     if (isset($_POST['md_altura_luminarias_a2']))
     {
         $md_altura_luminarias_a2 = $_POST['md_altura_luminarias_a2'];
     } else {
-        $md_altura_luminarias_a2 = 0;
+        $md_altura_luminarias_a2 = "";
     }
     if (isset($_POST['md_altura_luminarias_a3']))
     {
         $md_altura_luminarias_a3 = $_POST['md_altura_luminarias_a3'];
     } else {
-        $md_altura_luminarias_a3 = 0;
+        $md_altura_luminarias_a3 = "";
     }
     if (isset($_POST['md_altura_luminarias_a4']))
     {
         $md_altura_luminarias_a4 = $_POST['md_altura_luminarias_a4'];
     } else {
-        $md_altura_luminarias_a4 = 0;
+        $md_altura_luminarias_a4 = "";
     }
     if (isset($_POST['md_altura_luminarias_a5']))
     {
         $md_altura_luminarias_a5 = $_POST['md_altura_luminarias_a5'];
     } else {
-        $md_altura_luminarias_a5 = 0;
+        $md_altura_luminarias_a5 = "";
     }
     if (isset($_POST['md_altura_luminarias_a6']))
     {
         $md_altura_luminarias_a6 = $_POST['md_altura_luminarias_a6'];
     } else {
-        $md_altura_luminarias_a6 = 0;
+        $md_altura_luminarias_a6 = "";
     }
 
     if (isset($_POST['md_lampada_apagada']))
     {
         $md_largura_via_l1 = $_POST['md_largura_via_l1'];
     } else {
-        $md_largura_via_l1 = 0;
+        $md_largura_via_l1 = "";
     }
 
     // DATA DE CADASTRO
