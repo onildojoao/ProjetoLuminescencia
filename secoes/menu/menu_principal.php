@@ -39,7 +39,7 @@ if ($_POST != null)
 
         echo "<script>
         alert('Poste não encontrado na base de dados! Você será redirecionando para formulário para cadastro do novo poste!');
-        location.href='../formulario/tela_formulario_convencional_novo.php?id_poste=$id_poste';
+        location.href='../formulario/tela_formulario.php?id_poste=$id_poste';
         </script>";
         //header("Location: ");
     }
