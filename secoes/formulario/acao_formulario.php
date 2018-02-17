@@ -264,7 +264,7 @@ if ($_POST != null)
     } else {
         $md_c2_l1 = "";
     }
-    if (isset($_POST['md_c3_l1']))
+    if ($_POST['md_c3_l1'] != "")
     {
         $md_c3_l1 = $_POST['md_c3_l1'];
     } else {
@@ -605,6 +605,7 @@ if ($_POST != null)
     } else {
         $md_largura_via_l1 = "";
     }
+
     // DATA DE CADASTRO
     if (isset($_POST['data_cadastro']))
     {
