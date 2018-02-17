@@ -792,6 +792,12 @@ if ($_POST != null)
         
         echo $ok_cad;
         echo $ok_pp;
+        echo $md_lampada_apagada_pl1;
+        echo $md_lampada_apagada_pl2;
+        echo $md_lampada_apagada_pl3;
+        echo $md_lampada_apagada_pl4;
+        echo $md_lampada_apagada_pl5;
+        echo $md_lampada_apagada_pl6;
         //echo $erro_pp;
         //echo $erro_cad;
 
