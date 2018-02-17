@@ -31,7 +31,7 @@ if ($_POST != null)
 
         echo "<script>
         alert('Poste encontrado! Redirecionando para formulário de cadastro!');
-        location.href='../formulario/tela_formulario_convencional_edit.php?id_poste=$id_poste';
+        location.href='../formulario/tela_formulario_edit.php?id_poste=$id_poste';
         </script>";
         //header("Location: ");
 

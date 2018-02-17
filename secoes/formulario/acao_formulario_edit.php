@@ -732,6 +732,7 @@ if ($_POST != null)
                 '$md_altura_luminarias_a4', '$md_altura_luminarias_a5', '$md_altura_luminarias_a6',
                 '$md_largura_via_l1')";
 
+
     $retorno_cad = $conexao->query($sql_cad);
 
     if ($retorno_cad == true) 
@@ -745,19 +746,16 @@ if ($_POST != null)
     }
 
     // COMANDO SQL POSTE PRINCIPAL
-    $sql_pp = "INSERT INTO pp_posteprincipal
-                (pp_id,
-                pp_Estado, pp_Cidade,
-                pp_Endereco, pp_Endereco_Observacao,
-                pp_Regiao_Administrativa,
-                pp_LAT_DD, pp_LNG_DD, pp_Classe_Via
-                ) VALUES 
-                ('$id_poste',
-                '$pp_estado', '$pp_cidade',
-                '$pp_endereco', '$pp_endereco_observacao',
-                '$pp_regiao_administrativa',
-                '$dg_cg_p1_lat', '$dg_cg_p1_lng',
-                '$dg_classe_via')";
+    $sql_pp = "UPDATE pp_posteprincipal
+               SET pp_Estado = '$pp_estado',
+               pp_Cidade = '$pp_cidade',
+               pp_Endereco = '$pp_endereco',
+               pp_Endereco_Observacao = '$pp_endereco_observacao',
+               pp_Regiao_Administrativa = '$pp_regiao_administrativa',
+               pp_LAT_DD = '$dg_cg_p1_lat',
+               pp_LNG_DD = '$dg_cg_p1_lng',
+               pp_classe_via = '$dg_classe_via'
+               WHERE pp_id = '$id_poste'";
 
     $retorno_pp = $conexao->query($sql_pp);
 
@@ -792,12 +790,6 @@ if ($_POST != null)
         
         echo $ok_cad;
         echo $ok_pp;
-        echo $md_lampada_apagada_pl1;
-        echo $md_lampada_apagada_pl2;
-        echo $md_lampada_apagada_pl3;
-        echo $md_lampada_apagada_pl4;
-        echo $md_lampada_apagada_pl5;
-        echo $md_lampada_apagada_pl6;
         //echo $erro_pp;
         //echo $erro_cad;
 
