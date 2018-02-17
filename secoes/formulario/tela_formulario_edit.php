@@ -463,44 +463,51 @@ if ($retorno_buscaposte == true) {
                 <br>
 
                 <!-- LAMPADAS APAGADAS -->
+                <!-- LAMPADAS APAGADAS -->
                 <div class="form-group">
-                    <table class="teste">
-                        <tr>
-                            <td class="v-align" rowspan="2">
-                                <label class="subtitulo-dados">Se houver lâmpada apagada marcar posição:</label>
-                            </td>
-                            <td><label>PL. 1:</label></td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl1">
-                            </td>
-                            <td><label>PL. 3:</label></td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl3">
-                            </td>
-                            <td>
-                                <label>PL. 5:</label>
-                            </td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl5">
-                            </td>
-                        </tr>
-                        <tr>
+                <table class="teste">
+                    <tr>
+                        <td class="v-align" rowspan="2">
+                            <label class="subtitulo-dados">Se houver lâmpada apagada marcar posição:</label>
+                        </td>
+                        <td><label>PL. 1:</label></td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl1" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl1">Apagada
+                        </td>
+                        <td><label>PL. 3:</label></td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl3" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl3">Apagada
+                        </td>
+                        <td>
+                            <label>PL. 5:</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl5" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl5">Apagada
+                        </td>
+                    </tr>
+                    <tr>
 
-                            <td><label>PL. 2:</label></td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl2">
-                            </td>
-                            <td><label>PL. 4:</label></td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl4">
-                            </td>
-                            <td><label>PL. 6:</label></td>
-                            <td>
-                                <input type="checkbox" value="apagada" name="md_lampada_apagada_pl6">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                        <td><label>PL. 2:</label></td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl2" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl2">Apagada
+                        </td>
+                        <td><label>PL. 4:</label></td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl4" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl4">Apagada
+                        </td>
+                        <td><label>PL. 6:</label></td>
+                        <td>
+                            <input type="checkbox" value="acesa" name="md_lampada_apagada_pl6" checked>Acesa<br>
+                            <input type="checkbox" value="apagada" name="md_lampada_apagada_pl6">Apagada
+                        </td>
+                    </tr>
+                </table>
+                
 
                 <!-- TABELA DE LUMINÂNCIA  -->
                 <label class="subtitulo-dados">Lançar Medições na Grade Abaixo - Pontos Equidistantes</label>
