@@ -479,7 +479,8 @@ if ($retorno_buscaposte == true) {
                                 <input type="radio" value="Apagada" name="md_lampada_apagada_pl3">Apagada</td>
                             <td>
                                 <label>PL. 5:</label></td>
-                            <td class="" type="radio" value="Acesa" name="md_lampada_apagada_pl5" checked>Acesa<br>
+                            <td class="">
+                                <input type="radio" value="Acesa" name="md_lampada_apagada_pl5" checked>Acesa<br>
                                 <input type="radio" value="Apagada" name="md_lampada_apagada_pl5">Apagada</td>
                         </tr>
                         <tr>
